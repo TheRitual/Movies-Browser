@@ -1,8 +1,15 @@
+import { ThemeProvider } from "styled-components";
+import { Normalize } from "styled-normalize";
+import { GlobalStyles } from "./GlobalStyles";
+import { theme } from "./theme";
+
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+      <Normalize />
+      <GlobalStyles />
       Movies Browser App
-    </div>
+    </ThemeProvider>
   );
 }
 
