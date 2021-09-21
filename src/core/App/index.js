@@ -1,5 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
+import MoviesBrowser from "../../features/moviesBrowser/MoviesBrowser";
 import { GlobalStyles } from "./GlobalStyles";
 import { theme } from "./theme";
 
@@ -8,7 +9,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Normalize />
       <GlobalStyles />
-      Movies Browser App
+      <MoviesBrowser />
     </ThemeProvider>
   );
 }
