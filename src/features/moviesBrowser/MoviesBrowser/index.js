@@ -2,6 +2,7 @@ const MoviesBrowser = () => {
     return (
         <>
             Movies Browser Component
+            Linika tekstu
         </>
     );
 }
