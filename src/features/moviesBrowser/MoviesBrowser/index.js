@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Navigation from "./Navigation";
 import Section from "./Section";
 
