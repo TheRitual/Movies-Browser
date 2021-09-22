@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Navigation from "./Navigation";
 import Section from "./Section";
 
@@ -6,6 +7,7 @@ const MoviesBrowser = () => {
         <>
             <Navigation />
             <Section />
+            <Footer />
         </>
     );
 }
