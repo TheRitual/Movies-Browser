@@ -1,7 +1,9 @@
+import Navigation from "./Navigation";
+
 const MoviesBrowser = () => {
     return (
         <>
-            Movies Browser Component
+            <Navigation />
         </>
     );
 }
