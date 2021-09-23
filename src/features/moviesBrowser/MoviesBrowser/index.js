@@ -1,13 +1,12 @@
-import Footer from "./Footer";
-import Navigation from "./Navigation";
-import Section from "./Section";
+import { Main } from "./styled";
 
 const MoviesBrowser = () => {
     return (
         <>
-            <Navigation />
-            <Section />
-            <Footer />
+        <nav>Navigation</nav>
+        <Main>
+            Main Page Content
+        </Main>
         </>
     );
 }
