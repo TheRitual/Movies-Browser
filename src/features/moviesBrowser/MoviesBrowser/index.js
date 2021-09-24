@@ -1,6 +1,6 @@
 import { Main } from "./styled";
 import { Tile } from "../../Tile";
-import { Image } from "../../images/poster.png";
+import Image from "../../images/poster.png";
 
 const MoviesBrowser = () => {
     return (
