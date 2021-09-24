@@ -5,11 +5,12 @@ import ActorDetailPage from "./ActorDetailPage";
 import MoviesListPage from "./MoviesListPage";
 import ActorsListPage from "./ActorsListPage";
 import { Main } from "./styled";
+import Navigation from "../../../generic/components/Navigation";
 
 const MoviesBrowser = () => {
   return (
     <HashRouter>
-      <nav>Navigation</nav>
+      <Navigation />
       <Main>
         <Switch>
           <Route path={toMoviesList()}>
