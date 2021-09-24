@@ -16,5 +16,6 @@ export const GlobalStyles = createGlobalStyle`
     body {
         overflow-y: scroll;
         background-color: ${({ theme }) => theme.colors.bodyBackground};
+        font-family: 'Poppins', sans-serif;
     }
 `;
