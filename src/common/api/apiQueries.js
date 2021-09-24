@@ -5,7 +5,7 @@ const getApiKey = (version) => {
     }
 }
 
-export const getMovies = async (page) => {
+export const fetchMoviesApi = async (page) => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${getApiKey()}&language=en-US&page=${page || 1}`);
     if (!response.ok) {
         new Error((response).statusText);
