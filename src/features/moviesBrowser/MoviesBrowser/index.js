@@ -1,11 +1,12 @@
 import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
 import { toActor, toActorsList, toMovie, toMoviesList } from "../../../core/config/routes";
 import { Main } from "./styled";
+import Navigation from "../../../Navigation";
 
 const MoviesBrowser = () => {
     return (
         <HashRouter>
-            <nav>Navigation</nav>
+            <Navigation />
             <Main>
                 <Switch>
                     <Route path={toMoviesList()}>

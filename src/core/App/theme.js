@@ -1,6 +1,6 @@
 const pallette = {
     white: "#FFFFFF",
-    black: "#000000",
+    black: "#18181B",
 }
 
 export const theme = {
