@@ -1,7 +1,9 @@
+import { SiteTitle } from "../../styledComponents/Header/styled";
+
 const ListPage = ({ isActors, children, header }) => {
     return (
         <>
-            <h1 class="styled-header">{header}</h1>
+            <SiteTitle>{header}</SiteTitle>
             {isActors ?
                 <grid class="styled-actors-type-grid">{children}</grid>
                 :

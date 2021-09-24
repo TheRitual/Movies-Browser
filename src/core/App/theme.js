@@ -8,6 +8,7 @@ export const theme = {
         bodyBackground: pallette.white,
     },
     breakpoints: {
+        small: "576px",
         tabletPortrait: "767px",
     }
 }
