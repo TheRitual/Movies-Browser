@@ -5,7 +5,7 @@ import ActorDetailPage from "./ActorDetailPage";
 import MoviesListPage from "./MoviesListPage";
 import ActorsListPage from "./ActorsListPage";
 import { Main } from "./styled";
-import Navigation from "../../../generic/components/Navigation";
+import Navigation from "../../../common/Navigation";
 
 const MoviesBrowser = () => {
   return (
