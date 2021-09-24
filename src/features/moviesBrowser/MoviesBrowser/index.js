@@ -1,7 +1,7 @@
 import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
 import { toActor, toActorsList, toMovie, toMoviesList } from "../../../core/config/routes";
 import { Main } from "./styled";
-import Navigation from "../../../Navigation";
+import Navigation from "../../../generic/components/Navigation";
 
 const MoviesBrowser = () => {
     return (
