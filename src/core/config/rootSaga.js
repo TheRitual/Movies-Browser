@@ -1,5 +1,5 @@
 import { all } from "@redux-saga/core/effects";
-import { moviesBrowserSaga } from "../../features/MoviesBrowser/moviesBrowserSaga"
+import { moviesBrowserSaga } from "../../features/moviesBrowser/moviesBrowserSaga"
 
 function* rootSaga () {
     yield all([

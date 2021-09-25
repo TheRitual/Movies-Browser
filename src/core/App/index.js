@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
 import { GlobalStyles } from "./GlobalStyles";
-import MoviesBrowser from "../../features/MoviesBrowser"
+import MoviesBrowser from "../../features/moviesBrowser/MoviesBrowser"
 import { theme } from "./theme";
 
 function App() {
