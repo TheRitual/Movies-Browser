@@ -1,13 +1,9 @@
-import React from "react";
-import { StyledNavigation } from "./styled";
-
 const Navigation = () => {
-return(
-    <StyledNavigation>
-        Movies
-        People
-    </StyledNavigation>
-)
+    return (
+        <>
+            Navigation
+        </>
+    );
 }
 
 export default Navigation;

@@ -1,10 +1,10 @@
 import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
-import { toActor, toActorsList, toMovie, toMoviesList } from "../../core/config/routes";
-import MovieDetailPage from "./MovieDetailPage";
-import ActorDetailPage from "./ActorDetailPage";
-import MoviesListPage from "./MoviesListPage";
-import ActorsListPage from "./ActorsListPage";
-import Navigation from "../../common/Navigation";
+import { toActor, toActorsList, toMovie, toMoviesList } from "../../../core/config/routes";
+import MovieDetailPage from "../MovieDetailPage";
+import ActorDetailPage from "../ActorDetailPage";
+import MoviesListPage from "../MoviesListPage";
+import ActorsListPage from "../ActorsListPage";
+import Navigation from "../../../common/Navigation";
 import { Main } from "./styled";
 
 const MoviesBrowser = () => {
