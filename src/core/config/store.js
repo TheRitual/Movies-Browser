@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "./rootSaga";
+import moviesBrowserReducer from "../../features/MoviesBrowser/moviesBrowserSlice";
+
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer: {
-        //reducers
+        moviesBrowser: moviesBrowserReducer,
     },
     middleware: [sagaMiddleware]
 });

@@ -1,6 +1,6 @@
 const ActorDetailPage = () => {
     return (
-        <> 
+        <>
             ActorDetailPage
         </>
     );
