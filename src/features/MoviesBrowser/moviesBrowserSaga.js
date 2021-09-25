@@ -1,16 +1,27 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
-import { fetchList } from "../../common/api/apiQueries";
-import { setMoviesList, fetchData, fetchDataError, setPage, setTotalPages, selectRequestType } from "./moviesBrowserSlice";
+import { fetchList, fetchDetails } from "../../common/api/apiQueries";
+import { setMoviesList, setDetailItem, fetchListData, fetchDetailedData, fetchDataError, setTotalPages, selectRequestType, selectDetailId } from "./moviesBrowserSlice";
 import { selectPage } from "./moviesBrowserSlice";
 
-function* fetchMoviesHandler() {
+function* fetchListHandler() {
     try {
         const page = yield select(selectPage);
         const requestType = yield select(selectRequestType);
-        const moviesList = yield call(fetchList, requestType, page );
-        yield put(setMoviesList(moviesList.results));
-        yield put(setPage(moviesList.page));
-        yield put(setTotalPages(moviesList.total_pages));
+        const list = yield call(fetchList, requestType, page);
+        yield put(setMoviesList(list.results));
+        yield put(setTotalPages(list.total_pages));
+    } catch (error) {
+        yield put(fetchDataError());
+        yield call(Error, error);
+    }
+}
+
+function* fetchDetailHandler() {
+    try {
+        const detail = yield select(selectDetailId);
+        const requestType = yield select(selectRequestType);
+        const detailedItem = yield call(fetchDetails, requestType, detail);
+        yield put(setDetailItem(detailedItem));
     } catch (error) {
         yield put(fetchDataError());
         yield call(Error, error);
@@ -18,5 +29,6 @@ function* fetchMoviesHandler() {
 }
 
 export function* moviesBrowserSaga() {
-    yield takeLatest(fetchData.type, fetchMoviesHandler);
+    yield takeLatest(fetchListData.type, fetchListHandler);
+    yield takeLatest(fetchDetailedData.type, fetchDetailHandler);
 }

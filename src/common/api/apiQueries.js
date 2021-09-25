@@ -17,3 +17,16 @@ export const fetchList = async (type, page) => {
     }
     return await response.json();
 };
+
+export const fetchDetails = async (type, id) => {
+    let link = ""
+    switch (type) {
+        case "actor": link = "person"; break;
+        default: link = "movie";
+    }
+    const response = await fetch(`https://api.themoviedb.org/3/${link}/${id}?api_key=${getApiKey()}&language=en-US`);
+    if (!response.ok) {
+        new Error((response).statusText);
+    }
+    return await response.json();
+};
