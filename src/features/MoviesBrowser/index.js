@@ -4,8 +4,8 @@ import MovieDetailPage from "./MovieDetailPage";
 import ActorDetailPage from "./ActorDetailPage";
 import MoviesListPage from "./MoviesListPage";
 import ActorsListPage from "./ActorsListPage";
-import { Main } from "./styled";
 import Navigation from "../../common/Navigation";
+import { Main } from "./styled";
 
 const MoviesBrowser = () => {
   return (

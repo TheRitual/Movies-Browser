@@ -1,9 +1,9 @@
 import { all } from "@redux-saga/core/effects";
-import { moviesListSaga } from "../../features/MoviesBrowser/MoviesListPage/moviesListSaga"
+import { moviesBrowserSaga } from "../../features/MoviesBrowser/moviesBrowserSaga"
 
 function* rootSaga () {
     yield all([
-        moviesListSaga(),
+        moviesBrowserSaga(),
     ])
 }
 

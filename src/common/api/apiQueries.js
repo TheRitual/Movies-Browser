@@ -5,8 +5,13 @@ const getApiKey = (version) => {
     }
 }
 
-export const fetchMoviesApi = async (page) => {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${getApiKey()}&language=en-US&page=${page || 1}`);
+export const fetchList = async (type, page) => {
+    let link = ""
+    switch (type) {
+        case "actors": link = "person/popular"; break;
+        default: link = "movie/popular";
+    }
+    const response = await fetch(`https://api.themoviedb.org/3/${link}?api_key=${getApiKey()}&language=en-US&page=${page || 1}`);
     if (!response.ok) {
         new Error((response).statusText);
     }
