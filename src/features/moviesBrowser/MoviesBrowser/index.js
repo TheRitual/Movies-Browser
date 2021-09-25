@@ -1,5 +1,5 @@
 import { Main } from "./styled";
-import Navigation from "../../../Navigation";
+import Navigation from "../../../common/Navigation";
 
 const MoviesBrowser = () => {
     return (
