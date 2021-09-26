@@ -7,6 +7,7 @@ import ActorsListPage from "../ActorsListPage";
 import Navigation from "../../../common/Navigation";
 import { Main } from "./styled";
 import NotFound from "../../../common/NotFound";
+import NoResultPage from "../../../common/NoResultPage";
 
 const MoviesBrowser = () => {
   return (
@@ -14,10 +15,11 @@ const MoviesBrowser = () => {
       <Navigation />
       <Main>
         <Switch>
-          <Route path={toMoviesList()} component={MoviesListPage} />  
-          <Route path={toMovie()} component={MovieDetailPage} />          
+          <Route path={toMoviesList()} component={MoviesListPage} />
+          <Route path={toMovie()} component={MovieDetailPage} />
           <Route path={toActorsList()} component={ActorsListPage} />
           <Route path={toActor()} component={ActorDetailPage} />
+          <Route exact path="/noresults" component={NoResultPage} />
           <Route exact path="/">
             <Redirect to={toMoviesList()} />
           </Route>
