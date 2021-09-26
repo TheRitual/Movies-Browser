@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.noResultBackground};
+    align-items: center;
     margin: 0 auto;
+    background-color: ${({ theme }) => theme.colors.subpageBackground};
 `;
 
 export const NoResultHeader = styled.h1`
