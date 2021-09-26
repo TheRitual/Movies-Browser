@@ -1,17 +1,15 @@
-import { ThemeProvider } from "styled-components";
-import { Normalize } from "styled-normalize";
-import { GlobalStyles } from "./GlobalStyles";
-import MoviesBrowser from "../../features/moviesBrowser/MoviesBrowser"
-import { theme } from "./theme";
+import { Wrapper, ErrorImage, Title, Subtitle, ErrorButton } from "./styled";
 
-function App() {
+const ErrorPage = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Normalize />
-      <GlobalStyles />
-      <MoviesBrowser />
-    </ThemeProvider>
-  );
-}
+    <Wrapper>
+      <ErrorImage />
+      <Title>Ooops! Something went wrong...</Title>
+      <Subtitle>Please check your network connection and try again</Subtitle>
+      <ErrorButton> Back to home page </ErrorButton>
+    </Wrapper>
 
-export default App;
+  );
+};
+
+export default ErrorPage;
