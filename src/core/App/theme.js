@@ -11,7 +11,7 @@ export const theme = {
         navBackground: pallette.black,
         navText: pallette.white,
         headers: pallette.woodsmoke,
-        noResultBackground: pallette.mercury,
+        subpageBackground: pallette.mercury,
     },
     breakpoints: {
         tabletPortrait: "767px",
