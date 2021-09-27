@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import { toPerson } from "../../../../core/config/routes";
 
-const PersonTile = ({person}) => {
+const PersonTile = ({ person }) => {
     return (
         <div>
-            <Link to={person}>{person.name}</Link>
+            <Link to={toPerson(person)}>{person.name}</Link>
         </div>
     );
 }
