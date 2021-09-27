@@ -1,8 +1,10 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
-import { fetchDetailedMovieData, selectDetailItem } from "../moviesBrowserSlice";
+import { fetchDetailedMovieData } from "../moviesBrowserSlice";
+import MovieDetailsTile from "./MovieDetailsTile";
+import MovieHeader from "./MovieHeader";
+import PeopleList from "./PeopleList";
 
 const MovieDetailPage = () => {
     const { id } = useParams();
@@ -10,10 +12,12 @@ const MovieDetailPage = () => {
     useEffect(() => {
         dispatch(fetchDetailedMovieData(id));
     });
-    const movie = useSelector(selectDetailItem);
     return (
         <>
-            <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt={movie.title} />     
+            <MovieHeader />
+            <MovieDetailsTile />
+            <PeopleList title="Cast" />
+            <PeopleList title="Crew" />
         </>
     );
 }
