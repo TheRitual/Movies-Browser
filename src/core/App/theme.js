@@ -1,8 +1,9 @@
 const pallette = {
     white: "#FFFFFF",
     black: "#000000",
-    woodsmoke: "#18181B",
     mercury: "#E5E5E5",
+    woodsmoke: "#18181B",
+    scienceBlue: "#0044CC",
 }
 
 export const theme = {
@@ -11,9 +12,12 @@ export const theme = {
         navBackground: pallette.black,
         navText: pallette.white,
         headers: pallette.woodsmoke,
+        noResultPageBackground: pallette.mercury,
+        errorButton: pallette.scienceBlue,
         subpageBackground: pallette.mercury,
     },
     breakpoints: {
+        small: 576,
         tabletPortrait: "767px",
     }
 }

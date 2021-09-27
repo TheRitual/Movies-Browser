@@ -8,7 +8,7 @@ const getApiKey = (version) => {
 export const fetchList = async (type, page) => {
     let link = ""
     switch (type) {
-        case "actors": link = "person/popular"; break;
+        case "people": link = "person/popular"; break;
         default: link = "movie/popular";
     }
     const response = await fetch(`https://api.themoviedb.org/3/${link}?api_key=${getApiKey()}&language=en-US&page=${page || 1}`);
@@ -21,7 +21,7 @@ export const fetchList = async (type, page) => {
 export const fetchDetails = async (type, id) => {
     let link = ""
     switch (type) {
-        case "actor": link = "person"; break;
+        case "person": link = "person"; break;
         default: link = "movie";
     }
     const response = await fetch(`https://api.themoviedb.org/3/${link}/${id}?api_key=${getApiKey()}&language=en-US`);
