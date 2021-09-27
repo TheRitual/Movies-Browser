@@ -1,21 +1,23 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
-import { fetchDetailedPersonData, selectDetailItem } from "../moviesBrowserSlice";
+import { fetchDetailedPersonData } from "../moviesBrowserSlice";
+import PersonDetailsTile from "./PersonDetailsTile";
+import MoviesList from "./MoviesList";
 
-const ActorDetailPage = () => {
+const PersonDetailPage = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchDetailedPersonData(id));
     });
-    const person = useSelector(selectDetailItem);
     return (
         <>
-            <img src={`https://image.tmdb.org/t/p/w200${person.profile_path}`} alt={person.name} /> 
+          <PersonDetailsTile />  
+          <MoviesList title="Movies - cast" />
+          <MoviesList title="Movies - crew" />
         </>
     );
 }
 
-export default ActorDetailPage;
+export default PersonDetailPage;
