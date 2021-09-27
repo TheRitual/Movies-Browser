@@ -14,8 +14,10 @@ export const theme = {
         headers: pallette.woodsmoke,
         noResultPageBackground: pallette.mercury,
         errorButton: pallette.scienceBlue,
+        subpageBackground: pallette.mercury,
     },
     breakpoints: {
+        small: 576,
         tabletPortrait: "767px",
     }
 }
