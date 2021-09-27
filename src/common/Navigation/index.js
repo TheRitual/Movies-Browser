@@ -5,17 +5,21 @@ import {
     StyledTitle,
     StyledNavLink,
     StyledNavWrapper,
-    StyledInput
+    StyledInput,
+    StyledLabel,
+    InputIcon,
+    StyledCameraIcon,
 } from "./styled";
 import { toActorsList, toMoviesList } from "../../core/config/routes";
+import cameraIcon from "./assets/images/CameraIcon.svg";
+import search from "./assets/images/SearchIcon.svg";
 
 
 const Navigation = () => {
     return (
         <StyledNavigation>
             <StyledNavWrapper>
-                <>StyledCameraIcon</>
-                {/*tu miejsce na ikonkę SVG kamery*/}
+                <StyledCameraIcon src={cameraIcon} />
                 <StyledTitle>Movies Browser</StyledTitle>
                 <NavigationList>
                     <StyledNavLink 
@@ -27,11 +31,11 @@ const Navigation = () => {
                     >
                         People </StyledNavLink>
                 </NavigationList>
-                <StyledInput />
-                    <>InputIcon</>
-                    {/*tu będzie ikonka search SVG <>InputIcon */}
-                    Search
-
+                <StyledLabel>
+                <InputIcon src={search} />
+                <StyledInput 
+/>
+                    </StyledLabel>
             </StyledNavWrapper>
         </StyledNavigation>
     )
