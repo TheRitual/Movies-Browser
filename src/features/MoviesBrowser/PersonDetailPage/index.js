@@ -1,14 +1,14 @@
-import PersonDetailsTile from "./PersonDetailsTile";
-import MoviesList from "./MoviesList";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchDetailedPersonData } from "../moviesBrowserSlice";
+import PersonDetails from "./PersonDetails";
 
 const PersonDetailPage = () => {
-    return (
-        <>
-          <PersonDetailsTile />  
-          <MoviesList title="Movies - cast" />
-          <MoviesList title="Movies - crew" />
-        </>
-    );
+  const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchDetailedPersonData());
+    });
+    return <PersonDetails />
 }
 
 export default PersonDetailPage;

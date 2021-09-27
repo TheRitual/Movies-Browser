@@ -1,13 +1,14 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import ListPage from "../ListPage";
-import Paginator from "../ListPage/Paginator";
+import { fetchMoviesListData } from "../moviesBrowserSlice";
 
 const MoviesListPage = () => {
-    return (
-        <>
-            <ListPage header="Popular Movies" />
-            <Paginator />
-        </>
-    );
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchMoviesListData());
+    });
+    return <ListPage header="Popular Movies" />;
 }
 
 export default MoviesListPage;

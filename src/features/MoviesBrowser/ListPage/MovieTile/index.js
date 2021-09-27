@@ -10,7 +10,7 @@ const MovieTile = ({ movie }) => {
             <p> Release data: {movie.release_date} </p>
             <p> Genres:&nbsp;
                 {movie.genre_ids && movie.genre_ids.map(genre => (
-                    <span>
+                    <span key={genre}>
                         [{genre}] 
                     </span>
                 ))}

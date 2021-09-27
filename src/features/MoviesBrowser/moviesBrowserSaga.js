@@ -31,6 +31,7 @@ function* fetchListHandler() {
 
 function* fetchDetailHandler() {
     try {
+        yield delay(1000);
         const detail = yield select(selectDetailId);
         const requestType = yield select(selectRequestType);
         const detailedItem = yield call(fetchDetails, requestType, detail);

@@ -1,6 +1,6 @@
 import { Redirect, Route, Switch } from "react-router";
 import { toMovie, toMoviesList, toPeopleList, toPerson } from "../../../../core/config/routes";
-import NotFound from "../../../../common/NotFound";
+import ErrorPage from "../../../../common/ErrorPage";
 import MovieDetailPage from "../../MovieDetailPage";
 import PersonDetailPage from "../../PersonDetailPage";
 import MoviesListPage from "../../MoviesListPage";
@@ -16,7 +16,7 @@ const PageSwitch = () => {
             <Route exact path="/">
                 <Redirect to={toMoviesList()} />
             </Route>
-            <Route component={NotFound} />
+            <Route component={ErrorPage} />
         </Switch>
     );
 }

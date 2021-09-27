@@ -18,7 +18,7 @@ const MovieDetailsTile = () => {
             
             <p> Countries:&nbsp;
                 {movie.production_countries && movie.production_countries.map(country => (
-                    <span>
+                    <span key={country.iso_3166_1}>
                         {country.name} ({country.iso_3166_1}),
                     </span>
                 ))}
@@ -26,7 +26,7 @@ const MovieDetailsTile = () => {
 
             <p> Genres:&nbsp;
                 {movie.genres && movie.genres.map(genre => (
-                    <span>
+                    <span key={genre.id}>
                         [{genre.name}] 
                     </span>
                 ))}
