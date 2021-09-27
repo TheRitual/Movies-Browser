@@ -40,7 +40,7 @@ const moviesBrowserSlice = createSlice({
             state.isLoading = false;
         },
         setPeopleList: (state, { payload: peopleList }) => {
-            state.peopleList = peopleList;
+            state.itemsList = peopleList;
             state.isLoading = false;
         },
         setDetailItem: (state, { payload: item }) => {
@@ -74,6 +74,5 @@ export const selectList = state => selectMoviesBrowserState(state).itemsList;
 export const selectDetailItem = state => selectMoviesBrowserState(state).detailItem;
 export const selectType = state => selectMoviesBrowserState(state).requestType;
 export const selectIsListEmpty = state => selectMoviesBrowserState(state).itemsList.length === 0;
-
 
 export default moviesBrowserSlice.reducer;
