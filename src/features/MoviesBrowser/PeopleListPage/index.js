@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ListPage from "../ListPage";
+import Paginator from "../ListPage/Paginator";
 import { fetchPeopleListData } from "../moviesBrowserSlice";
 
 const ActorsListPage = () => {
@@ -9,7 +10,10 @@ const ActorsListPage = () => {
         dispatch(fetchPeopleListData(1));
     });
     return (
-        <ListPage header="Popular Actors " showPaginator={true} columns="6" type="people" />
+        <>
+            <ListPage header="Popular Actors " />
+            <Paginator />
+        </>
     );
 }
 

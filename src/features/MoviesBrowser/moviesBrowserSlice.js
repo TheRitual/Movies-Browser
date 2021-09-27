@@ -72,6 +72,7 @@ export const selectDetailId = state => selectMoviesBrowserState(state).detailId;
 export const selectTotalPages = state => selectMoviesBrowserState(state).totalPages;
 export const selectList = state => selectMoviesBrowserState(state).itemsList;
 export const selectDetailItem = state => selectMoviesBrowserState(state).detailItem;
+export const selectType = state => selectMoviesBrowserState(state).requestType;
 export const selectIsListEmpty = state => selectMoviesBrowserState(state).itemsList.length === 0;
 
 

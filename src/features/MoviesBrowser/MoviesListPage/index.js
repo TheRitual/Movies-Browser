@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ListPage from "../ListPage";
+import Paginator from "../ListPage/Paginator";
 import { fetchMoviesListData } from "../moviesBrowserSlice";
 
 
@@ -11,7 +12,10 @@ const MoviesListPage = () => {
     });
 
     return (
-        <ListPage header="Popular Movies " showPaginator={true} type="movies" />
+        <>
+            <ListPage header="Popular Movies" />
+            <Paginator />
+        </>
     );
 }
 
