@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+
 export const StyledNavigation = styled.nav`
     width: 100%;
     background-color: ${({ theme }) => theme.colors.navBackground};
@@ -25,11 +26,13 @@ export const StyledCameraIcon = styled.img`
     height: 43px;
     border: 2.5px solid ${({ theme }) => theme.colors.white};
     margin: 0 10px;
+    padding-left: 5px;
 `;
 
 export const StyledTitle = styled.h1`
     color: ${({ theme }) => theme.colors.navText};
     position: inherit;
+    top: calc(50% - 40px/2);
     width: 168px;
     height: 40px;
     left: 52px;
@@ -41,6 +44,7 @@ export const StyledTitle = styled.h1`
     line-height: 40px;
     letter-spacing: -1.5px;
     text-transform: capitalize;
+    flex-grow: 1;
 `;
 
 export const StyledLabel = styled.label`
@@ -65,13 +69,16 @@ export const StyledInput = styled.input`
     outline: none;
     flex-grow: 0.8;
     width: 75%;
-
+    border: 1px solid ${({ theme }) => theme.colors.mystic};
+    
 `;
 
 export const InputIcon = styled.img`
     width: 20px;
     height: 23px;
     margin: 0 15px;
+    background: url("../assets/images/SearchIcon.svg");
+
 `;
 
 export const StyledNavWrapper = styled.div`
@@ -83,9 +90,7 @@ export const StyledNavWrapper = styled.div`
 `;
 
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({
-    activeClassName: "active",
-}))`
+export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.navText};
     text-decoration: none;
     font-family: Poppins;
