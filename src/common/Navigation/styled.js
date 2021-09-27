@@ -21,9 +21,10 @@ export const NavigationList = styled.ul`
 `;
 
 export const StyledCameraIcon = styled.img`
-    width: 22px;
-    height: 23px;
+    width: 32px;
+    height: 43px;
     border: 2.5px solid ${({ theme }) => theme.colors.white};
+    margin: 0 10px;
 `;
 
 export const StyledTitle = styled.h1`
@@ -42,21 +43,35 @@ export const StyledTitle = styled.h1`
     text-transform: capitalize;
 `;
 
-export const StyledInput = styled.input`
+export const StyledLabel = styled.label`
     background-color: ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors.mystic};
     border-radius: 33px;
     position: inherit;
+    width: 30%max-content;
+    height: 40px;
+    display: flex;
+    align-items: center;
     left: 0%;
     right: 0%;
     top: 0%;
     bottom: 0%;
-    border: 1px solid ${({ theme }) => theme.colors.mystic};
+`;
+
+export const StyledInput = styled.input`
+    background-color: none;
+    font-size: 16px;
+    border-radius: 33px;
+    outline: none;
+    flex-grow: 0.8;
+    width: 75%;
+
 `;
 
 export const InputIcon = styled.img`
     width: 20px;
-    height: 20px;
-
+    height: 23px;
+    margin: 0 15px;
 `;
 
 export const StyledNavWrapper = styled.div`
