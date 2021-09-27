@@ -27,11 +27,11 @@ const Navigation = () => {
                     >
                         People </StyledNavLink>
                 </NavigationList>
-                <StyledInput>
+                <StyledInput />
                     <>InputIcon</>
                     {/*tu będzie ikonka search SVG <>InputIcon */}
                     Search
-                </StyledInput>
+
             </StyledNavWrapper>
         </StyledNavigation>
     )

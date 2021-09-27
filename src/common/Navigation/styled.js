@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const StyledNavigation = styled.nav`
-    width: 1920px;
-    height: 94px;
-    background-color: ${({ theme }) => theme.colors.navigationBar};
+    width: 100%x;
+    background-color: ${({ theme }) => theme.colors.navBackground};
     left: 0%;
     right: 0%;
     top: 0%;
@@ -28,12 +27,11 @@ export const StyledCameraIcon = styled.img`
 `;
 
 export const StyledTitle = styled.h1`
-    color: ${({ theme }) => theme.colors.white};
-    position: absolute;
+    color: ${({ theme }) => theme.colors.navText};
+    position: inherit;
     width: 168px;
     height: 40px;
     left: 52px;
-    top: calc(50% - 40px/2);
     margin: 0;
     font-family: Poppins;
     font-style: normal;
@@ -47,7 +45,7 @@ export const StyledTitle = styled.h1`
 export const StyledInput = styled.input`
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: 33px;
-    position: absolute;
+    position: inherit;
     left: 0%;
     right: 0%;
     top: 0%;
@@ -73,7 +71,7 @@ export const StyledNavWrapper = styled.div`
 export const StyledNavLink = styled(NavLink).attrs(() => ({
     activeClassName: "active",
 }))`
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.navText};
     text-decoration: none;
     font-family: Poppins;
     font-style: normal;
@@ -81,4 +79,12 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
+    position: static;
+    padding: 10px;
+
+    &:active {
+        border: 1px solid ${({ theme }) => theme.colors.navText};
+        border-radius: 24px;
+        box-sizing: border-box;
+    }
     `;
