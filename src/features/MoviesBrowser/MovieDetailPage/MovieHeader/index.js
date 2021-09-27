@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { LargeVote } from "../../../../common/Vote";
 import { selectDetailItem } from "../../moviesBrowserSlice";
 
 const MovieHeader = () => {
@@ -7,8 +8,7 @@ const MovieHeader = () => {
         <div>
             <h4>Movie Header Component</h4>
             <p> Title = {movie.title} </p>
-            <p> Votes Score = {movie.vote_average} </p>
-            <p> Votes count = {movie.vote_count} </p>
+            <LargeVote score={movie.vote_average} count={movie.vote_count} />
             <p>Backdrop image : https://image.tmdb.org/t/p/w1280{movie.backdrop_path}</p>
         </div>
     );
