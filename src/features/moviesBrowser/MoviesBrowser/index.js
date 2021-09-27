@@ -1,10 +1,9 @@
 import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
-import { toActor, toActorsList, toMovie, toMoviesList } from "../../../core/config/routes";
+import { toPerson, toPeopleList, toMovie, toMoviesList } from "../../../core/config/routes";
 import MovieDetailPage from "../MovieDetailPage";
-import ActorDetailPage from "../ActorDetailPage";
+import PersonDetailPage from "../PersonDetailPage";
 import MoviesListPage from "../MoviesListPage";
-import ActorsListPage from "../ActorsListPage";
-import Navigation from "../../../common/Navigation";
+import PeopleListPage from "../PeopleListPage";
 import { Main } from "./styled";
 import NotFound from "../../../common/NotFound";
 import NoResultPage from "../../../common/NoResultPage";
@@ -12,13 +11,13 @@ import NoResultPage from "../../../common/NoResultPage";
 const MoviesBrowser = () => {
   return (
     <HashRouter>
-      <Navigation />
+      Navigation
       <Main>
         <Switch>
           <Route path={toMoviesList()} component={MoviesListPage} />
           <Route path={toMovie()} component={MovieDetailPage} />
-          <Route path={toActorsList()} component={ActorsListPage} />
-          <Route path={toActor()} component={ActorDetailPage} />
+          <Route path={toPeopleList()} component={PeopleListPage} />
+          <Route path={toPerson()} component={PersonDetailPage} />
           <Route exact path="/noresults" component={NoResultPage} />
           <Route exact path="/">
             <Redirect to={toMoviesList()} />

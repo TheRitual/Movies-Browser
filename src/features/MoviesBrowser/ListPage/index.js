@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { toActor, toMovie } from "../../../core/config/routes";
+import { toPerson, toMovie } from "../../../core/config/routes";
 import { selectList } from "../moviesBrowserSlice";
 import { ListGrid, ListHeader } from "./styled";
 
@@ -13,7 +13,7 @@ const ListPage = ({ header, showPaginator, type }) => {
                 {list && list.map(listItem => {
                     return (<section>
                         <Link to={
-                            type === "movies" ? toMovie(listItem) : toActor(listItem)
+                            type === "movies" ? toMovie(listItem) : toPerson(listItem)
                         }>
                             <p>{type === "movies" ? listItem.title : listItem.name}</p>
                         </Link>
