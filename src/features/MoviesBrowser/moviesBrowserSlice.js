@@ -6,28 +6,41 @@ const moviesBrowserSlice = createSlice({
         requestType: "movies",
         detailItem: {},
         page: 1,
-        detailId: 100,
-        moviesList: [],
-        actorsList: [],
+        detailId: 293660,
+        itemsList: [],
         isLoading: true,
         totalPages: 1,
     },
     reducers: {
-        fetchListData: (state, { payload: request }) => {
-            state.requestType = request.type || "movies";
-            state.page = request.page || 1;
+        fetchMoviesListData: (state, { payload: page }) => {
+            state.requestType = "movies";
+            state.page = page || 1;
             state.isLoading = true;
         },
-        fetchDetailedData : (state, {payload: request}) => {
-            state.requestType = request.type || "movie";
-            state.detailId = request.id || 100;
+        fetchPeopleListData: (state, { payload: page }) => {
+            state.requestType = "people";
+            state.page = page || 1;
+            state.isLoading = true;
+        },
+        fetchDetailedMovieData: (state, { payload: id }) => {
+            state.requestType = "movie";
+            state.detailId = id || 293660;
+            state.isLoading = true;
+        },
+        fetchDetailedPersonData: (state, { payload: id }) => {
+            state.requestType = "person";
+            state.detailId = id || 10859;
             state.isLoading = true;
         },
         setTotalPages: (state, { payload: pagesAmount }) => {
             state.totalPages = pagesAmount;
         },
-        setMoviesList: (state, { payload: moviesList }) => {
-            state.moviesList = moviesList;
+        setList: (state, { payload: list }) => {
+            state.itemsList = list;
+            state.isLoading = false;
+        },
+        setPeopleList: (state, { payload: peopleList }) => {
+            state.peopleList = peopleList;
             state.isLoading = false;
         },
         setDetailItem: (state, { payload: item }) => {
@@ -40,7 +53,16 @@ const moviesBrowserSlice = createSlice({
     }
 });
 
-export const { setMoviesList, fetchListData, fetchDataError, setTotalPages, fetchDetailedData, setDetailItem } = moviesBrowserSlice.actions;
+export const {
+    setList,
+    fetchMoviesListData,
+    fetchPeopleListData,
+    fetchDataError,
+    setTotalPages,
+    fetchDetailedMovieData,
+    fetchDetailedPersonData,
+    setDetailItem,
+} = moviesBrowserSlice.actions;
 
 export const selectMoviesBrowserState = state => state.moviesBrowser;
 export const selectIsLoading = state => selectMoviesBrowserState(state).isLoading;
@@ -48,8 +70,9 @@ export const selectRequestType = state => selectMoviesBrowserState(state).reques
 export const selectPage = state => selectMoviesBrowserState(state).page;
 export const selectDetailId = state => selectMoviesBrowserState(state).detailId;
 export const selectTotalPages = state => selectMoviesBrowserState(state).totalPages;
-export const selectMoviesList = state => selectMoviesBrowserState(state).moviesList;
+export const selectList = state => selectMoviesBrowserState(state).itemsList;
 export const selectDetailItem = state => selectMoviesBrowserState(state).detailItem;
-export const selectIsMoviesListEmpty = state => selectMoviesBrowserState(state).moviesList.length === 0;
+export const selectIsListEmpty = state => selectMoviesBrowserState(state).itemsList.length === 0;
+
 
 export default moviesBrowserSlice.reducer;
