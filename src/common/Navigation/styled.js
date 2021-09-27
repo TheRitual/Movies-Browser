@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const StyledNavigation = styled.nav`
-    width: 100%x;
+    width: 100%;
     background-color: ${({ theme }) => theme.colors.navBackground};
     left: 0%;
     right: 0%;
