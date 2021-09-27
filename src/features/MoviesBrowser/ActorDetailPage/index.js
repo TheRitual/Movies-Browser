@@ -13,7 +13,7 @@ const ActorDetailPage = () => {
     const person = useSelector(selectDetailItem);
     return (
         <>
-            <img src={`https://image.tmdb.org/t/p/w200${person.profile_path}`} /> 
+            <img src={`https://image.tmdb.org/t/p/w200${person.profile_path}`} alt={person.name} /> 
         </>
     );
 }

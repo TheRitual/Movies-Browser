@@ -13,7 +13,7 @@ const MovieDetailPage = () => {
     const movie = useSelector(selectDetailItem);
     return (
         <>
-            <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} />     
+            <img src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt={movie.title} />     
         </>
     );
 }
