@@ -15,8 +15,15 @@ export const NavigationList = styled.ul`
     display: flex;
     justify-content: center;
     width: max-content;
-    margin: 0;
+    margin: 0 10px;
     position: static;
+    flex-grow: 8;
+`;
+
+export const NavigationListItem = styled.li`
+    flex-grow: 0;
+    justify-content: flex-start;
+    margin: 15px 5px;
 `;
 
 export const StyledCameraIcon = styled.img`

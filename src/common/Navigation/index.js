@@ -2,6 +2,7 @@ import React from "react";
 import {
     StyledNavigation,
     NavigationList,
+    NavigationListItem,
     StyledTitle,
     StyledNavLink,
     StyledNavWrapper,
@@ -22,14 +23,20 @@ const Navigation = () => {
                 <StyledCameraIcon src={cameraIcon} />
                 <StyledTitle>Movies Browser</StyledTitle>
                 <NavigationList>
+                    <NavigationListItem>
                     <StyledNavLink 
                     to={toMoviesList()}
                     >
-                        Movies</StyledNavLink>
+                        Movies
+                        </StyledNavLink>
+                        </NavigationListItem>
+                        <NavigationListItem>    
                     <StyledNavLink 
                     to={toActorsList()}
                     >
-                        People </StyledNavLink>
+                        People 
+                        </StyledNavLink>
+                        </NavigationListItem>
                 </NavigationList>
                 <StyledLabel>
 
