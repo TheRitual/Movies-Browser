@@ -1,34 +1,33 @@
-import { NavigationList, StyledNavigation, StyledNavWrapper, StyledTitle, StyledNavLink, StyledInput } from "./styled";
+import React from "react";
 import { toActorsList, toMoviesList } from "../../core/config/routes";
+import cameraIcon from "../assets/svg/CameraIcon.svg";
+import {
+    StyledNavigation,
+    NavigationList,
+    NavigationListItem,
+    StyledTitle,
+    StyledNavLink,
+    StyledNavWrapper,
+    StyledInput,
+    StyledCameraIcon,
+} from "./styled";
+
 
 const Navigation = () => {
     return (
         <StyledNavigation>
             <StyledNavWrapper>
-                <>StyledCameraIcon</>
-                {/*tu miejsce na ikonkę SVG kamery*/}
+                <StyledCameraIcon src={cameraIcon} />
                 <StyledTitle>Movies Browser</StyledTitle>
                 <NavigationList>
-
-                    <StyledNavLink
-                        to={toMoviesList()}
-                    >
-                        Movies
-                    </StyledNavLink>
-
-
-                    <StyledNavLink
-                        to={toActorsList()}
-                    >
-                        People
-                    </StyledNavLink>
-
+                    <NavigationListItem>
+                        <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>
+                    </NavigationListItem>
+                    <NavigationListItem>
+                        <StyledNavLink to={toActorsList()}> People </StyledNavLink>
+                    </NavigationListItem>
                 </NavigationList>
                 <StyledInput />
-                <>InputIcon</>
-                {/*tu będzie ikonka search SVG <>InputIcon */}
-                Search
-
             </StyledNavWrapper>
         </StyledNavigation>
     )
