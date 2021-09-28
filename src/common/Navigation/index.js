@@ -1,5 +1,5 @@
 import React from "react";
-import { toActorsList, toMoviesList } from "../../core/config/routes";
+import { toPeopleList, toMoviesList } from "../../core/config/routes";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import {
     StyledNavigation,
@@ -24,7 +24,7 @@ const Navigation = () => {
                         <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>
                     </NavigationListItem>
                     <NavigationListItem>
-                        <StyledNavLink to={toActorsList()}> People </StyledNavLink>
+                        <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
                 <StyledInput />
