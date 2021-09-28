@@ -2,13 +2,20 @@ import styled from "styled-components";
 import { ReactComponent as Loading } from "./loading.svg";
 
 export const Wrapper = styled.div`
-    margin: 50px 50px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
     text-align: center;
     padding: 16px;
     background-color: ${({ theme }) => theme.colors.subpageBackground};
 `;
 
 export const Header = styled.h1`
+    align-self: flex-start;
+    font-size: 36px;
+    line-height: 43px;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
