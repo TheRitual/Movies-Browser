@@ -13,7 +13,6 @@ export const StyledNavigation = styled.nav`
 export const NavigationList = styled.ul`
     list-style: none;
     display: flex;
-    justify-content: center;
     margin: 0 10px;
     position: static;
     flex-grow: 8;
