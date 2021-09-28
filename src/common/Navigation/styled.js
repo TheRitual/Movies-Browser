@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Search from "./assets/images/SearchIcon.svg";
+import Search from "../assets/svg/SearchIcon.svg";
 
 
 export const StyledNavigation = styled.nav`
@@ -33,10 +33,8 @@ export const StyledCameraIcon = styled.img`
 
 export const StyledTitle = styled.h1`
     color: ${({ theme }) => theme.colors.navText};
-    position: inherit;
     width: 168px;
     margin: 0;
-    font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -46,27 +44,11 @@ export const StyledTitle = styled.h1`
     flex-grow: 1;
 `;
 
-export const StyledLabel = styled.label`
-    background-color: ${({ theme }) => theme.colors.white};
-    border: 1px solid ${({ theme }) => theme.colors.mystic};
-    border-radius: 33px;
-    position: inherit;
-    width: 30%max-content;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-`;
-
 export const StyledInput = styled.input`
 background: ${({ theme }) => theme.colors.white}; 
     font-size: 16px;
     border-radius: 33px;
     outline: none;
-    flex-grow: 0.8;
     height: 48px;
     min-width: 400px;
     outline: 0px;
@@ -76,6 +58,7 @@ background: ${({ theme }) => theme.colors.white};
     background-position: 26px 12px;
     background-repeat: no-repeat;
     background-size: 24px 24px;
+    color: #7E839A;
 `;
 
 export const StyledNavWrapper = styled.div`
@@ -85,24 +68,27 @@ export const StyledNavWrapper = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 1368px;
+    margin: auto;
 `;
 
 
 export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.navText};
     text-decoration: none;
-    font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
-    position: static;
-    padding: 10px;
-
+    padding: 12px 16px;
+    border: 1px solid ${({ theme }) => theme.colors.navBackground};
+    border-radius: 24px;
+    height: 48px;
     &.active {
-        border: 1px solid ${({ theme }) => theme.colors.navText};
-        border-radius: 24px;
-        box-sizing: border-box;
+        border-color: ${({ theme }) => theme.colors.navText};
+    }
+    &:hover {
+        background-color: ${({ theme }) => theme.colors.navText};
+        color: ${({ theme }) => theme.colors.navBackground};
     }
 `;

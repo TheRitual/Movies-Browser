@@ -1,4 +1,6 @@
 import React from "react";
+import { toActorsList, toMoviesList } from "../../core/config/routes";
+import cameraIcon from "../assets/svg/CameraIcon.svg";
 import {
     StyledNavigation,
     NavigationList,
@@ -7,13 +9,8 @@ import {
     StyledNavLink,
     StyledNavWrapper,
     StyledInput,
-    StyledLabel,
-    InputIcon,
     StyledCameraIcon,
 } from "./styled";
-import { toActorsList, toMoviesList } from "../../core/config/routes";
-import cameraIcon from "./assets/images/CameraIcon.svg";
-import search from "./assets/images/SearchIcon.svg";
 
 
 const Navigation = () => {
@@ -24,24 +21,13 @@ const Navigation = () => {
                 <StyledTitle>Movies Browser</StyledTitle>
                 <NavigationList>
                     <NavigationListItem>
-                    <StyledNavLink 
-                    to={toMoviesList()}
-                    >
-                        Movies
-                        </StyledNavLink>
-                        </NavigationListItem>
-                        <NavigationListItem>    
-                    <StyledNavLink 
-                    to={toActorsList()}
-                    >
-                        People 
-                        </StyledNavLink>
-                        </NavigationListItem>
+                        <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>
+                    </NavigationListItem>
+                    <NavigationListItem>
+                        <StyledNavLink to={toActorsList()}> People </StyledNavLink>
+                    </NavigationListItem>
                 </NavigationList>
-                <StyledLabel>
-
                 <StyledInput />
-                    </StyledLabel>
             </StyledNavWrapper>
         </StyledNavigation>
     )
