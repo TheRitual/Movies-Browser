@@ -1,26 +1,31 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { toActor, toMovie } from "../../../core/config/routes";
-import { selectList } from "../moviesBrowserSlice";
+import { selectIsLoading, selectList, selectType } from "../moviesBrowserSlice";
+import MovieTile from "./MovieTile";
+import PersonTile from "./PersonTile";
 import { ListGrid, ListHeader } from "./styled";
+import LoadingPage from "../../../common/LoadingPage";
+import Paginator from "../ListPage/Paginator";
 
-const ListPage = ({ header, showPaginator, type }) => {
+const ListPage = ({ header }) => {
     const list = useSelector(selectList);
+    const type = useSelector(selectType);
+    const isLoading = useSelector(selectIsLoading);
     return (
         <>
             <ListHeader> {header} </ListHeader>
-            <ListGrid columns={type === "movies" ? 4 : 6}>
-                {list && list.map(listItem => {
-                    return (<section>
-                        <Link to={
-                            type === "movies" ? toMovie(listItem) : toActor(listItem)
-                        }>
-                            <p>{type === "movies" ? listItem.title : listItem.name}</p>
-                        </Link>
-                    </section>);
-                })}
-            </ListGrid>
-            {showPaginator && <span>Paginator start page</span>}
+            {isLoading ?
+                <LoadingPage />
+                :
+                <>
+                    <ListGrid columns={type === "movies" ? 4 : 6}>
+                        {list && list.map(listItem => {
+                            return type === "movies" ? <MovieTile movie={listItem} key={listItem.id} /> : <PersonTile key={listItem.id} person={listItem} />
+                        })}
+                    </ListGrid>
+                    <Paginator />
+                </>
+            }
+
         </>
     );
 }

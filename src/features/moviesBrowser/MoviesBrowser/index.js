@@ -1,30 +1,16 @@
-import { Switch, Route, HashRouter, Redirect } from "react-router-dom";
-import { toActor, toActorsList, toMovie, toMoviesList } from "../../../core/config/routes";
-import MovieDetailPage from "../MovieDetailPage";
-import ActorDetailPage from "../ActorDetailPage";
-import MoviesListPage from "../MoviesListPage";
-import ActorsListPage from "../ActorsListPage";
-import Navigation from "../../../common/Navigation";
+import { HashRouter, Link } from "react-router-dom";
+import { toPeopleList, toMoviesList } from "../../../core/config/routes";
+import PageSwitch from "./PageSwitch";
 import { Main } from "./styled";
-import NotFound from "../../../common/NotFound";
-import NoResultPage from "../../../common/NoResultPage";
+
 
 const MoviesBrowser = () => {
   return (
     <HashRouter>
-      <Navigation />
+      <Link to={toMoviesList()}> Movies </Link>
+      <Link to={toPeopleList()}> People </Link>
       <Main>
-        <Switch>
-          <Route path={toMoviesList()} component={MoviesListPage} />
-          <Route path={toMovie()} component={MovieDetailPage} />
-          <Route path={toActorsList()} component={ActorsListPage} />
-          <Route path={toActor()} component={ActorDetailPage} />
-          <Route exact path="/noresults" component={NoResultPage} />
-          <Route exact path="/">
-            <Redirect to={toMoviesList()} />
-          </Route>
-          <Route component={NotFound} />
-        </Switch>
+          <PageSwitch />
       </Main>
     </HashRouter>
   );
