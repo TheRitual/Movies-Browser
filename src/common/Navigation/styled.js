@@ -14,7 +14,6 @@ export const NavigationList = styled.ul`
     list-style: none;
     display: flex;
     justify-content: center;
-    width: max-content;
     margin: 0 10px;
     position: static;
     flex-grow: 8;
@@ -36,10 +35,7 @@ export const StyledCameraIcon = styled.img`
 export const StyledTitle = styled.h1`
     color: ${({ theme }) => theme.colors.navText};
     position: inherit;
-    top: calc(50% - 40px/2);
     width: 168px;
-    height: 40px;
-    left: 52px;
     margin: 0;
     font-family: Poppins;
     font-style: normal;
