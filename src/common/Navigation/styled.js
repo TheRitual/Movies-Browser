@@ -70,7 +70,7 @@ export const StyledInput = styled.input`
 export const InputIcon = styled.img`
     width: 20px;
     height: 23px;
-    border-style: none;
+    border: 1px solid ${({ theme }) => theme.colors.waterloo};
     background: url("../assets/images/SearchIcon.svg") no-repeat scroll 7px 7px;;
     padding-left: 30px;
 `;
