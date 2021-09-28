@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import Search from "./assets/images/SearchIcon.svg";
 
 
 export const StyledNavigation = styled.nav`
@@ -15,6 +16,7 @@ export const NavigationList = styled.ul`
     justify-content: center;
     width: max-content;
     margin: 0;
+    position: static;
 `;
 
 export const StyledCameraIcon = styled.img`
@@ -58,20 +60,20 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledInput = styled.input`
+background: ${({ theme }) => theme.colors.white}; 
     font-size: 16px;
     border-radius: 33px;
     outline: none;
     flex-grow: 0.8;
-    width: 75%;
+    height: 48px;
+    min-width: 400px;
+    outline: 0px;
+    padding: 12px 12px 12px 64px;
     border: 1px solid ${({ theme }) => theme.colors.mystic}; 
-`;
-
-export const InputIcon = styled.img`
-    width: 20px;
-    height: 23px;
-    border: 1px solid ${({ theme }) => theme.colors.waterloo};
-    background: url("../assets/images/SearchIcon.svg") no-repeat scroll 7px 7px;
-    padding-left: 30px;
+    background-image: url(${Search});
+    background-position: 26px 12px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
 `;
 
 export const StyledNavWrapper = styled.div`
