@@ -58,20 +58,19 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledInput = styled.input`
-    background-color: none;
     font-size: 16px;
     border-radius: 33px;
     outline: none;
     flex-grow: 0.8;
     width: 75%;
-    border: 1px solid ${({ theme }) => theme.colors.mystic};         
+    border: 1px solid ${({ theme }) => theme.colors.mystic}; 
 `;
 
 export const InputIcon = styled.img`
     width: 20px;
     height: 23px;
     border: 1px solid ${({ theme }) => theme.colors.waterloo};
-    background: url("../assets/images/SearchIcon.svg") no-repeat scroll 7px 7px;;
+    background: url("../assets/images/SearchIcon.svg") no-repeat scroll 7px 7px;
     padding-left: 30px;
 `;
 
@@ -86,7 +85,6 @@ export const StyledNavWrapper = styled.div`
 
 export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.navText};
-    border: 1px solid ${({ theme }) => theme.colors.navBackground};
     text-decoration: none;
     font-family: Poppins;
     font-style: normal;
@@ -97,7 +95,7 @@ export const StyledNavLink = styled(NavLink)`
     position: static;
     padding: 10px;
 
-    &:active {
+    &.active {
         border: 1px solid ${({ theme }) => theme.colors.navText};
         border-radius: 24px;
         box-sizing: border-box;
