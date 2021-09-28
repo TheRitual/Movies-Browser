@@ -1,5 +1,5 @@
-import { HashRouter, Link } from "react-router-dom";
-import { toPeopleList, toMoviesList } from "../../../core/config/routes";
+import { HashRouter } from "react-router-dom";
+import Navigation from "../../../common/Navigation";
 import PageSwitch from "./PageSwitch";
 import { Main } from "./styled";
 
@@ -7,8 +7,7 @@ import { Main } from "./styled";
 const MoviesBrowser = () => {
   return (
     <HashRouter>
-      <Link to={toMoviesList()}> Movies </Link>
-      <Link to={toPeopleList()}> People </Link>
+      <Navigation />
       <Main>
           <PageSwitch />
       </Main>
