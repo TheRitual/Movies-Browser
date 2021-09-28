@@ -33,8 +33,7 @@ const Navigation = () => {
                 </NavigationList>
                 <StyledLabel>
                 <InputIcon src={search} />
-                <StyledInput 
-/>
+                <StyledInput />
                     </StyledLabel>
             </StyledNavWrapper>
         </StyledNavigation>
