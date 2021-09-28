@@ -32,7 +32,7 @@ const Navigation = () => {
                         People </StyledNavLink>
                 </NavigationList>
                 <StyledLabel>
-                <InputIcon src={search} />
+
                 <StyledInput />
                     </StyledLabel>
             </StyledNavWrapper>
