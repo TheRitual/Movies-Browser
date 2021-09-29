@@ -25,9 +25,13 @@ export const fetchDetails = async (type, id) => {
 
 export const fetchSearch = async (type, query, page) => {
     const link = type === "people" || type === "person" ? "person" : "movie";
-    const response = await fetch(`https://api.themoviedb.org/3/search/${link}?api_key=${getApiKey()}&language=en-US&query=${query}&page=${page}&include_adult=false`);
-    if (!response.ok) {
-        new Error((response).statusText);
+    if (query || query !== "") {
+        const response = await fetch(`https://api.themoviedb.org/3/search/${link}?api_key=${getApiKey()}&language=en-US&query=${query}&page=${page}&include_adult=false`);
+        if (!response.ok) {
+            new Error((response).statusText);
+        }
+        return await response.json();
+    } else {
+        return null;
     }
-    return await response.json();
 };

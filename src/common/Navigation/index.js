@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
-import { fetchSearchData, selectPage, selectSearchQuery, setPage, setSearchQuery } from "../../features/moviesBrowser/moviesBrowserSlice";
+import { fetchSearchData, selectPage, selectSearchQuery, selectType, setPage, setSearchQuery } from "../../features/moviesBrowser/moviesBrowserSlice";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName } from "../../features/moviesBrowser/queryParamNames";
@@ -24,6 +24,8 @@ const Navigation = () => {
     const searchValue = useSelector(selectSearchQuery);
     const replaceParam = useReplaceQueryParameter();
     const page = useSelector(selectPage);
+    const type = useSelector(selectType);
+    const placeholderType = type === "people" || type === "person" ? "person" : "movie";
 
     useEffect(() => {
         dispatch(setSearchQuery(search));
@@ -50,7 +52,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput value={searchValue} onChange={onSearchChange} />
+                <StyledInput value={searchValue} onChange={onSearchChange} placeholder={`Serach for ${placeholderType}`} />
             </StyledNavWrapper>
         </StyledNavigation>
     )
