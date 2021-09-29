@@ -10,6 +10,7 @@ const moviesBrowserSlice = createSlice({
         itemsList: [],
         isLoading: true,
         totalPages: 1,
+        searchQueryParam: "wartość z wyszukiwarki",
     },
     reducers: {
         fetchMoviesListData: (state, { payload: page }) => {
@@ -73,6 +74,6 @@ export const selectTotalPages = state => selectMoviesBrowserState(state).totalPa
 export const selectList = state => selectMoviesBrowserState(state).itemsList;
 export const selectDetailItem = state => selectMoviesBrowserState(state).detailItem;
 export const selectIsListEmpty = state => selectMoviesBrowserState(state).itemsList.length === 0;
-
+export const searchQueryParam = state => selectMoviesBrowserState(state).searchQueryParam;
 
 export default moviesBrowserSlice.reducer;
