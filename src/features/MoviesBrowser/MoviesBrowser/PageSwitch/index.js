@@ -16,7 +16,7 @@ const PageSwitch = () => {
             <Route exact path="/">
                 <Redirect to={toMoviesList()} />
             </Route>
-            <Route component={ErrorPage} />
+            <Route component={ErrorPage} /> 
         </Switch>
     );
 }
