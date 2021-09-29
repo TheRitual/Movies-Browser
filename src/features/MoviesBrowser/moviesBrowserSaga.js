@@ -14,6 +14,7 @@ import {
     selectPage,
     selectSearchQuery,
     selectType,
+    setResultsAmount,
 } from "./moviesBrowserSlice";
 
 function* fetchListHandler() {
@@ -48,6 +49,7 @@ function* fetchSearchHandler() {
         const requestType = yield select(selectType);
         const list = yield call(fetchSearch, requestType, query, page);
         yield put(setList(list.results || []));
+        yield put(setResultsAmount(list.total_results));
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
