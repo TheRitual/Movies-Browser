@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    background-color: ${({ theme }) => theme.colors.subpageBackground};
+    background-color: transparent;
 `;
 
 export const NoResultHeader = styled.h1`

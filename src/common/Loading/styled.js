@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Loading } from "./loading.svg";
+import { ReactComponent as Loading } from "../assets/svg/loading.svg";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     margin: 0 auto;
     text-align: center;
     padding: 16px;
-    background-color: ${({ theme }) => theme.colors.subpageBackground};
+    background-color: transparent;
 `;
 
 export const Header = styled.h1`
