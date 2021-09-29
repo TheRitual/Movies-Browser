@@ -10,6 +10,7 @@ const moviesBrowserSlice = createSlice({
         itemsList: [],
         isLoading: true,
         totalPages: 1,
+        searchQuery: "",
     },
     reducers: {
         fetchMoviesListData: (state, { payload: page }) => {
@@ -17,9 +18,21 @@ const moviesBrowserSlice = createSlice({
             state.page = page || 1;
             state.isLoading = true;
         },
+        fetchSearchMoviesData: (state, { payload : searchData }) => {
+            state.requestType = "movies";
+            state.page = searchData.page || 1;
+            state.searchQuery = searchData.query;
+            state.isLoading = true;
+        },
         fetchPeopleListData: (state, { payload: page }) => {
             state.requestType = "people";
             state.page = page || 1;
+            state.isLoading = true;
+        },
+        fetchSearchPeopleData: (state, { payload : searchData }) => {
+            state.requestType = "people";
+            state.page = searchData.page || 1;
+            state.searchQuery = searchData.query;
             state.isLoading = true;
         },
         fetchDetailedMovieData: (state, { payload: id }) => {
@@ -62,7 +75,8 @@ export const {
     fetchDetailedMovieData,
     fetchDetailedPersonData,
     setDetailItem,
-    setSearchQuery,
+    fetchSearchMoviesData,
+    fetchSearchPeopleData,
 } = moviesBrowserSlice.actions;
 
 export const selectMoviesBrowserState = state => state.moviesBrowser;

@@ -1,18 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useLocation } from "react-router";
+import { useQueryParameter } from "../../../common/api/useQueryParameters";
 import ListPage from "../ListPage";
 import { fetchMoviesListData } from "../moviesBrowserSlice";
+import { searchQueryParamName } from "../queryParamNames";
 
 const MoviesListPage = () => {
     const dispatch = useDispatch();
-    const location = useLocation();
+    const search = useQueryParameter(searchQueryParamName);
     useEffect(() => {
-        console.log(location);
-        dispatch(fetchMoviesListData());
+        search ? dispatch(fetchSearchMoviesData()) : dispatch(fetchMoviesListData());
         // eslint-disable-next-line
-    },[]);
+    }, []);
     return <ListPage header="Popular Movies" />;
 }
+
+
 
 export default MoviesListPage;
