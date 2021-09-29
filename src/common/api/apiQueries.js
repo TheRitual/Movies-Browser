@@ -30,3 +30,17 @@ export const fetchDetails = async (type, id) => {
     }
     return await response.json();
 };
+
+export const fetchSearch = async (type, query, page) => {
+    let link = ""
+    switch (type) {
+        case "people": link = "person"; break;
+        case "person": link = "person"; break;
+        default: link = "movie";
+    }
+    const response = await fetch(`https://api.themoviedb.org/3/search/${link}?api_key=${getApiKey()}&language=en-US&query=${query}&page=${page}&include_adult=false`);
+    if (!response.ok) {
+        new Error((response).statusText);
+    }
+    return await response.json();
+};
