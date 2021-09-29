@@ -15,14 +15,21 @@ import {
 } from "./styled";
 import { selectType } from "../../features/moviesBrowser/moviesBrowserSlice";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router";
 
 
 const Navigation = () => {
     const replaceQueryParameter = useReplaceQueryParameter();
     const pageType = useSelector(selectType);
+    const location = useLocation();
     const getType = () => { return pageType === "person" || pageType === "people" ? "person" : "movie"; }
     const setSearchString = ({ target }) => {
-        replaceQueryParameter([{ key: searchQueryParamName, value: target.value || undefined }]);
+        const pathByType = (getType() === "person" ? toPeopleList() : toMoviesList());
+        if (location.pathname !== pathByType) {
+            replaceQueryParameter({ key: searchQueryParamName, value: target.value || undefined }, pathByType);
+        } else {
+            replaceQueryParameter({ key: searchQueryParamName, value: target.value || undefined });
+        }
     }
 
     return (
