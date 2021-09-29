@@ -6,11 +6,7 @@ const getApiKey = (version) => {
 }
 
 export const fetchList = async (type, page) => {
-    let link = ""
-    switch (type) {
-        case "people": link = "person/popular"; break;
-        default: link = "movie/popular";
-    }
+    let link = type === "people" ? "person/popular" : "movie/popular";
     const response = await fetch(`https://api.themoviedb.org/3/${link}?api_key=${getApiKey()}&language=en-US&page=${page || 1}`);
     if (!response.ok) {
         new Error((response).statusText);
@@ -19,11 +15,7 @@ export const fetchList = async (type, page) => {
 };
 
 export const fetchDetails = async (type, id) => {
-    let link = ""
-    switch (type) {
-        case "person": link = "person"; break;
-        default: link = "movie";
-    }
+    const link = type === "person" ? "person" : "movie";
     const response = await fetch(`https://api.themoviedb.org/3/${link}/${id}?api_key=${getApiKey()}&language=en-US`);
     if (!response.ok) {
         new Error((response).statusText);
@@ -32,12 +24,7 @@ export const fetchDetails = async (type, id) => {
 };
 
 export const fetchSearch = async (type, query, page) => {
-    let link = ""
-    switch (type) {
-        case "people": link = "person"; break;
-        case "person": link = "person"; break;
-        default: link = "movie";
-    }
+    const link = type === "people" || type === "person" ? "person" : "movie";
     const response = await fetch(`https://api.themoviedb.org/3/search/${link}?api_key=${getApiKey()}&language=en-US&query=${query}&page=${page}&include_adult=false`);
     if (!response.ok) {
         new Error((response).statusText);
