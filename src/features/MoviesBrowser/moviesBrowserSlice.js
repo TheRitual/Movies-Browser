@@ -14,14 +14,12 @@ const moviesBrowserSlice = createSlice({
     },
     reducers: {
         fetchMoviesListData: (state) => {
-            state.type = "movie";
             state.isLoading = true;
         },
         fetchSearchData: (state) => {
             state.isLoading = true;
         },
         fetchPeopleListData: (state) => {
-            state.type = "person";
             state.isLoading = true;
         },
         fetchDetailedMovieData: (state, { payload: id }) => {
