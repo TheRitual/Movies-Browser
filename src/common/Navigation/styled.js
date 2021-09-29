@@ -1,65 +1,64 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import Search from "../assets/svg/SearchIcon.svg";
+
 
 export const StyledNavigation = styled.nav`
     width: 100%;
     background-color: ${({ theme }) => theme.colors.navBackground};
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 13px;
 `;
 
 export const NavigationList = styled.ul`
     list-style: none;
     display: flex;
-    justify-content: center;
-    width: max-content;
-    margin: 0;
+    margin: 0 10px;
+    position: static;
+    flex-grow: 8;
 `;
 
-
+export const NavigationListItem = styled.li`
+    flex-grow: 0;
+    justify-content: flex-start;
+    margin: 15px 5px;
+`;
 
 export const StyledCameraIcon = styled.img`
-    width: 22px;
-    height: 23px;
-    border: 2.5px solid ${({ theme }) => theme.colors.white};
+    width: 37px;
+    height: 47px;
+    margin: 0 10px;
+    padding-left: 5px;
 `;
 
 export const StyledTitle = styled.h1`
-    color: ${({ theme }) => theme.colors.white};
-    position: absolute;
+    color: ${({ theme }) => theme.colors.navText};
     width: 168px;
-    height: 40px;
-    left: 52px;
-    top: calc(50% - 40px/2);
     margin: 0;
-    font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 40px;
     letter-spacing: -1.5px;
     text-transform: capitalize;
+    flex-grow: 1;
 `;
 
 export const StyledInput = styled.input`
-    background-color: ${({ theme }) => theme.colors.white};
+background: ${({ theme }) => theme.colors.white}; 
+    font-size: 16px;
     border-radius: 33px;
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    border: 1px solid ${({ theme }) => theme.colors.mystic};
-`;
-
-export const InputIcon = styled.img`
-    width: 20px;
-    height: 20px;
-
+    outline: none;
+    height: 48px;
+    min-width: 400px;
+    outline: 0px;
+    padding: 12px 12px 12px 64px;
+    border: 1px solid ${({ theme }) => theme.colors.mystic}; 
+    background-image: url(${Search});
+    background-position: 26px 12px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    color: #7E839A;
 `;
 
 export const StyledNavWrapper = styled.div`
@@ -68,18 +67,28 @@ export const StyledNavWrapper = styled.div`
     width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
+    max-width: 1368px;
+    margin: auto;
 `;
 
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({
-    activeClassName: "active",
-}))`
-    color: ${({ theme }) => theme.colors.white};
+export const StyledNavLink = styled(NavLink)`
+    color: ${({ theme }) => theme.colors.navText};
     text-decoration: none;
-    font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
-    `;
+    padding: 12px 16px;
+    border: 1px solid ${({ theme }) => theme.colors.navBackground};
+    border-radius: 24px;
+    height: 48px;
+    &.active {
+        border-color: ${({ theme }) => theme.colors.navText};
+    }
+    &:hover {
+        background-color: ${({ theme }) => theme.colors.navText};
+        color: ${({ theme }) => theme.colors.navBackground};
+    }
+`;
