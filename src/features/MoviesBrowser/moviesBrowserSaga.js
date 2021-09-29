@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select, delay, debounce } from "redux-saga/effects";
+import { call, put, takeLatest, select, debounce } from "redux-saga/effects";
 import { fetchList, fetchDetails, fetchSearch } from "../../common/api/apiQueries";
 import {
     fetchDetailedMovieData,
@@ -18,7 +18,6 @@ import {
 
 function* fetchListHandler() {
     try {
-        yield delay(1000);
         const page = yield select(selectPage);
         const type = yield select(selectType);
         const list = yield call(fetchList, type, page);
@@ -34,7 +33,6 @@ function* fetchDetailHandler() {
     try {
         const detail = yield select(selectDetailId);
         const requestType = yield select(selectType);
-        yield delay(1000);
         const detailedItem = yield call(fetchDetails, requestType, detail);
         yield put(setDetailItem(detailedItem));
     } catch (error) {

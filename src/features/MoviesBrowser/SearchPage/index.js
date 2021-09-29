@@ -19,7 +19,7 @@ const SearchPage = () => {
         }
         // eslint-disable-next-line
     }, [query]);
-    return query || search ? <ListPage header={`Search for ${type} "${query}""`} /> : type === "person" ? <Redirect to={toPeopleList()} /> : <Redirect to={toMoviesList()} />;
+    return query || search ? <ListPage header={`Search for ${type} "${query}"`} /> : type === "person" ? <Redirect to={toPeopleList()} /> : <Redirect to={toMoviesList()} />;
 }
 
 
