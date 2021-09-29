@@ -6,11 +6,9 @@ import { fetchPeopleListData } from "../moviesBrowserSlice";
 const ActorsListPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchPeopleListData(1));
+        dispatch(fetchPeopleListData());
     });
-    return (
-        <ListPage header="Popular Actors " showPaginator={true} columns="6" type="people" />
-    );
+    return <ListPage header="Popular Actors" />;
 }
 
 export default ActorsListPage;
