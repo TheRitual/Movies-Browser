@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
-import { selectPage, selectSearchQuery, setPage, setSearchQuery } from "../../features/moviesBrowser/moviesBrowserSlice";
+import { fetchSearchData, selectPage, selectSearchQuery, setPage, setSearchQuery } from "../../features/moviesBrowser/moviesBrowserSlice";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName } from "../../features/moviesBrowser/queryParamNames";
@@ -34,6 +34,7 @@ const Navigation = () => {
     const onSearchChange = ({ target }) => {
         dispatch(setSearchQuery(target.value));
         replaceParam([{ key: searchQueryParamName, value: target.value }, { key: pageQueryParamName, value: page }], toSearch());
+        dispatch(fetchSearchData());
     }
 
     return (
