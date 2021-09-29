@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
     margin: 50px 50px 120px;
@@ -28,7 +29,7 @@ export const Subtitle = styled.h2`
     color: ${({ theme }) => theme.colors.headers};
 `;
 
-export const ErrorButton = styled.button`
+export const StyledLink = styled(Link)`
     display: inline-block;
     font-weight: bold;
     margin-top: 24px;

@@ -1,4 +1,7 @@
-import { Wrapper, ErrorImage, Title, Subtitle, ErrorButton } from "./styled";
+import { toMoviesList } from "../../core/config/routes";
+import { Wrapper, ErrorImage, Title, Subtitle, StyledLink } from "./styled";
+
+
 
 const ErrorPage = () => {
   return (
@@ -6,7 +9,9 @@ const ErrorPage = () => {
       <ErrorImage />
       <Title>Ooops! Something went wrong...</Title>
       <Subtitle>Please check your network connection and try again</Subtitle>
-      <ErrorButton> Back to home page </ErrorButton>
+      
+        <StyledLink to={toMoviesList}> AA </StyledLink>
+      
     </Wrapper>
 
   );
