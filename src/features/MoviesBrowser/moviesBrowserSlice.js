@@ -14,12 +14,14 @@ const moviesBrowserSlice = createSlice({
     },
     reducers: {
         fetchMoviesListData: (state) => {
+            state.type = "movie";
             state.isLoading = true;
         },
         fetchSearchData: (state) => {
             state.isLoading = true;
         },
         fetchPeopleListData: (state) => {
+            state.type = "person";
             state.isLoading = true;
         },
         fetchDetailedMovieData: (state, { payload: id }) => {
@@ -72,6 +74,7 @@ export const {
     fetchSearchData,
     setSearchQuery,
     setPage,
+    setType,
 } = moviesBrowserSlice.actions;
 
 export const selectMoviesBrowserState = state => state.moviesBrowser;
@@ -82,7 +85,7 @@ export const selectDetailId = state => selectMoviesBrowserState(state).detailId;
 export const selectTotalPages = state => selectMoviesBrowserState(state).totalPages;
 export const selectList = state => selectMoviesBrowserState(state).itemsList;
 export const selectDetailItem = state => selectMoviesBrowserState(state).detailItem;
-export const selectType = state => selectMoviesBrowserState(state).requestType;
+export const selectType = state => selectMoviesBrowserState(state).type;
 export const selectSearchQuery = state => selectMoviesBrowserState(state).searchQuery;
 export const selectIsListEmpty = state => selectMoviesBrowserState(state).itemsList.length === 0;
 

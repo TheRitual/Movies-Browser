@@ -1,6 +1,5 @@
 import { call, put, takeLatest, select, delay, debounce } from "redux-saga/effects";
 import { fetchList, fetchDetails, fetchSearch } from "../../common/api/apiQueries";
-import { fetchSearchData, selectPage, selectSearchQuery } from "./moviesBrowserSlice";
 import {
     fetchDetailedMovieData,
     fetchDetailedPersonData,
@@ -10,16 +9,19 @@ import {
     fetchPeopleListData,
     fetchDataError,
     setTotalPages,
-    selectRequestType,
-    selectDetailId
+    selectDetailId,
+    fetchSearchData,
+    selectPage,
+    selectSearchQuery,
+    selectType,
 } from "./moviesBrowserSlice";
 
 function* fetchListHandler() {
     try {
         yield delay(1000);
         const page = yield select(selectPage);
-        const requestType = yield select(selectRequestType);
-        const list = yield call(fetchList, requestType, page);
+        const type = yield select(selectType);
+        const list = yield call(fetchList, type, page);
         yield put(setList(list.results));
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
@@ -30,9 +32,9 @@ function* fetchListHandler() {
 
 function* fetchDetailHandler() {
     try {
-        yield delay(1000);
         const detail = yield select(selectDetailId);
-        const requestType = yield select(selectRequestType);
+        const requestType = yield select(selectType);
+        yield delay(1000);
         const detailedItem = yield call(fetchDetails, requestType, detail);
         yield put(setDetailItem(detailedItem));
     } catch (error) {
@@ -45,7 +47,7 @@ function* fetchSearchHandler() {
     try {
         const page = yield select(selectPage);
         const query = yield select(selectSearchQuery);
-        const requestType = yield select(selectRequestType);
+        const requestType = yield select(selectType);
         const list = yield call(fetchSearch, requestType, query, page);
         yield put(setList(list.results));
         yield put(setTotalPages(list.total_pages));
