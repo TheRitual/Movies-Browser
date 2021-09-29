@@ -1,8 +1,9 @@
-import React from "react";
+import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList } from "../../core/config/routes";
-import { useReplaceQueryParameter } from "../../common/api/useQueryParameters";
-import { searchQueryParamName } from "../../features/moviesBrowser/queryParamNames";
+import { setPage, setSearchQuery } from "../../features/moviesBrowser/moviesBrowserSlice";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
+import { useQueryParameter } from "../../common/api/useQueryParameters";
+import { searchQueryParamName, pageQueryParamName } from "../../features/moviesBrowser/queryParamNames";
 import {
     StyledNavigation,
     NavigationList,
@@ -13,24 +14,18 @@ import {
     StyledInput,
     StyledCameraIcon,
 } from "./styled";
-import { selectType } from "../../features/moviesBrowser/moviesBrowserSlice";
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router";
-
+import { useEffect } from "react";
 
 const Navigation = () => {
-    const replaceQueryParameter = useReplaceQueryParameter();
-    const pageType = useSelector(selectType);
-    const location = useLocation();
-    const getType = () => { return pageType === "person" || pageType === "people" ? "person" : "movie"; }
-    const setSearchString = ({ target }) => {
-        const pathByType = (getType() === "person" ? toPeopleList() : toMoviesList());
-        if (location.pathname !== pathByType) {
-            replaceQueryParameter({ key: searchQueryParamName, value: target.value || undefined }, pathByType);
-        } else {
-            replaceQueryParameter({ key: searchQueryParamName, value: target.value || undefined });
-        }
-    }
+    const dispatch = useDispatch();
+    const search = useQueryParameter(searchQueryParamName) || "";
+    const page = useQueryParameter(pageQueryParamName) || 1;
+
+    useEffect(() => {
+        dispatch(setSearchQuery(search));
+        dispatch(setPage(page));
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <StyledNavigation>
@@ -45,7 +40,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput onChange={setSearchString} placeholder={`Search for a ${getType()}`} />
+                <StyledInput />
             </StyledNavWrapper>
         </StyledNavigation>
     )
