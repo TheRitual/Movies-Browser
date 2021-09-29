@@ -1,7 +1,7 @@
 import React from "react";
 import { toPeopleList, toMoviesList } from "../../core/config/routes";
 import { useReplaceQueryParameter } from "../../common/api/useQueryParameters";
-import { searchQueryParamName} from "../../features/moviesBrowser/searchQueryParamName";
+import { searchQueryParamName, typeQueryParamName } from "../../features/moviesBrowser/queryParamNames";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import {
     StyledNavigation,
@@ -13,14 +13,24 @@ import {
     StyledInput,
     StyledCameraIcon,
 } from "./styled";
+import { selectType } from "../../features/moviesBrowser/moviesBrowserSlice";
+import { useSelector } from "react-redux";
 
 
 const Navigation = () => {
     const replaceQueryParameter = useReplaceQueryParameter();
-    const setSearchString = ({target}) => {
-        replaceQueryParameter({key: searchQueryParamName, value: target.value || undefined});
+    const pageType = useSelector(selectType);
+    const getType = () => {
+        switch (pageType) {
+            case "person": return "person";
+            case "people": return "person";
+            default: return "movie";
+        }
     }
-    
+    const setSearchString = ({ target }) => {
+        replaceQueryParameter([{ key: searchQueryParamName, value: target.value || undefined }, { key: typeQueryParamName, value: getType() }]);
+    }
+
     return (
         <StyledNavigation>
             <StyledNavWrapper>
@@ -34,7 +44,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput onChange={setSearchString} />
+                <StyledInput onChange={setSearchString} placeholder={`Search for a ${getType()}`} />
             </StyledNavWrapper>
         </StyledNavigation>
     )

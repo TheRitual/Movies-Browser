@@ -14,7 +14,6 @@ import {
     selectDetailId
 } from "./moviesBrowserSlice";
 
-
 function* fetchListHandler() {
     try {
         yield delay(1000);
