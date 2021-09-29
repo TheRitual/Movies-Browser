@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
-    margin: 50px 50px 120px;
+    background-color: ${({ theme }) => theme.colors.noResultPageBackground};
+    margin: 0 auto;
     text-align: center;
     padding: 16px;
-    background-color: ${({ theme }) => theme.colors.noResultPageBackground};
 `;
 
 export const ErrorImage = styled.img`
+    width: 100px;
+    height: 90px;
 `;
 
 export const Title = styled.h1`
@@ -28,7 +31,7 @@ export const Subtitle = styled.h2`
     color: ${({ theme }) => theme.colors.headers};
 `;
 
-export const ErrorButton = styled.button`
+export const StyledLink = styled(Link)`
     display: inline-block;
     font-weight: bold;
     margin-top: 24px;
