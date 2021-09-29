@@ -7,10 +7,10 @@ import { fetchSearchData, selectSearchQuery, selectType } from "../moviesBrowser
 
 const SearchPage = () => {
     const dispatch = useDispatch();
-    const queryType = useSelector(selectType);
-    const type = queryType === "people" || queryType === "person" ? "person" : "movie";
+    const type = useSelector(selectType);
     const link = type === "person" ? toPeopleList() : toMoviesList();
     const query = useSelector(selectSearchQuery);
+    console.log("Query: " + query);
     if (query) {
         dispatch(fetchSearchData());
     }

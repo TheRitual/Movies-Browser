@@ -25,11 +25,11 @@ const Navigation = () => {
     const replaceParam = useReplaceQueryParameter();
     const page = useSelector(selectPage);
     const type = useSelector(selectType);
-    const placeholderType = type === "people" || type === "person" ? "person" : "movie";
 
     useEffect(() => {
         dispatch(setSearchQuery(search));
         dispatch(setPage(locationPage));
+        
         // eslint-disable-next-line
     }, []);
 
@@ -52,7 +52,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput value={searchValue} onChange={onSearchChange} placeholder={`Serach for ${placeholderType}`} />
+                <StyledInput value={searchValue} onChange={onSearchChange} placeholder={`Serach for ${type}`} />
             </StyledNavWrapper>
         </StyledNavigation>
     )

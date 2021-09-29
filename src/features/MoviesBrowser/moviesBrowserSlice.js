@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const moviesBrowserSlice = createSlice({
     name: 'moviesBrowser',
     initialState: {
-        requestType: "movies",
+        type: "movie",
         detailItem: {},
         page: 1,
         detailId: 293660,
@@ -14,23 +14,19 @@ const moviesBrowserSlice = createSlice({
     },
     reducers: {
         fetchMoviesListData: (state) => {
-            state.requestType = "movies";
             state.isLoading = true;
         },
         fetchSearchData: (state) => {
             state.isLoading = true;
         },
         fetchPeopleListData: (state) => {
-            state.requestType = "people";
             state.isLoading = true;
         },
         fetchDetailedMovieData: (state, { payload: id }) => {
-            state.requestType = "movie";
             state.detailId = id || 293660;
             state.isLoading = true;
         },
         fetchDetailedPersonData: (state, { payload: id }) => {
-            state.requestType = "person";
             state.detailId = id || 10859;
             state.isLoading = true;
         },
@@ -57,6 +53,9 @@ const moviesBrowserSlice = createSlice({
         },
         setPage: (state, { payload: page }) => {
             state.page = page;
+        },
+        setType: (state, { payload: type }) => {
+            state.type = type;
         }
     }
 });
