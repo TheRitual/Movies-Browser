@@ -3,7 +3,7 @@ import { selectIsLoading, selectList, selectType } from "../moviesBrowserSlice";
 import MovieTile from "./MovieTile";
 import PersonTile from "./PersonTile";
 import { ListGrid, ListHeader } from "./styled";
-import LoadingPage from "../../../common/LoadingPage";
+import Loading from "../../../common/Loading";
 import Paginator from "../ListPage/Paginator";
 
 const ListPage = ({ header }) => {
@@ -14,7 +14,7 @@ const ListPage = ({ header }) => {
         <>
             <ListHeader> {header} </ListHeader>
             {isLoading ?
-                <LoadingPage />
+                <Loading />
                 :
                 <>
                     <ListGrid columns={type === "movies" ? 4 : 6}>

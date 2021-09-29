@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import {ReactComponent as ErrorIcon} from "../assets/svg/error.svg";
 
 export const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.noResultPageBackground};
     margin: 0 auto;
     text-align: center;
-    padding: 16px;
+    padding: 10vmax;
 `;
 
-export const ErrorImage = styled.img`
+export const ErrorImage = styled(ErrorIcon)`
     width: 100px;
     height: 90px;
 `;
