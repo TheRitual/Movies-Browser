@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import { toPeopleList, toMoviesList } from "../../core/config/routes";
-import { setPage, setSearchQuery } from "../../features/moviesBrowser/moviesBrowserSlice";
+import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
+import { selectPage, selectSearchQuery, setPage, setSearchQuery } from "../../features/moviesBrowser/moviesBrowserSlice";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
-import { useQueryParameter } from "../../common/api/useQueryParameters";
+import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName } from "../../features/moviesBrowser/queryParamNames";
 import {
     StyledNavigation,
@@ -15,17 +15,26 @@ import {
     StyledCameraIcon,
 } from "./styled";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Navigation = () => {
     const dispatch = useDispatch();
     const search = useQueryParameter(searchQueryParamName) || "";
-    const page = useQueryParameter(pageQueryParamName) || 1;
+    const locationPage = useQueryParameter(pageQueryParamName) || 1;
+    const searchValue = useSelector(selectSearchQuery);
+    const replaceParam = useReplaceQueryParameter();
+    const page = useSelector(selectPage);
 
     useEffect(() => {
         dispatch(setSearchQuery(search));
-        dispatch(setPage(page));
+        dispatch(setPage(locationPage));
         // eslint-disable-next-line
     }, []);
+
+    const onSearchChange = ({ target }) => {
+        dispatch(setSearchQuery(target.value));
+        replaceParam([{ key: searchQueryParamName, value: target.value }, { key: pageQueryParamName, value: page }], toSearch());
+    }
 
     return (
         <StyledNavigation>
@@ -40,7 +49,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput />
+                <StyledInput value={searchValue} onChange={onSearchChange} />
             </StyledNavWrapper>
         </StyledNavigation>
     )
