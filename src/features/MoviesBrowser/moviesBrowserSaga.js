@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { call, put, takeLatest, select, delay } from "redux-saga/effects";
 import { fetchList, fetchDetails } from "../../common/api/apiQueries";
 import { selectPage } from "./moviesBrowserSlice";
 import {
@@ -17,6 +17,7 @@ import {
 
 function* fetchListHandler() {
     try {
+        yield delay(1000);
         const page = yield select(selectPage);
         const requestType = yield select(selectRequestType);
         const list = yield call(fetchList, requestType, page);
@@ -30,6 +31,7 @@ function* fetchListHandler() {
 
 function* fetchDetailHandler() {
     try {
+        yield delay(1000);
         const detail = yield select(selectDetailId);
         const requestType = yield select(selectRequestType);
         const detailedItem = yield call(fetchDetails, requestType, detail);
