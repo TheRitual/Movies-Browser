@@ -49,7 +49,7 @@ function* fetchSearchHandler() {
         const query = yield select(selectSearchQuery);
         const requestType = yield select(selectType);
         const list = yield call(fetchSearch, requestType, query, page);
-        yield put(setList(list.results));
+        yield put(setList(list.results || []));
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
