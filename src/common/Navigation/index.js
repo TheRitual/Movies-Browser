@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
-import { fetchSearchData, selectPage, selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
+import { selectPage, selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName, typeQueryParamName } from "../../features/moviesBrowser/queryParamNames";
@@ -22,10 +22,10 @@ const Navigation = () => {
     const search = useQueryParameter(searchQueryParamName) || "";
     const locationPage = useQueryParameter(pageQueryParamName) || 1;
     const locationType = useQueryParameter(typeQueryParamName) || "movie";
-    const searchValue = useSelector(selectSearchQuery);
     const replaceParam = useReplaceQueryParameter();
     const page = useSelector(selectPage);
     const type = useSelector(selectType);
+    const query = useSelector(selectSearchQuery);
 
     useEffect(() => {
         dispatch(setSearchQuery(search));
@@ -42,10 +42,7 @@ const Navigation = () => {
             { key: typeQueryParamName, value: type }
         ];
         replaceParam(params, toSearch());
-        dispatch(fetchSearchData());
     }
-
-    
 
     return (
         <StyledNavigation>
@@ -60,7 +57,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput value={searchValue} onChange={onSearchChange} placeholder={`Search for ${type}`} />
+                <StyledInput value={query} onChange={onSearchChange} placeholder={`Search for ${type}`} />
             </StyledNavWrapper>
         </StyledNavigation>
     )
