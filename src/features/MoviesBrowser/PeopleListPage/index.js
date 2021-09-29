@@ -7,7 +7,8 @@ const ActorsListPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchPeopleListData());
-    });
+        // eslint-disable-next-line
+    },[]);
     return <ListPage header="Popular Actors" />;
 }
 

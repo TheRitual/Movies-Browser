@@ -10,6 +10,7 @@ const moviesBrowserSlice = createSlice({
         itemsList: [],
         isLoading: true,
         totalPages: 1,
+        searchQuery: "",
     },
     reducers: {
         fetchMoviesListData: (state, { payload: page }) => {
@@ -49,6 +50,9 @@ const moviesBrowserSlice = createSlice({
         },
         fetchDataError: state => {
             state.isLoading = false;
+        },
+        setSearchQuery: (state, {payload: query}) => {
+            state.searchQuery = query;
         }
     }
 });
@@ -62,6 +66,7 @@ export const {
     fetchDetailedMovieData,
     fetchDetailedPersonData,
     setDetailItem,
+    setSearchQuery,
 } = moviesBrowserSlice.actions;
 
 export const selectMoviesBrowserState = state => state.moviesBrowser;

@@ -1,5 +1,7 @@
 import React from "react";
 import { toPeopleList, toMoviesList } from "../../core/config/routes";
+import { useReplaceQueryParameter } from "../../common/api/useQueryParameters";
+import { searchQueryParamName} from "../../features/moviesBrowser/searchQueryParamName";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import {
     StyledNavigation,
@@ -14,6 +16,11 @@ import {
 
 
 const Navigation = () => {
+    const replaceQueryParameter = useReplaceQueryParameter();
+    const setSearchString = ({target}) => {
+        replaceQueryParameter({key: searchQueryParamName, value: target.value || undefined});
+    }
+    
     return (
         <StyledNavigation>
             <StyledNavWrapper>
@@ -27,7 +34,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput />
+                <StyledInput onChange={setSearchString} />
             </StyledNavWrapper>
         </StyledNavigation>
     )

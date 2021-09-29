@@ -7,7 +7,8 @@ const MoviesListPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchMoviesListData());
-    });
+        // eslint-disable-next-line
+    },[]);
     return <ListPage header="Popular Movies" />;
 }
 

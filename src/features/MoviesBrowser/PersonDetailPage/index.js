@@ -9,7 +9,8 @@ const PersonDetailPage = () => {
   const { id } = useParams()
     useEffect(() => {
         dispatch(fetchDetailedPersonData(id));
-    });
+    // eslint-disable-next-line
+  },[]);
     return <PersonDetails />
 }
 
