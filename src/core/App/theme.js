@@ -5,6 +5,9 @@ const pallette = {
     woodsmoke: "#18181B",
     mercury: "#F5F5FA",
     scienceBlue: "#0044CC",
+    mineShaft: "#333333",
+    pattensBlue: "#D6E4FF",
+    mystic: "#E4E6F0",
 }
 
 export const theme = {
@@ -16,6 +19,13 @@ export const theme = {
         headers: pallette.woodsmoke,
         noResultPageBackground: pallette.mercury,
         errorButton: pallette.scienceBlue,
+        paginatorText: pallette.waterloo,
+        paginatorPage: pallette.woodsmoke,
+        paginatorButton: pallette.pattensBlue,
+        paginatorButtonText: pallette.mineShaft,
+        paginatorArrow: pallette.scienceBlue,
+        paginatorDisabledButton: pallette.mystic,
+        paginatorDisabledArrow: pallette.waterloo,
     },
     breakpoints: {
         mobile: "320px",
