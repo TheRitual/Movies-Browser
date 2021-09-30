@@ -28,7 +28,7 @@ const Paginator = () => {
             const params = [
                 { key: searchQueryParamName, value: undefined },
                 { key: pageQueryParamName, value: page },
-                { key: typeQueryParamName, value: type }
+                { key: typeQueryParamName, value: undefined }
             ];
                 if(type === "person")
                     {

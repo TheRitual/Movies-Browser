@@ -19,20 +19,20 @@ import { useSelector } from "react-redux";
 
 const Navigation = () => {
     const dispatch = useDispatch();
-    const search = useQueryParameter(searchQueryParamName) || "";
+    const search = useQueryParameter(searchQueryParamName);
     const locationPage = useQueryParameter(pageQueryParamName) || 1;
-    const locationType = useQueryParameter(typeQueryParamName) || "movie";
+    const locationType = useQueryParameter(typeQueryParamName);
     const replaceParam = useReplaceQueryParameter();
     const page = useSelector(selectPage);
     const type = useSelector(selectType);
     const query = useSelector(selectSearchQuery);
 
     useEffect(() => {
-        dispatch(setSearchQuery(search));
-        dispatch(setPage(locationPage));
-        dispatch(setType(locationType));
+        search && dispatch(setSearchQuery(search));
+        locationPage && dispatch(setPage(locationPage));
+        locationType && dispatch(setType(locationType));
         // eslint-disable-next-line
-    }, []);
+    }, [search, locationPage, locationType]);
 
     const onSearchChange = ({ target }) => {
         dispatch(setSearchQuery(target.value));
@@ -57,7 +57,7 @@ const Navigation = () => {
                         <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
                     </NavigationListItem>
                 </NavigationList>
-                <StyledInput value={query} onChange={onSearchChange} placeholder={`Search for ${type}`} />
+                <StyledInput value={query || ""} onChange={onSearchChange} placeholder={`Search for ${type}`} />
             </StyledNavWrapper>
         </StyledNavigation>
     )

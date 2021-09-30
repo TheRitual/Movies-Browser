@@ -53,8 +53,8 @@ const moviesBrowserSlice = createSlice({
             state.searchQuery = query;
         },
         setPage: (state, { payload: page }) => {
-            if (page < state.page) { page = 1 }
-            if (page > state.totalPages) { page = state.totalPages }
+            page < 1 && (page = 1);
+            page > state.totalPages && (page = state.totalPages);
             state.page = page;
         },
         setType: (state, { payload: type }) => {
