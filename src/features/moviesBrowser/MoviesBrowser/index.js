@@ -3,13 +3,12 @@ import Navigation from "../../../common/Navigation";
 import PageSwitch from "./PageSwitch";
 import { Main } from "./styled";
 
-
 const MoviesBrowser = () => {
   return (
     <HashRouter>
       <Navigation />
       <Main>
-          <PageSwitch />
+        <PageSwitch />
       </Main>
     </HashRouter>
   );

@@ -3,14 +3,14 @@ import { selectIsLoading } from "../../moviesBrowserSlice";
 import MovieDetailsTile from "../MovieDetailsTile";
 import MovieHeader from "../MovieHeader";
 import PeopleList from "../PeopleList";
-import LoadingPage from "../../../../common/LoadingPage";
+import Loading from "../../../../common/Loading";
 
 const MovieDetails = () => {
     const isLoading = useSelector(selectIsLoading);
     return isLoading ?
         <>
             <h1>Loading Movie Details...</h1>
-            <LoadingPage />
+            <Loading />
         </>
         :
         <>
