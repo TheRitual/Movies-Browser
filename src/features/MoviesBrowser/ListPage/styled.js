@@ -15,6 +15,12 @@ export const ListGrid = styled.div`
     padding: 0;
     grid-template-columns: repeat(${({columns}) => columns || 4}, 1fr);
     gap: 24px;
-    justify-items: stretch;
+    justify-items: center;
     align-items: stretch;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        grid-template-columns: 1fr;
+    }
 `;

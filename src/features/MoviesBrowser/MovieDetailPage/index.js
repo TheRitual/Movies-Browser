@@ -10,7 +10,8 @@ const MovieDetailPage = () => {
     const { id } = useParams()
     useEffect(() => {
         dispatch(fetchDetailedMovieData(id));
-    });
+        // eslint-disable-next-line
+    },[]);
     return <MovieDetails />;
 }
 
