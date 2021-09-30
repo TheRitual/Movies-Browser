@@ -43,11 +43,11 @@ const Paginator = () => {
 
     return (
         <PaginatorWrapper>
-            <PaginatorButton disabled={page === "1" || page === 1} onClick={() => onSetPage(1)}>
+            <PaginatorButton disabled={page === "1" || page === 1} onClick={() => onSetPage("1")}>
                 <LeftArrow /> First
             </PaginatorButton>
 
-            <PaginatorButton disabled={page === "1" || page === 1} onClick={() => onSetPage((Number(page) - 1))}>
+            <PaginatorButton disabled={page === "1" || page === 1} onClick={() => onSetPage((Number(page) - 1).toString())}>
                 <LeftArrow /> Previous
             </PaginatorButton>
 
@@ -55,7 +55,7 @@ const Paginator = () => {
                 Page <PaginatorPage>{page}</PaginatorPage> from <PaginatorPage>{totalPages}</PaginatorPage>
             </PaginatorText>
 
-            <PaginatorButton disabled={page === totalPages} onClick={() => onSetPage((Number(page) + 1))}>
+            <PaginatorButton disabled={page === totalPages} onClick={() => onSetPage((Number(page) + 1).toString())}>
                 Next <RightArrow />
             </PaginatorButton>
 
