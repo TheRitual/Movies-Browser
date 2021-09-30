@@ -18,7 +18,9 @@ export const theme = {
         errorButton: pallette.scienceBlue,
     },
     breakpoints: {
-        small: "576px",
-        tabletPortrait: "767px",
+        mobile: "320px",
+        mobileLandscape: "568px",
+        tablet: "767px",
+        tabletLandscape: "1024px",
     }
 }
