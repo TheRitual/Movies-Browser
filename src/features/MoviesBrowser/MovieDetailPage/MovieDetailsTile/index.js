@@ -6,9 +6,7 @@ import {
     Title,
     Content,
     Description,
-    Tags,
-    Tag,
-    Poster,
+
 } from "./styled";
 
 const MovieDetailsTile = () => {
@@ -22,7 +20,7 @@ const MovieDetailsTile = () => {
                 <p>Title: {movie.title}</p>
 
                 <Vote score={movie.vote_average} count={movie.vote_count} />
-                <Poster />
+
                 <p>Poster image : https://image.tmdb.org/t/p/w400{movie.poster_path}</p>
 
                 <p> Release data: {movie.release_date} </p>
@@ -34,10 +32,7 @@ const MovieDetailsTile = () => {
                         </span>
                     ))}
                 </p>
-                <Tags />
-                <Tag></Tag>
-                <Tag></Tag>
-                <Tag></Tag>
+
                 <p> Genres:&nbsp;
                     {movie.genres && movie.genres.map(genre => (
                         <span key={genre.id}>
