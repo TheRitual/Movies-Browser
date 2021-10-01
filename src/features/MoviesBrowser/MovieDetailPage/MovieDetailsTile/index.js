@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
 import Vote from "../../../../common/Vote";
 import { selectDetailItem } from "../../moviesBrowserSlice";
-import { 
-    StyledDetailTile, 
-    Title, 
-    Content, 
-    Description, 
+import {
+    StyledDetailTile,
+    Title,
+    Content,
+    Description,
     Tags,
     Poster,
- } from "./styled";
+} from "./styled";
 
 const MovieDetailsTile = () => {
     const movie = useSelector(selectDetailItem);
@@ -21,7 +21,7 @@ const MovieDetailsTile = () => {
                 <p>Title: {movie.title}</p>
 
                 <Vote score={movie.vote_average} count={movie.vote_count} />
-<Poster />
+                <Poster />
                 <p>Poster image : https://image.tmdb.org/t/p/w400{movie.poster_path}</p>
 
                 <p> Release data: {movie.release_date} </p>
