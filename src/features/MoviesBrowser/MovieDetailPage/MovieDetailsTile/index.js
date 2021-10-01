@@ -7,6 +7,7 @@ import {
     Content,
     Description,
     Tags,
+    Tag,
     Poster,
 } from "./styled";
 
@@ -34,6 +35,9 @@ const MovieDetailsTile = () => {
                     ))}
                 </p>
                 <Tags />
+                <Tag></Tag>
+                <Tag></Tag>
+                <Tag></Tag>
                 <p> Genres:&nbsp;
                     {movie.genres && movie.genres.map(genre => (
                         <span key={genre.id}>
