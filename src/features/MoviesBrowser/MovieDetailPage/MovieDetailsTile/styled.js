@@ -48,7 +48,7 @@ export const Tags = styled.ul`
 `;
 
 export const Tag = styled.li`
-    background: ${({theme}) => theme.color.mystic};
+    background: ${({ theme }) => theme.color.mystic};
     padding: 8px 16px;
     font-size: 14px;
     margin: 8px;
