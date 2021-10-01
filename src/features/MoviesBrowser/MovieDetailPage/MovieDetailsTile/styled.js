@@ -64,3 +64,8 @@ export const Description = styled.p`
 
 export const Content = styled.div``;
 
+export const Poster = styled.img`
+    border-radius: 5px;
+    margin: 0px 40px;
+`;
+
