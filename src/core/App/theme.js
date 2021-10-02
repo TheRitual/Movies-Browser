@@ -6,6 +6,7 @@ const pallette = {
     mercury: "#F5F5FA",
     scienceBlue: "#0044CC",
     mystic: "#E4E6F0",
+    stormGrey: "#74788B",
 }
 
 export const theme = {
@@ -20,6 +21,7 @@ export const theme = {
         tileBackground: pallette.white,
         titleHeader: pallette.black,
         tagBackground: pallette.mystic,
+        subText: pallette.stormGrey,
     },
     breakpoints: {
         mobile: "320px",
