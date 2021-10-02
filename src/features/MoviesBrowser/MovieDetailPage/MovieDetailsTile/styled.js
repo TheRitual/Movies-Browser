@@ -32,12 +32,19 @@ export const Title = styled.h4`
 
 `;
 
-export const Subtitle = styled.p`
+export const Subtitle = styled.h3`
     font-size: 22px;
     line-height: 26px;
     margin: 24px 0px;
 `;
 
+export const Subtekst = styled.h3`
+    color: ${({ theme }) => theme.colors.subText};
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    line-height: 22px;
+`;
 
 export const Tags = styled.ul`
     display: flex;
