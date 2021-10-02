@@ -5,13 +5,13 @@ const moviesBrowserSlice = createSlice({
     initialState: {
         type: "movie",
         detailItem: {},
-        page: 1,
-        detailId: 293660,
+        page: "1",
+        detailId: "293660",
         itemsList: [],
         isLoading: true,
-        totalPages: 1,
+        totalPages: "1",
         searchQuery: "",
-        resultsAmount: 0,
+        resultsAmount: "0",
         genres: [],
     },
     reducers: {
@@ -33,7 +33,7 @@ const moviesBrowserSlice = createSlice({
             state.isLoading = true;
         },
         setTotalPages: (state, { payload: pagesAmount }) => {
-            state.totalPages = pagesAmount;
+            state.totalPages = pagesAmount.toString();
         },
         setList: (state, { payload: list }) => {
             state.itemsList = list;
@@ -54,13 +54,15 @@ const moviesBrowserSlice = createSlice({
             state.searchQuery = query;
         },
         setPage: (state, { payload: page }) => {
-            state.page = page;
+            Number(page) < 1 && (page = "1");
+            Number(page) > state.totalPages && (page = state.totalPages);
+            state.page = page.toString();
         },
         setType: (state, { payload: type }) => {
             state.type = type;
         },
         setResultsAmount: (state, { payload: amount }) => {
-            state.resultsAmount = amount;
+            state.resultsAmount = amount.toString();
         },
         setGenres: (state, { payload: genresList }) => {
             state.genres = genresList;
