@@ -5,6 +5,7 @@ const pallette = {
     woodsmoke: "#18181B",
     mercury: "#F5F5FA",
     scienceBlue: "#0044CC",
+    mystic: "#E4E6F0",
 }
 
 export const theme = {
