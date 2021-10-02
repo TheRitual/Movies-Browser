@@ -32,3 +32,11 @@ export const fetchSearch = async (type = "movie", query = "", page = 1) => {
         return null;
     }
 };
+
+export const fetchGenres = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${getApiKey()}&language=en-US`);
+    if (!response.ok) {
+        new Error((response).statusText);
+    }
+    return await response.json();
+};
