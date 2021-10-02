@@ -41,14 +41,15 @@ export const Subtitle = styled.p`
 
 export const Tags = styled.ul`
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     list-style: none;
     padding-left: 0;
     margin: 16px -8px;
 `;
 
 export const Tag = styled.li`
-    background: ${({ theme }) => theme.colors.tagBackground};
+    background-color: ${({ theme }) => theme.colors.tagBackground};
+    flex-direction: row;
     list-style: none;
     padding: 8px 16px;
     font-size: 14px;
@@ -60,7 +61,9 @@ export const Description = styled.p`
     font-size: 20px;
     margin: 24px 0px;
     line-height: 32px;
-    margin: 24px 0px;
+    display: flex;
+    align-items: center;
+    order: 5;
 `;
 
 export const Content = styled.div``;
