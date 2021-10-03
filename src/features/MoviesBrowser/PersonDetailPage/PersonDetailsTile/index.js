@@ -4,7 +4,7 @@ import {
     PersonDetailTile,
     PersonName,
     Subtekst,
-
+    Description,
 } from "./styled";
 
 const PersonDetailsTile = () => {
