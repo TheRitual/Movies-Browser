@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { selectIsLoading } from "../../moviesBrowserSlice";
 import PersonDetailsTile from "../PersonDetailsTile";
-import MoviesList from "../MoviesList";
 import Loading from "../../../../common/Loading";
+import CreditsList from "../CreditsList";
 
 const PersonDetails = () => {
     const isLoading = useSelector(selectIsLoading);
@@ -14,8 +14,7 @@ const PersonDetails = () => {
         :
         <>
             <PersonDetailsTile />
-            <MoviesList title="Movies - cast" />
-            <MoviesList title="Movies - crew" />
+            <CreditsList />
         </>
         ;
 }
