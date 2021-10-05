@@ -37,6 +37,7 @@ export const StyledLink = styled(Link)`
 
 export const StyledPoster = styled.img`
     border-radius: 5px;
+    width: 100%;
 `;
 
 
