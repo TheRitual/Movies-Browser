@@ -20,7 +20,7 @@ import { useSelector } from "react-redux";
 const Navigation = () => {
     const dispatch = useDispatch();
     const search = useQueryParameter(searchQueryParamName);
-    const locationPage = useQueryParameter(pageQueryParamName) || "1";
+    const locationPage = useQueryParameter(pageQueryParamName);
     const locationType = useQueryParameter(typeQueryParamName);
     const replaceParam = useReplaceQueryParameter();
     const type = useSelector(selectType);
@@ -28,7 +28,7 @@ const Navigation = () => {
 
     useEffect(() => {
         search && dispatch(setSearchQuery(search));
-        locationPage && dispatch(setPage(locationPage));
+        locationPage ? dispatch(setPage(locationPage)) : dispatch(setPage("1"));
         locationType && dispatch(setType(locationType));
         // eslint-disable-next-line
     }, [search, locationPage, locationType]);
@@ -42,6 +42,8 @@ const Navigation = () => {
         ];
         replaceParam(params, toSearch());
     }
+
+    
 
     return (
         <StyledNavigation>

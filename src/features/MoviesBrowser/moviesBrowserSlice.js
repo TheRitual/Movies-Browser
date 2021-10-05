@@ -9,6 +9,7 @@ const moviesBrowserSlice = createSlice({
         detailId: "293660",
         itemsList: [],
         isLoading: true,
+        isError: false,
         totalPages: "1",
         searchQuery: "",
         resultsAmount: "0",
@@ -18,19 +19,24 @@ const moviesBrowserSlice = createSlice({
     },
     reducers: {
         fetchMoviesListData: (state) => {
+            state.isError = false;
             state.isLoading = true;
         },
         fetchSearchData: (state) => {
+            state.isError = false;
             state.isLoading = true;
         },
         fetchPeopleListData: (state) => {
+            state.isError = false;
             state.isLoading = true;
         },
         fetchDetailedMovieData: (state, { payload: id }) => {
+            state.isError = false;
             state.detailId = id || 293660;
             state.isLoading = true;
         },
         fetchDetailedPersonData: (state, { payload: id }) => {
+            state.isError = false;
             state.detailId = id || 10859;
             state.isLoading = true;
         },
@@ -51,13 +57,14 @@ const moviesBrowserSlice = createSlice({
         },
         fetchDataError: state => {
             state.isLoading = false;
+            state.isError = true;
         },
         setSearchQuery: (state, { payload: query }) => {
             state.searchQuery = query;
         },
         setPage: (state, { payload: page }) => {
-            Number(page) < 1 || (page = "1");
-            Number(page) > state.totalPages || (page = state.totalPages);
+            Number(page) < 1 && (page = "1");
+            state.isError = false;
             state.page = page.toString();
         },
         setType: (state, { payload: type }) => {
@@ -99,6 +106,7 @@ export const {
 
 export const selectMoviesBrowserState = state => state.moviesBrowser;
 export const selectIsLoading = state => selectMoviesBrowserState(state).isLoading;
+export const selectIsError = state => selectMoviesBrowserState(state).isError;
 export const selectPage = state => selectMoviesBrowserState(state).page;
 export const selectDetailId = state => selectMoviesBrowserState(state).detailId;
 export const selectTotalPages = state => selectMoviesBrowserState(state).totalPages;

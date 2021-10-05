@@ -5,6 +5,7 @@ import { fetchMoviesListData, setSearchQuery, setType } from "../moviesBrowserSl
 
 const MoviesListPage = () => {
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(setType("movie"));
         dispatch(setSearchQuery(""));
