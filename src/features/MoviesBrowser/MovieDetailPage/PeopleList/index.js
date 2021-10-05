@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectCast, selectCrew, selectIsCastEmpty, selectIsCrewEmpty } from "../../moviesBrowserSlice";
-import { toPerson } from "../../../../core/config/routes";
-import { Link } from "react-router-dom";
+import PersonTile from "../../ListPage/PersonTile";
+import { StyledPeopleList } from "./styled";
 
 const PeopleList = () => {
     const crew = useSelector(selectCrew);
@@ -10,16 +10,12 @@ const PeopleList = () => {
     const isCastEmpty = useSelector(selectIsCastEmpty);
 
     return (
-        <div>
+        <StyledPeopleList>
             {isCastEmpty ||
                 <>
                     <h4>Cast</h4>
                     {cast.map(castItem => (
-                        <div>
-                            {castItem.profile_path && <img src={`https://image.tmdb.org/t/p/w185/${castItem.profile_path}`} alt={castItem.name} />}
-                            <p><Link to={toPerson({ id: castItem.id })}>{castItem.name}</Link></p>
-                            <p>{castItem.character}</p>
-                        </div>
+                        <PersonTile person={castItem} showCharacter={true} />
                     ))}
                 </>
             }
@@ -27,15 +23,11 @@ const PeopleList = () => {
                 <>
                     <h4>Crew</h4>
                     {crew.map(castItem => (
-                        <div>
-                            {castItem.profile_path && <img src={`https://image.tmdb.org/t/p/w185/${castItem.profile_path}`} alt={castItem.name} />}
-                            <p><Link to={toPerson({ id: castItem.id })}>{castItem.name}</Link></p>
-                            <p>{castItem.job}</p>
-                        </div>
+                        <PersonTile person={castItem} showJob={true} />
                     ))}
                 </>
             }
-        </div>
+        </StyledPeopleList>
     );
 }
 
