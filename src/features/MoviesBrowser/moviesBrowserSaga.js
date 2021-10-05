@@ -58,6 +58,11 @@ function* fetchDetailHandler() {
 
 function* fetchSearchHandler() {
     try {
+        const isGenresEmpty = yield select(selectIsGenresListEmpty);
+        if (isGenresEmpty) {
+            const genres = yield call(fetchGenres);
+            yield put(setGenres(genres.genres));
+        }
         const page = yield select(selectPage);
         const query = yield select(selectSearchQuery);
         const requestType = yield select(selectType);
