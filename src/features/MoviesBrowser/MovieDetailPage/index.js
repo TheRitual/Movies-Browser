@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
-import { fetchDetailedMovieData } from "../moviesBrowserSlice";
+import { fetchDetailedMovieData, setType } from "../moviesBrowserSlice";
 import MovieDetails from "./MovieDetails";
 
 
@@ -9,6 +9,7 @@ const MovieDetailPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams()
     useEffect(() => {
+        dispatch(setType("movie"));
         dispatch(fetchDetailedMovieData(id));
         // eslint-disable-next-line
     },[]);

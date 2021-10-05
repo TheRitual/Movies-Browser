@@ -1,5 +1,5 @@
 import { call, put, takeLatest, select, debounce } from "redux-saga/effects";
-import { fetchList, fetchDetails, fetchSearch, fetchGenres } from "../../common/api/apiQueries";
+import { fetchList, fetchDetails, fetchSearch, fetchGenres, fetchPersonCredits, fetchMovieCredits } from "../../common/api/apiQueries";
 import {
     fetchDetailedMovieData,
     fetchDetailedPersonData,
@@ -17,6 +17,8 @@ import {
     setResultsAmount,
     selectIsGenresListEmpty,
     setGenres,
+    setCast,
+    setCrew,
 } from "./moviesBrowserSlice";
 
 function* fetchListHandler() {
@@ -41,6 +43,11 @@ function* fetchDetailHandler() {
     try {
         const detail = yield select(selectDetailId);
         const requestType = yield select(selectType);
+        const credits = yield requestType === "person" ? call(fetchPersonCredits, detail) : call(fetchMovieCredits, detail);
+        const cast = credits.cast;
+        yield yield put(setCast(cast));
+        const crew = credits.crew;
+        yield yield put(setCrew(crew));
         const detailedItem = yield call(fetchDetails, requestType, detail);
         yield put(setDetailItem(detailedItem));
     } catch (error) {

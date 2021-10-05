@@ -40,3 +40,19 @@ export const fetchGenres = async () => {
     }
     return await response.json();
 };
+
+export const fetchMovieCredits = async (movie_id) => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${getApiKey()}&language=en-US`);
+    if (!response.ok) {
+        new Error((response).statusText);
+    }
+    return await response.json();
+};
+
+export const fetchPersonCredits = async (person_id) => {
+    const response = await fetch(`https://api.themoviedb.org/3/person/${person_id}/movie_credits?api_key=${getApiKey()}&language=en-US`);
+    if (!response.ok) {
+        new Error((response).statusText);
+    }
+    return await response.json();
+};
