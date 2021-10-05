@@ -17,6 +17,7 @@ export const theme = {
         noResultPageBackground: pallette.mercury,
         errorButton: pallette.scienceBlue,
         tileBackground: pallette.white,
+        linkHeader: pallette.black,
     },
     breakpoints: {
         mobile: "320px",
