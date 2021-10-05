@@ -36,6 +36,7 @@ const moviesBrowserSlice = createSlice({
         },
         setTotalPages: (state, { payload: pagesAmount }) => {
             state.totalPages = pagesAmount.toString();
+            Number(state.page) > Number(state.totalPages) && (state.page = state.totalPages);
         },
         setList: (state, { payload: list }) => {
             state.itemsList = list;
@@ -56,8 +57,7 @@ const moviesBrowserSlice = createSlice({
             state.searchQuery = query;
         },
         setPage: (state, { payload: page }) => {
-            Number(page) < 1 || (page = "1");
-            Number(page) > state.totalPages || (page = state.totalPages);
+            Number(page) < 1 && (page = "1");
             state.page = page.toString();
         },
         setType: (state, { payload: type }) => {
