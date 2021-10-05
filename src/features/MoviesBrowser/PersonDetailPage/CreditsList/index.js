@@ -1,34 +1,30 @@
 import { useSelector } from "react-redux";
 import { selectCast, selectCrew, selectIsCastEmpty, selectIsCrewEmpty } from "../../moviesBrowserSlice";
-import PersonTile from "../../ListPage/PersonTile";
-import { StyledPeopleList } from "./styled";
+import MovieTile from "../../ListPage/MovieTile";
+import { StyledMoviesList } from "./styled";
 
-const PeopleList = () => {
+const CreditsList = () => {
     const crew = useSelector(selectCrew);
     const cast = useSelector(selectCast);
     const isCrewEmpty = useSelector(selectIsCrewEmpty);
     const isCastEmpty = useSelector(selectIsCastEmpty);
 
     return (
-        <StyledPeopleList>
+        <StyledMoviesList>
             {isCastEmpty ||
                 <>
                     <h4>Cast</h4>
-                    {cast.map(castItem => (
-                        <PersonTile person={castItem} showCharacter={true} />
-                    ))}
+                    {cast.map(castItem => <MovieTile movie={castItem}> </MovieTile>)}
                 </>
             }
             {isCrewEmpty ||
-                <>
+                (<>
                     <h4>Crew</h4>
-                    {crew.map(castItem => (
-                        <PersonTile person={castItem} showJob={true} />
-                    ))}
-                </>
+                    {crew.map(crewItem => <MovieTile movie={crewItem}> </MovieTile>)}
+                </>)
             }
-        </StyledPeopleList>
+        </StyledMoviesList>
     );
 }
 
-export default PeopleList;
+export default CreditsList;
