@@ -6,6 +6,8 @@ import {
     StyledLink,
     StyledPoster,
     StyledReview,
+    ScoreScale,
+    VotedScale,
  } from "./styled";
 
 
@@ -35,10 +37,13 @@ const MovieTile = ({ movie }) => {
                 src={starIcon}
                 alt="star"
                 /> */}
-            
-            
-            <Vote score={movie.vote_average} count={movie.vote_count} />
-       
+            <ScoreScale>
+            {movie.vote_average}&nbsp;
+            </ScoreScale>
+
+            <VotedScale>
+            {movie.vote_count} 
+            </VotedScale>
             </StyledReview>
         </StyledMovieTile>
     );
