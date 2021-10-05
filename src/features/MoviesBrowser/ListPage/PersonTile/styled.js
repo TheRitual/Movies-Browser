@@ -24,6 +24,7 @@ export const StyledLink = styled(Link)`
     line-height: 1.3;
     color: ${({ theme }) => theme.colors.linkHeader};
     text-decoration: none;
+    text-align: center;
     margin: 8px 0px;
     flex: none;
     order: 0;
@@ -32,4 +33,20 @@ export const StyledLink = styled(Link)`
 
 export const StyledPoster = styled.img`
     border-radius: 5px;
+`;
+
+
+export const Details = styled.p`
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    color: ${({ theme }) => theme.colors.personDetail};
+    align-items: center;
+    text-align: center;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 0px;
 `;
