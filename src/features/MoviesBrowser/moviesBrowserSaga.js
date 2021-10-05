@@ -35,7 +35,7 @@ function* fetchListHandler() {
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
@@ -52,7 +52,7 @@ function* fetchDetailHandler() {
         yield put(setDetailItem(detailedItem));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
@@ -72,7 +72,7 @@ function* fetchSearchHandler() {
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
