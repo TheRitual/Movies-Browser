@@ -28,12 +28,16 @@ const Navigation = () => {
     const query = useSelector(selectSearchQuery);
 
     useEffect(() => {
-        search !== query && dispatch(setSearchQuery(search));
-        locationPage !== page ? dispatch(setPage(locationPage)) : dispatch(setPage("1"));
-        locationType !== type && dispatch(setType(locationType));
-        search !== '' ? dispatch(fetchSearchData()) : locationType === "person" ? dispatch(fetchPeopleListData()) : dispatch(fetchMoviesListData());
+        if (search !== query && search) { dispatch(setSearchQuery(search)) };
+        if (locationType !== type && locationType) { dispatch(setType(locationType)); }
+        if (locationPage) { dispatch(setPage(locationPage)) } else { dispatch(setPage("1")); }
         // eslint-disable-next-line
     }, [search, locationPage, locationType]);
+
+    useEffect(() => {
+        query ? dispatch(fetchSearchData()) : type === "person" ? dispatch(fetchPeopleListData()) : dispatch(fetchMoviesListData());
+        // eslint-disable-next-line
+    }, [query, type, page]);
 
     const onSearchChange = ({ target }) => {
         dispatch(setSearchQuery(target.value));
@@ -44,8 +48,6 @@ const Navigation = () => {
         ];
         replaceParam(params, toSearch());
     }
-
-
 
     return (
         <StyledNavigation>
