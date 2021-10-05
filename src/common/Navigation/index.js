@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
-import { selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
+import { fetchMoviesListData, fetchPeopleListData, fetchSearchData, selectPage, selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName, typeQueryParamName } from "../../features/moviesBrowser/queryParamNames";
@@ -24,12 +24,14 @@ const Navigation = () => {
     const locationType = useQueryParameter(typeQueryParamName);
     const replaceParam = useReplaceQueryParameter();
     const type = useSelector(selectType);
+    const page = useSelector(selectPage);
     const query = useSelector(selectSearchQuery);
 
     useEffect(() => {
-        search && dispatch(setSearchQuery(search));
-        locationPage ? dispatch(setPage(locationPage)) : dispatch(setPage("1"));
-        locationType && dispatch(setType(locationType));
+        search !== query && dispatch(setSearchQuery(search));
+        locationPage !== page ? dispatch(setPage(locationPage)) : dispatch(setPage("1"));
+        locationType !== type && dispatch(setType(locationType));
+        search !== '' ? dispatch(fetchSearchData()) : locationType === "person" ? dispatch(fetchPeopleListData()) : dispatch(fetchMoviesListData());
         // eslint-disable-next-line
     }, [search, locationPage, locationType]);
 
@@ -43,7 +45,7 @@ const Navigation = () => {
         replaceParam(params, toSearch());
     }
 
-    
+
 
     return (
         <StyledNavigation>
