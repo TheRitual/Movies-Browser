@@ -78,3 +78,12 @@ export const StyledPoster = styled.img`
     border-radius: 5px;
 `;
 
+export const StyledReview = styled.div`
+display: flex;
+align-items: flex-end;
+flex-grow: 1;
+
+@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    align-items: center;
+}
+`;
