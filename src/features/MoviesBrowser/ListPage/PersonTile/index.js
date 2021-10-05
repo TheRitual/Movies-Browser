@@ -1,12 +1,27 @@
-import { Link } from "react-router-dom";
-import { toPerson } from "../../../../core/config/routes";
 
-const PersonTile = ({ person }) => {
+import { toPerson } from "../../../../core/config/routes";
+import { StyledPersonTile, StyledLink, StyledPoster, PersonDetails } from "./styled";
+
+const PersonTile = ({ person, showJob, showCharacter }) => {
+
     return (
-        <div>
-            <img alt={person.name} src={`https://image.tmdb.org/t/p/w200${person.profile_path}`} />
-            <Link to={toPerson(person)}>{person.name}</Link>
-        </div>
+        <StyledPersonTile>
+            <StyledLink
+            to={toPerson(person)}>
+
+            <StyledPoster
+                alt={person.name}
+                src={`https://image.tmdb.org/t/p/w200${person.profile_path}`}
+                />
+                {person.name}
+            </StyledLink>
+
+            <PersonDetails>
+                {showJob || person.job}
+                {showCharacter || person.character }
+            </PersonDetails>
+
+        </StyledPersonTile>
     );
 }
 
