@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectCast, selectCrew, selectIsCastEmpty, selectIsCrewEmpty } from "../../moviesBrowserSlice";
-import { toMovie } from "../../../../core/config/routes";
-import { Link } from "react-router-dom";
+import MovieTile from "../../ListPage/MovieTile";
+import { StyledMoviesList } from "./styled";
 
 const CreditsList = () => {
     const crew = useSelector(selectCrew);
@@ -10,32 +10,20 @@ const CreditsList = () => {
     const isCastEmpty = useSelector(selectIsCastEmpty);
 
     return (
-        <div>
+        <StyledMoviesList>
             {isCastEmpty ||
                 <>
                     <h4>Cast</h4>
-                    {cast.map(castItem => (
-                        <div key={castItem.id}>
-                            {castItem.poster_path && <img src={`https://image.tmdb.org/t/p/w200/${castItem.poster_path}`} alt={castItem.name} />}
-                            <p><Link to={toMovie({ id: castItem.id })}>{castItem.title}</Link></p>
-                            <p>{castItem.character}</p>
-                        </div>
-                    ))}
+                    {cast.map(castItem => <MovieTile movie={castItem}> </MovieTile>)}
                 </>
             }
             {isCrewEmpty ||
                 (<>
                     <h4>Crew</h4>
-                    {crew.map(crewItem => (
-                        <div key={crewItem.id}>
-                            {crewItem.poster_path && <img src={`https://image.tmdb.org/t/p/w200/${crewItem.poster_path}`} alt={crewItem.name} />}
-                            <p><Link to={toMovie({ id: crewItem.id })}>{crewItem.title}</Link></p>
-                            <p>{crewItem.job}</p>
-                        </div>
-                    ))}
+                    {crew.map(crewItem => <MovieTile movie={crewItem}> </MovieTile>)}
                 </>)
             }
-        </div>
+        </StyledMoviesList>
     );
 }
 
