@@ -5,8 +5,6 @@ export const StyledMovieTile = styled.div`
     background: ${({ theme }) => theme.colors.tileBackground};
     padding: 16px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    display: grid;
-    grid-template-columns: auto 1fr;
     grid-gap: 40px;
     border-radius: 5px;
 
@@ -28,8 +26,10 @@ export const Title = styled.header`
     margin-bottom: 24px;
 `;
 
-export const Subtitle = styled.div`
+export const Subtitle = styled.h3`
     font-size: 22px;
+    font-weight: 400;
+    color: ${({ theme }) => theme.colors.subtitleColor};
 `;
 
 export const Content = styled.div``;
@@ -60,12 +60,21 @@ export const Description = styled.p`
 `;
 
 export const StyledLink = styled(Link)`
+    font-family: Poppins;
+    font-style: normal;
     text-decoration: none;
     font-weight: 500;
     font-size: 22px;
     line-height: 1.3;
-    margin: 8px 0px;
-    align-items: center;
+    margin: none;
+    align-self: center;
     flex-grow: 0;
     color: ${({ theme }) => theme.colors.linkHeader};
 `;
+
+export const StyledPoster = styled.img`
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 5px;
+`;
+
