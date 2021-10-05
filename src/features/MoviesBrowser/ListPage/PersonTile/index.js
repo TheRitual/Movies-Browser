@@ -2,7 +2,7 @@
 import { toPerson } from "../../../../core/config/routes";
 import { StyledPersonTile, StyledLink, StyledPoster, PersonDetails } from "./styled";
 
-const PersonTile = ({ person }) => {
+const PersonTile = ({ person, showJob, showCharacter }) => {
     
     return (
         <StyledPersonTile>
@@ -19,6 +19,7 @@ const PersonTile = ({ person }) => {
             {showJob || <p> {person.job} </p>}
             {showCharacter || <p> {person.character} </p>}
             </PersonDetails>
+
         </StyledPersonTile>
     );
 }
