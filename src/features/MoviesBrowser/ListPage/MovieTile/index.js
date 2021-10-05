@@ -1,20 +1,22 @@
-import { Link } from "react-router-dom";
+
 import Vote from "../../../../common/Vote";
 import { toMovie } from "../../../../core/config/routes";
 import { 
     StyledMovieTile,
     StyledLink,
-
+    StyledPoster,
  } from "./styled";
 
 const MovieTile = ({ movie }) => {
     return (
         <StyledMovieTile>
+            <StyledLink
+            to={toMovie(movie)}>
+                <StyledPoster
+                    alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
 
-            <img alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
-
-            <StyledLink>
-            <Link to={toMovie(movie)}>{movie.title}</Link>
+            
+            {movie.title}
             </StyledLink>
             
             <p> Release data: {movie.release_date} </p>
