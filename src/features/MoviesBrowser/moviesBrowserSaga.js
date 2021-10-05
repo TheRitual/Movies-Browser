@@ -35,7 +35,7 @@ function* fetchListHandler() {
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
@@ -52,12 +52,17 @@ function* fetchDetailHandler() {
         yield put(setDetailItem(detailedItem));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
 function* fetchSearchHandler() {
     try {
+        const isGenresEmpty = yield select(selectIsGenresListEmpty);
+        if (isGenresEmpty) {
+            const genres = yield call(fetchGenres);
+            yield put(setGenres(genres.genres));
+        }
         const page = yield select(selectPage);
         const query = yield select(selectSearchQuery);
         const requestType = yield select(selectType);
@@ -67,7 +72,7 @@ function* fetchSearchHandler() {
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
