@@ -13,7 +13,7 @@ const PersonTile = ({ person, showJob, showCharacter }) => {
                 alt={person.name}
                 src={`https://image.tmdb.org/t/p/w200${person.profile_path}`}
                 />
-                
+                {person.name}
             </StyledLink>
 
             <PersonDetails>
