@@ -12,7 +12,11 @@ export const StyledPersonTile = styled.div`
 
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-
+      grid-template-columns: 1fr;
+      align-items: center;
+      display: grid;
+      grid-gap: 16px;
+      width: 100%;
       }
 `;
 
@@ -36,7 +40,7 @@ export const StyledPoster = styled.img`
 `;
 
 
-export const Details = styled.p`
+export const PersonDetails = styled.p`
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
