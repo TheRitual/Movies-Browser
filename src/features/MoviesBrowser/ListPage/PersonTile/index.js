@@ -7,14 +7,18 @@ const PersonTile = ({ person, showJob, showCharacter }) => {
     return (
         <StyledPersonTile>
             <StyledLink
+            to={toPerson(person)}>
+
+            <StyledPoster
                 alt={person.name}
                 src={`https://image.tmdb.org/t/p/w200${person.profile_path}`}
-                to={toPerson(person)}>{person.name}
+                />
+                
             </StyledLink>
 
             <PersonDetails>
-                {showJob || { personJob }}
-                {showCharacter || { personCharacter }}
+                {showJob || person.job}
+                {showCharacter || person.character }
             </PersonDetails>
 
         </StyledPersonTile>
