@@ -60,6 +60,7 @@ const moviesBrowserSlice = createSlice({
             state.isError = true;
         },
         setSearchQuery: (state, { payload: query }) => {
+            state.isError = false;
             state.searchQuery = query;
         },
         setPage: (state, { payload: page }) => {
@@ -68,6 +69,7 @@ const moviesBrowserSlice = createSlice({
             state.page = page.toString();
         },
         setType: (state, { payload: type }) => {
+            state.isError = false;
             state.type = type;
         },
         setResultsAmount: (state, { payload: amount }) => {
@@ -81,6 +83,9 @@ const moviesBrowserSlice = createSlice({
         },
         setCrew: (state, { payload: crew }) => {
             state.crew = crew;
+        },
+        setError: (state, { payload: isError }) => {
+            state.isError = isError;
         },
     }
 });
@@ -102,6 +107,7 @@ export const {
     setGenres,
     setCast,
     setCrew,
+    setError,
 } = moviesBrowserSlice.actions;
 
 export const selectMoviesBrowserState = state => state.moviesBrowser;
