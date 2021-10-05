@@ -43,6 +43,8 @@ const Navigation = () => {
         replaceParam(params, toSearch());
     }
 
+    
+
     return (
         <StyledNavigation>
             <StyledNavWrapper>
