@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useReplaceQueryParameter } from "../../../../common/api/useQueryParameters";
 import { toMoviesList, toPeopleList, toSearch } from "../../../../core/config/routes";
-import { fetchMoviesListData, fetchPeopleListData, fetchSearchData, selectPage, selectSearchQuery, selectTotalPages, selectType, setPage } from "../../moviesBrowserSlice";
+import { selectPage, selectSearchQuery, selectTotalPages, selectType, setPage } from "../../moviesBrowserSlice";
 import { pageQueryParamName, searchQueryParamName, typeQueryParamName } from "../../queryParamNames";
 import { LeftArrow, PaginatorButton, PaginatorPage, PaginatorText, PaginatorWrapper, RightArrow } from "./styled";
 
@@ -17,7 +17,6 @@ const Paginator = () => {
     const onSetPage = (page) => {
         dispatch(setPage(page));
         if (query) {
-            dispatch(fetchSearchData());
             const params = [
                 { key: searchQueryParamName, value: query },
                 { key: pageQueryParamName, value: page },
@@ -33,10 +32,8 @@ const Paginator = () => {
                 if(type === "person")
                     {
                         replaceParam(params, toPeopleList());
-                        dispatch(fetchPeopleListData());
                     } else {
                         replaceParam(params, toMoviesList()) ;
-                        dispatch(fetchMoviesListData());
                     }
         }
     }

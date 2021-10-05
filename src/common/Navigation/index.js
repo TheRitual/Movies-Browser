@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
-import { selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
+import { fetchMoviesListData, fetchPeopleListData, fetchSearchData, selectPage, selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
 import cameraIcon from "../assets/svg/CameraIcon.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName, typeQueryParamName } from "../../features/moviesBrowser/queryParamNames";
@@ -24,14 +24,20 @@ const Navigation = () => {
     const locationType = useQueryParameter(typeQueryParamName);
     const replaceParam = useReplaceQueryParameter();
     const type = useSelector(selectType);
+    const page = useSelector(selectPage);
     const query = useSelector(selectSearchQuery);
 
     useEffect(() => {
-        search && dispatch(setSearchQuery(search));
-        locationPage ? dispatch(setPage(locationPage)) : dispatch(setPage("1"));
-        locationType && dispatch(setType(locationType));
+        if (search !== query && search) { dispatch(setSearchQuery(search)) };
+        if (locationType !== type && locationType) { dispatch(setType(locationType)); }
+        if (locationPage) { dispatch(setPage(locationPage)) } else { dispatch(setPage("1")); }
         // eslint-disable-next-line
     }, [search, locationPage, locationType]);
+
+    useEffect(() => {
+        query ? dispatch(fetchSearchData()) : type === "person" ? dispatch(fetchPeopleListData()) : dispatch(fetchMoviesListData());
+        // eslint-disable-next-line
+    }, [query, type, page]);
 
     const onSearchChange = ({ target }) => {
         dispatch(setSearchQuery(target.value));
@@ -42,8 +48,6 @@ const Navigation = () => {
         ];
         replaceParam(params, toSearch());
     }
-
-    
 
     return (
         <StyledNavigation>
