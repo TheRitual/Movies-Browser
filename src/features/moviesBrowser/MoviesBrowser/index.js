@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { HashRouter } from "react-router-dom";
-import ErrorPage from "../../../common/ErrorPage";
 import Navigation from "../../../common/Navigation";
+import { toError } from "../../../core/config/routes";
 import { selectIsError } from "../moviesBrowserSlice";
 import PageSwitch from "./PageSwitch";
 import { Main } from "./styled";
+import { Redirect } from "react-router";
 
 const MoviesBrowser = () => {
   const isError = useSelector(selectIsError);
@@ -12,7 +13,8 @@ const MoviesBrowser = () => {
     <HashRouter>
       <Navigation />
       <Main>
-        {isError ? <ErrorPage /> : <PageSwitch />}
+        {isError && <Redirect to={toError()} />}
+        <PageSwitch />
       </Main>
     </HashRouter>
   );
