@@ -11,7 +11,7 @@ const ActorsListPage = () => {
         dispatch(fetchPeopleListData());
         // eslint-disable-next-line
     },[]);
-    return <ListPage header="Popular Actors" />;
+    return <ListPage header="Popular People" />;
 }
 
 export default ActorsListPage;
