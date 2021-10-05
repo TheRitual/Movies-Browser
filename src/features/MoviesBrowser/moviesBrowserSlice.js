@@ -107,12 +107,12 @@ export const selectDetailItem = state => selectMoviesBrowserState(state).detailI
 export const selectType = state => selectMoviesBrowserState(state).type;
 export const selectSearchQuery = state => selectMoviesBrowserState(state).searchQuery;
 export const selectResultsAmount = state => selectMoviesBrowserState(state).resultsAmount;
-export const selectIsListEmpty = state => selectMoviesBrowserState(state).itemsList.length === 0;
+export const selectIsListEmpty = state => Array.isArray(selectMoviesBrowserState(state).itemsList) && selectMoviesBrowserState(state).itemsList.length === 0;
 export const selectGenres = (state) => selectMoviesBrowserState(state).genres;
-export const selectIsGenresListEmpty = state => selectMoviesBrowserState(state).genres.length === 0;
+export const selectIsGenresListEmpty = state => Array.isArray(selectMoviesBrowserState(state).genres) && selectMoviesBrowserState(state).genres.length === 0;
 export const selectCrew = (state) => selectMoviesBrowserState(state).crew;
-export const selectIsCrewEmpty = state => selectMoviesBrowserState(state).crew.length === 0;
+export const selectIsCrewEmpty = state => Array.isArray(selectMoviesBrowserState(state).crew) && selectMoviesBrowserState(state).crew.length === 0;
 export const selectCast = (state) => selectMoviesBrowserState(state).cast;
-export const selectIsCastEmpty = state => selectMoviesBrowserState(state).cast.length === 0;
+export const selectIsCastEmpty = state => Array.isArray(selectMoviesBrowserState(state).cast) && selectMoviesBrowserState(state).cast.length === 0;
 
 export default moviesBrowserSlice.reducer;
