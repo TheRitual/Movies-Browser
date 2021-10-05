@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.js": "/Movies-Browser/static/js/main.4203176b.chunk.js",
-    "main.js.map": "/Movies-Browser/static/js/main.4203176b.chunk.js.map",
+    "main.js": "/Movies-Browser/static/js/main.44773017.chunk.js",
+    "main.js.map": "/Movies-Browser/static/js/main.44773017.chunk.js.map",
     "runtime-main.js": "/Movies-Browser/static/js/runtime-main.b958e636.js",
     "runtime-main.js.map": "/Movies-Browser/static/js/runtime-main.b958e636.js.map",
-    "static/js/2.0aec65b5.chunk.js": "/Movies-Browser/static/js/2.0aec65b5.chunk.js",
-    "static/js/2.0aec65b5.chunk.js.map": "/Movies-Browser/static/js/2.0aec65b5.chunk.js.map",
+    "static/js/2.5d6fcf30.chunk.js": "/Movies-Browser/static/js/2.5d6fcf30.chunk.js",
+    "static/js/2.5d6fcf30.chunk.js.map": "/Movies-Browser/static/js/2.5d6fcf30.chunk.js.map",
     "static/js/3.d3689957.chunk.js": "/Movies-Browser/static/js/3.d3689957.chunk.js",
     "static/js/3.d3689957.chunk.js.map": "/Movies-Browser/static/js/3.d3689957.chunk.js.map",
     "index.html": "/Movies-Browser/index.html",
-    "static/js/2.0aec65b5.chunk.js.LICENSE.txt": "/Movies-Browser/static/js/2.0aec65b5.chunk.js.LICENSE.txt",
+    "static/js/2.5d6fcf30.chunk.js.LICENSE.txt": "/Movies-Browser/static/js/2.5d6fcf30.chunk.js.LICENSE.txt",
     "static/media/CameraIcon.64519bac.svg": "/Movies-Browser/static/media/CameraIcon.64519bac.svg",
     "static/media/SearchIcon.b531feb2.svg": "/Movies-Browser/static/media/SearchIcon.b531feb2.svg",
     "static/media/error.0ca0bc72.svg": "/Movies-Browser/static/media/error.0ca0bc72.svg",
-    "static/media/loading.2356fe67.svg": "/Movies-Browser/static/media/loading.2356fe67.svg"
+    "static/media/leftArrow.40e7e274.svg": "/Movies-Browser/static/media/leftArrow.40e7e274.svg",
+    "static/media/loading.2356fe67.svg": "/Movies-Browser/static/media/loading.2356fe67.svg",
+    "static/media/noResult.938cbfe1.svg": "/Movies-Browser/static/media/noResult.938cbfe1.svg",
+    "static/media/rightArrow.9fdf3bd2.svg": "/Movies-Browser/static/media/rightArrow.9fdf3bd2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b958e636.js",
-    "static/js/2.0aec65b5.chunk.js",
-    "static/js/main.4203176b.chunk.js"
+    "static/js/2.5d6fcf30.chunk.js",
+    "static/js/main.44773017.chunk.js"
   ]
 }
