@@ -29,7 +29,7 @@ export const StyledLink = styled(Link)`
     color: ${({ theme }) => theme.colors.linkHeader};
     text-decoration: none;
     text-align: center;
-    margin: 8px 0px;
+
     flex: none;
     order: 0;
     flex-grow: 0;
