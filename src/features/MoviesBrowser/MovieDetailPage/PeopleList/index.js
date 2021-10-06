@@ -21,8 +21,8 @@ const PeopleList = () => {
         {isCrewEmpty || <>
             <SectionTitle>Crew</SectionTitle>
             <StyledPeopleList>
-                {crew.map(castItem => (
-                    <PersonTile person={castItem} showJob={true} />
+                {crew.map(crewItem => (
+                    <PersonTile person={crewItem} showJob={true} />
                 ))}
             </StyledPeopleList>
         </>}
