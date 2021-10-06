@@ -18,6 +18,7 @@ export const theme = {
         noResultPageBackground: pallette.mercury,
         errorButton: pallette.scienceBlue,
         tileBackground: pallette.white,
+        linkHeader: pallette.black,
         subTekst: pallette.stormGrey,
     },
     breakpoints: {
