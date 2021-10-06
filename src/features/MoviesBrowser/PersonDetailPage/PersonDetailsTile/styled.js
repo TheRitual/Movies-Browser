@@ -12,7 +12,7 @@ export const PersonDetailTile = styled.div`
 
 `;
 
-export const PersonName = styled.header`
+export const PersonName = styled.h1`
     color: ${({ theme }) => theme.colors.linkHeader};
     font-family: Poppins;
     font-style: normal;
@@ -27,11 +27,9 @@ export const Subtitle = styled.h3`
     color: ${({ theme }) => theme.colors.subTekst};
     font-size: 18px;
     line-height: 22px;
-    margin: 0px 10px;
     display: flex;
     align-items: center;
-    margin-left: 12px;
-    margin-bottom: 8px;
+
 `;
 
 export const StyledDetails = styled.span`
@@ -50,14 +48,9 @@ export const Description = styled.p`
     font-weight: 400;
     display: flex;
     text-align: justify;
-
-
 `;
 
-export const TileWrapper = styled.div`
-    display: flex;
-
-`;
+export const Content = styled.div``;
 
 export const StyledPoster = styled.img`
     flex: none;
@@ -65,6 +58,8 @@ export const StyledPoster = styled.img`
     flex-grow: 0;
     margin: 0px 40px;
     border-radius: 5px;
+    width: 399px;
+    height: 564px;
     left: 40px;
     top: 40px;
 
