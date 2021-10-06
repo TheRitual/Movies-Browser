@@ -21,9 +21,7 @@ const MovieTile = ({ movie }) => {
             to={toMovie(movie)}>
                 <StyledPoster
                     alt={movie.title} src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
-
-            
-            {movie.title}
+                    {movie.title}
             </StyledLink>
             
             <p> Release data: {movie.release_date} </p>
@@ -43,7 +41,6 @@ const MovieTile = ({ movie }) => {
             <ScoreScale>
             {movie.vote_average}&nbsp;
             </ScoreScale>
-
             <VotedScale>
             {movie.vote_count} 
             </VotedScale>
