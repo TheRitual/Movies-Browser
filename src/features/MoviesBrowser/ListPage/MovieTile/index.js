@@ -17,7 +17,7 @@ const MovieTile = ({ movie }) => {
             <StyledLink
             to={toMovie(movie)}>
                 <StyledPoster
-                    alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
+                    alt={movie.title} src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
 
             
             {movie.title}
