@@ -22,6 +22,7 @@ export const theme = {
         titleHeader: pallette.black,
         tagBackground: pallette.mystic,
         subText: pallette.stormGrey,
+        linkHeader: pallette.black,
     },
     breakpoints: {
         mobile: "320px",
