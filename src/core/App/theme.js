@@ -21,6 +21,7 @@ export const theme = {
         errorButton: pallette.scienceBlue,
         tileBackground: pallette.white,
         linkHeader: pallette.black,
+        subtitleColor: pallette.waterloo,
         personDetail: pallette.waterloo,
         paginatorText: pallette.waterloo,
         paginatorPage: pallette.woodsmoke,
