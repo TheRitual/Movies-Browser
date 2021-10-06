@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectDetailItem } from "../../moviesBrowserSlice";
 import {
     PersonDetailTile,
-    TileWrapper,
+    Content,
     PersonName,
     Subtitle,
     StyledDetails,
@@ -13,16 +13,15 @@ import {
 const PersonDetailsTile = () => {
     const person = useSelector(selectDetailItem);
     return (
-<TileWrapper>
+
         <PersonDetailTile>
-            
-                <StyledPoster
-                    src={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
-                    alt={person.name} />
-{/* Content */}
-                <PersonName /*title*/
-                    alt={person.name}
-                />
+
+            <StyledPoster
+                src={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                alt={person.name} />
+            <Content>
+                <PersonName />
+                    <h1>{person.name}</h1>          
                 <Subtitle>
                     Birthday:
                     <StyledDetails>{person.birthday}</StyledDetails>
@@ -34,15 +33,10 @@ const PersonDetailsTile = () => {
                 </Subtitle>
 
                 <Description>
-                    <p>Bio: {person.biography}</p>
+                    {person.biography}
                 </Description>
-{/* Content */}
-
-            
+            </Content>
         </PersonDetailTile>
-        </TileWrapper>
-
-
     );
 }
 
