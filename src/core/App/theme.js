@@ -21,6 +21,7 @@ export const theme = {
         errorButton: pallette.scienceBlue,
         tileBackground: pallette.white,
         linkHeader: pallette.black,
+        subtitleColor: pallette.waterloo,
         personDetail: pallette.waterloo,
         paginatorText: pallette.waterloo,
         paginatorPage: pallette.woodsmoke,
@@ -29,6 +30,7 @@ export const theme = {
         paginatorArrow: pallette.scienceBlue,
         paginatorDisabledButton: pallette.mystic,
         paginatorDisabledArrow: pallette.waterloo,
+        listTitles: pallette.black,
     },
     breakpoints: {
         mobile: "320px",
