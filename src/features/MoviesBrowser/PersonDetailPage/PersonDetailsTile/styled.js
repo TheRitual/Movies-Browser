@@ -54,7 +54,7 @@ export const Description = styled.p`
 
 `;
 
-export const TileInnerWrapper = styled.div`
+export const TileWrapper = styled.div`
     display: flex;
 
 `;
