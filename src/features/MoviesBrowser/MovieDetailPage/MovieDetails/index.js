@@ -16,8 +16,7 @@ const MovieDetails = () => {
         <>
             <MovieHeader />
             <MovieDetailsTile />
-            <PeopleList title="Cast" />
-            <PeopleList title="Crew" />
+            <PeopleList />
         </>
         ;
 }
