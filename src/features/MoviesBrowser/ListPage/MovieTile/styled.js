@@ -8,8 +8,7 @@ export const StyledMovieTile = styled.div`
     grid-gap: 40px;
     border-radius: 5px;
 
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0px;
     width: 100%;
     display: grid;
@@ -56,7 +55,6 @@ export const Description = styled.p`
     font-size: 20px;
     margin: 24px 0px;
     line-height: 1.6;
-
 `;
 
 export const StyledLink = styled(Link)`
@@ -79,11 +77,11 @@ export const StyledPoster = styled.img`
 `;
 
 export const StyledReview = styled.div`
-display: flex;
-align-items: flex-end;
-flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
 
-@media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     align-items: center;
 }
 `;
@@ -97,7 +95,6 @@ export const StyledStar = styled.img`
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         width: 10%;
-
     };
 `;
 
@@ -109,7 +106,6 @@ export const VotedScale = styled.p`
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 13px;
         line-height: 1.3;
-
     }
 `;
 
@@ -122,6 +118,5 @@ export const ScoreScale = styled.p`
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 13px;
         line-height: 1.3;
-
     }
 `;
