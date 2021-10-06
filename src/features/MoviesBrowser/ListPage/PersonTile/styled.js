@@ -10,7 +10,6 @@ export const StyledPersonTile = styled.div`
     padding: 16px;
     width: 100%;
 
-
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       grid-template-columns: 1fr;
       align-items: center;
@@ -29,7 +28,6 @@ export const StyledLink = styled(Link)`
     color: ${({ theme }) => theme.colors.linkHeader};
     text-decoration: none;
     text-align: center;
-
     flex: none;
     order: 0;
     flex-grow: 0;
