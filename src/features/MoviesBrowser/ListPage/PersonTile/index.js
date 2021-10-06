@@ -11,7 +11,7 @@ const PersonTile = ({ person, showJob, showCharacter }) => {
 
             <StyledPoster
                 alt={person.name}
-                src={`https://image.tmdb.org/t/p/w200${person.profile_path}`}
+                src={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
                 />
                 {person.name}
             </StyledLink>
