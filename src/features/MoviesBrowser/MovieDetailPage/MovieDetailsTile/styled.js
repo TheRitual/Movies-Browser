@@ -31,7 +31,6 @@ export const Title = styled.h1`
     font-family: Poppins;
     font-style: normal;
     color: ${({ theme }) => theme.colors.titleHeader};
-
 `;
 
 export const Subtitle = styled.h3`
@@ -80,7 +79,6 @@ export const Description = styled.p`
     line-height: 32px;
     display: flex;
     align-items: center;
-
 `;
 
 export const Content = styled.div``;

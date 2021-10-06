@@ -17,11 +17,13 @@ import {
 const MovieDetailsTile = () => {
     const movie = useSelector(selectDetailItem);
     return (
+
         <StyledMovieDetailTile>
 
             <StyledPoster
                 src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
                 alt={movie.title} />
+
             <Content>
                 <Title />
                 <h1>{movie.title}</h1>
@@ -58,9 +60,6 @@ const MovieDetailsTile = () => {
                 <Description />
                 {movie.overview}
             </Content>
-
-
-
         </StyledMovieDetailTile>
     );
 }
