@@ -9,7 +9,6 @@ export const PersonDetailTile = styled.div`
     flex-direction: row;
     align-items: flex-start;
     margin: 50px 0 50px;
-
 `;
 
 export const PersonName = styled.h1`
@@ -29,7 +28,6 @@ export const Subtitle = styled.h3`
     line-height: 22px;
     display: flex;
     align-items: center;
-
 `;
 
 export const StyledDetails = styled.span`
@@ -37,7 +35,6 @@ export const StyledDetails = styled.span`
     font-size: 18px;
     font-weight: normal;
     color: ${({ theme }) => theme.colors.linkHeader};
-
 `;
 
 export const Description = styled.p`
