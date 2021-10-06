@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledDetailTile = styled.div`
+export const StyledMovieDetailTile = styled.div`
     background: ${({ theme }) => theme.colors.tileBackground};
     padding: 40px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
@@ -21,7 +21,9 @@ export const StyledDetailTile = styled.div`
   }
 `;
 
-export const Title = styled.h4`
+export const Title = styled.h1`
+    font-family: Poppins;
+    font-style: normal;
     font-weight: 600;
     font-size: 36px;
     margin: 24px 0px;
@@ -33,6 +35,9 @@ export const Title = styled.h4`
 `;
 
 export const Subtitle = styled.h3`
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
     font-size: 22px;
     line-height: 26px;
     margin: 24px 0px;
@@ -65,12 +70,17 @@ export const Tag = styled.li`
 `;
 
 export const Description = styled.p`
+    color: ${({ theme }) => theme.colors.linkHeader};
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 160%;
     font-size: 20px;
     margin: 24px 0px;
     line-height: 32px;
     display: flex;
     align-items: center;
-    order: 5;
+
 `;
 
 export const Content = styled.div``;
@@ -78,5 +88,21 @@ export const Content = styled.div``;
 export const Poster = styled.img`
     border-radius: 5px;
     margin: 0px 40px;
+`;
+
+export const StyledDetails = styled.span`
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: normal;
+    color: ${({ theme }) => theme.colors.linkHeader};
+`;
+
+export const StyledPoster = styled.img`
+    width: 312px;
+    height: 464px;
+    left: 40px;
+    top: 40px;
+    margin-bottom: 8px;
+    border-radius: 5px;
 `;
 
