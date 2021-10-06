@@ -8,11 +8,11 @@ export const PersonDetailTile = styled.div`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 50px 0px;
+    margin: 50px 0 50px;
 
 `;
 
-export const PersonName = styled.h2`
+export const PersonName = styled.header`
     color: ${({ theme }) => theme.colors.linkHeader};
     font-family: Poppins;
     font-style: normal;
@@ -55,16 +55,18 @@ export const Description = styled.p`
 `;
 
 export const TileInnerWrapper = styled.div`
-display: flex;
+    display: flex;
 
 `;
 
 export const StyledPoster = styled.img`
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 0px 40px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 40px;
     border-radius: 5px;
+    left: 40px;
+    top: 40px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 200px;
