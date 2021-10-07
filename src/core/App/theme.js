@@ -26,6 +26,7 @@ export const theme = {
         paginatorArrow: pallette.scienceBlue,
         paginatorDisabledButton: pallette.mystic,
         paginatorDisabledArrow: pallette.waterloo,
+        headerBackground: pallette.black,
     },
     breakpoints: {
         mobile: "320px",
