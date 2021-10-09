@@ -19,7 +19,7 @@ export const PersonName = styled.h1`
     font-size: 36px;
     line-height: 1.3px;
     text-align: center;
-    margin: 24px 0px 0px;
+    margin: 24px 0px;
 `;
 
 export const Subtitle = styled.h3`
@@ -28,6 +28,7 @@ export const Subtitle = styled.h3`
     line-height: 22px;
     display: flex;
     align-items: center;
+    margin: 40px;
 `;
 
 export const StyledDetails = styled.span`
@@ -45,6 +46,8 @@ export const Description = styled.p`
     font-weight: 400;
     display: flex;
     text-align: justify;
+    margin: 40px;
+
 `;
 
 export const Content = styled.div``;
@@ -53,7 +56,6 @@ export const StyledPoster = styled.img`
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0px 40px;
     border-radius: 5px;
     width: 399px;
     height: 564px;
