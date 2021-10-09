@@ -16,7 +16,7 @@ const PersonDetailsTile = () => {
 
         <PersonDetailTile>
             <StyledPoster
-                src={`https://image.tmdb.org/t/p/w400${person.profile_path}`}
+                src={`https://image.tmdb.org/t/p/w500${person.profile_path}`}
                 alt={person.name} />
             <Content>
                 <PersonName />
