@@ -83,11 +83,6 @@ export const Description = styled.p`
 
 export const Content = styled.div``;
 
-export const Poster = styled.img`
-    border-radius: 5px;
-    margin: 0px 40px;
-`;
-
 export const StyledDetails = styled.span`
     margin-left: 12px;
     font-size: 18px;
@@ -100,6 +95,7 @@ export const StyledPoster = styled.img`
     height: 464px;
     left: 40px;
     top: 40px;
+    margin: 0px 40px;
     margin-bottom: 8px;
     border-radius: 5px;
 `;
