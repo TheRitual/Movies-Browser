@@ -28,8 +28,9 @@ const MovieDetailsTile = () => {
                 <Title>
                 {movie.title}
                 </Title>
-                <Subtitle />
-                {/* subtitle */}
+                {movie.release_date && 
+                <Subtitle>{movie.release_date.toString().substring(0,4)}
+                </Subtitle>}
 
                 <Subtekst>
                     Release data:&nbsp;
