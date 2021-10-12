@@ -1,5 +1,5 @@
 import { call, put, takeLatest, select, debounce } from "redux-saga/effects";
-import { fetchList, fetchDetails, fetchSearch } from "../../common/api/apiQueries";
+import { fetchList, fetchDetails, fetchSearch, fetchGenres, fetchPersonCredits, fetchMovieCredits } from "../../common/api/apiQueries";
 import {
     fetchDetailedMovieData,
     fetchDetailedPersonData,
@@ -15,10 +15,19 @@ import {
     selectSearchQuery,
     selectType,
     setResultsAmount,
+    selectIsGenresListEmpty,
+    setGenres,
+    setCast,
+    setCrew,
 } from "./moviesBrowserSlice";
 
 function* fetchListHandler() {
     try {
+        const isGenresEmpty = yield select(selectIsGenresListEmpty);
+        if (isGenresEmpty) {
+            const genres = yield call(fetchGenres);
+            yield put(setGenres(genres.genres));
+        }
         const page = yield select(selectPage);
         const type = yield select(selectType);
         const list = yield call(fetchList, type, page);
@@ -26,7 +35,7 @@ function* fetchListHandler() {
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
@@ -34,16 +43,26 @@ function* fetchDetailHandler() {
     try {
         const detail = yield select(selectDetailId);
         const requestType = yield select(selectType);
+        const credits = yield requestType === "person" ? call(fetchPersonCredits, detail) : call(fetchMovieCredits, detail);
+        const cast = credits.cast;
+        yield yield put(setCast(cast));
+        const crew = credits.crew;
+        yield yield put(setCrew(crew));
         const detailedItem = yield call(fetchDetails, requestType, detail);
         yield put(setDetailItem(detailedItem));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 
 function* fetchSearchHandler() {
     try {
+        const isGenresEmpty = yield select(selectIsGenresListEmpty);
+        if (isGenresEmpty) {
+            const genres = yield call(fetchGenres);
+            yield put(setGenres(genres.genres));
+        }
         const page = yield select(selectPage);
         const query = yield select(selectSearchQuery);
         const requestType = yield select(selectType);
@@ -53,7 +72,7 @@ function* fetchSearchHandler() {
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
-        yield call(Error, error);
+        yield call(console.error, error);
     }
 }
 

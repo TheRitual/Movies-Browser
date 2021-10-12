@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { selectCast, selectCrew, selectIsCastEmpty, selectIsCrewEmpty } from "../../moviesBrowserSlice";
-import PersonTile from "../../ListPage/PersonTile";
-import { SectionTitle, StyledPeopleList } from "./styled";
+import MovieTile from "../../ListPage/MovieTile";
+import { SectionTitle, StyledMoviesList } from "./styled";
 
-const PeopleList = () => {
+const CreditsList = () => {
     const crew = useSelector(selectCrew);
     const cast = useSelector(selectCast);
     const isCrewEmpty = useSelector(selectIsCrewEmpty);
@@ -12,22 +12,24 @@ const PeopleList = () => {
     return (<>
         {isCastEmpty || <>
             <SectionTitle>Cast</SectionTitle>
-            <StyledPeopleList>
+            <StyledMoviesList>
                 {cast.map(castItem => (
-                    <PersonTile person={castItem} showCharacter={true} />
+                    <MovieTile movie={castItem}> </MovieTile>
                 ))}
-            </StyledPeopleList>
+            </StyledMoviesList>
         </>}
         {isCrewEmpty || <>
             <SectionTitle>Crew</SectionTitle>
-            <StyledPeopleList>
+            <StyledMoviesList>
                 {crew.map(crewItem => (
-                    <PersonTile person={crewItem} showJob={true} />
+                    <MovieTile movie={crewItem}> </MovieTile>
                 ))}
-            </StyledPeopleList>
+            </StyledMoviesList>
         </>}
     </>);
 }
 
 
-export default PeopleList;
+
+
+export default CreditsList;
