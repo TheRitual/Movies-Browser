@@ -1,22 +1,51 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Vote from "../../../../common/Vote";
 import { toMovie } from "../../../../core/config/routes";
+import { selectGenres } from "../../moviesBrowserSlice";
+import { 
+    StyledMovieTile,
+    StyledLink,
+    StyledPoster,
+    StyledReview,
+    ScoreScale,
+    VotedScale,
+ } from "./styled";
 
 const MovieTile = ({ movie }) => {
+    const genres = useSelector(selectGenres);
+    const getGenre = id => genres.find(genre => genre.id === id).name;
     return (
-        <div>
-            <img alt={movie.title} src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} />
-            <p><Link to={toMovie(movie)}>{movie.title}</Link></p>
+        <StyledMovieTile>
+            <StyledLink
+            to={toMovie(movie)}>
+                <StyledPoster
+                    alt={movie.title} src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                    {movie.title}
+            </StyledLink>
+            
             <p> Release data: {movie.release_date} </p>
             <p> Genres:&nbsp;
                 {movie.genre_ids && movie.genre_ids.map(genre => (
-                    <span key={genre}>
-                        [{genre}] 
-                    </span>
+                        <span key={genre}>
+                            [{getGenre(genre)}]
+                        </span>
                 ))}
             </p>
-            <p><Vote score={movie.vote_average} count={movie.vote_count} /></p>
-        </div>
+
+            <StyledReview>
+                {/* <StyledStar
+                src={starIcon}
+                alt="star"
+                /> */}
+            <ScoreScale>
+            {movie.vote_average}&nbsp;
+            </ScoreScale>
+            <VotedScale>
+            {movie.vote_count} 
+            </VotedScale>
+            </StyledReview>
+        </StyledMovieTile>
     );
 }
 
