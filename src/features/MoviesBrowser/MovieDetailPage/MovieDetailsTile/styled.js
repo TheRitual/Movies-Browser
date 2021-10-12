@@ -92,7 +92,6 @@ export const StyledDetails = styled.span`
 
 export const StyledPoster = styled.img`
     width: 312px;
-    height: 464px;
     left: 40px;
     top: 40px;
     margin: 0px 40px;
