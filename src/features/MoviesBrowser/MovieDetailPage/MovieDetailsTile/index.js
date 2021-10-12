@@ -25,8 +25,9 @@ const MovieDetailsTile = () => {
                 alt={movie.title} />
 
             <Content>
-                <Title />
-                <h1>{movie.title}</h1>
+                <Title>
+                {movie.title}
+                </Title>
                 <Subtitle />
                 {/* subtitle */}
 
