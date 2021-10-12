@@ -19,9 +19,9 @@ const PersonDetailsTile = () => {
                 src={`https://image.tmdb.org/t/p/w500${person.profile_path}`}
                 alt={person.name} />
             <Content>
-                <PersonName />
-                <h1>{person.name}</h1>
-
+                <PersonName>
+                    {person.name}
+                </PersonName>
                 <Subtitle>
                     Birthday:
                     <StyledDetails>{person.birthday}</StyledDetails>
