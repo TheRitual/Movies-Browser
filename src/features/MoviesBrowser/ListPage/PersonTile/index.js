@@ -18,8 +18,8 @@ const PersonTile = ({ person, showJob, showCharacter }) => {
                 {person.name}
             </StyledLink>
             <PersonDetails>
-                {showJob || person.job}
-                {showCharacter || person.character }
+                {showJob && person.job}
+                {showCharacter && person.character }
             </PersonDetails>
         </StyledPersonTile>
     );
