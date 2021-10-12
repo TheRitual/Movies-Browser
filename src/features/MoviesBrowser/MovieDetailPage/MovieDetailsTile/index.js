@@ -49,7 +49,7 @@ const MovieDetailsTile = () => {
                     {movie.genres && movie.genres.map(genre => (
                         <Tag>
                             <span key={genre.id}>
-                                [{genre.name}]
+                                {genre.name}
                             </span>
                         </Tag>
                     ))}
