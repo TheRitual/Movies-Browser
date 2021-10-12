@@ -1,22 +1,42 @@
 import { useSelector } from "react-redux";
 import { selectDetailItem } from "../../moviesBrowserSlice";
+import {
+    PersonDetailTile,
+    Content,
+    PersonName,
+    Subtitle,
+    StyledDetails,
+    Description,
+    StyledPoster,
+} from "./styled";
 
 const PersonDetailsTile = () => {
     const person = useSelector(selectDetailItem);
     return (
-        <div>
-            <h4>Person Details Tile</h4>
-            
-            <p>Name: {person.name}</p>
-            
-            <p> Birthday:  {person.birthday} </p>
-            
-            <p> Place of birth:  {person.place_of_birth} </p>
-            
-            <p> Image : <img src={`https://image.tmdb.org/t/p/w200${person.profile_path}`} alt={person.name} /></p>
-            
-            <p>Bio: {person.biography}</p>
-        </div>
+
+        <PersonDetailTile>
+            <StyledPoster
+                src={`https://image.tmdb.org/t/p/w500${person.profile_path}`}
+                alt={person.name} />
+            <Content>
+                <PersonName />
+                <h1>{person.name}</h1>
+
+                <Subtitle>
+                    Birthday:
+                    <StyledDetails>{person.birthday}</StyledDetails>
+                </Subtitle>
+
+                <Subtitle>
+                    Place of birth:
+                    <StyledDetails>{person.place_of_birth}</StyledDetails>
+                </Subtitle>
+
+                <Description>
+                    {person.biography}
+                </Description>
+            </Content>
+        </PersonDetailTile>
     );
 }
 
