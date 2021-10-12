@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMovieDetailTile = styled.div`
+    width: 100%;
     background: ${({ theme }) => theme.colors.tileBackground};
     padding: 40px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
@@ -8,10 +9,10 @@ export const StyledMovieDetailTile = styled.div`
     grid-template-columns: auto 1fr;
     grid-gap: 40px;
     border-radius: 5px;
-    max-width: 100%;
+    margin: 50px 0 64px;
     
-    
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0px;
     width: 100%;
     display: grid;
@@ -90,10 +91,10 @@ export const StyledDetails = styled.span`
 `;
 
 export const StyledPoster = styled.img`
+    flex: none;
     width: 312px;
     left: 40px;
     top: 40px;
-    margin: 0px 40px;
     margin-bottom: 8px;
     border-radius: 5px;
 `;
