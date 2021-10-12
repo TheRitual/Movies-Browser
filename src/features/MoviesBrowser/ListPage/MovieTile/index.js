@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import Vote from "../../../../common/Vote";
 import { toMovie } from "../../../../core/config/routes";
 import { selectGenres } from "../../moviesBrowserSlice";
+import MovieDummy from "../../../../assets/images/movie_dummy.svg";
 import { 
     StyledMovieTile,
     StyledLink,
@@ -14,12 +15,13 @@ import {
 const MovieTile = ({ movie }) => {
     const genres = useSelector(selectGenres);
     const getGenre = id => genres.find(genre => genre.id === id).name;
+    const imgSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : MovieDummy;
     return (
         <StyledMovieTile>
             <StyledLink
             to={toMovie(movie)}>
                 <StyledPoster
-                    alt={movie.title} src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                    alt={movie.title} src={imgSrc} />
                     {movie.title}
             </StyledLink>
             
