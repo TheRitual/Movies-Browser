@@ -6,6 +6,9 @@ import {
     StyledMovieTile,
     StyledLink,
     StyledPoster,
+    Tags,
+    Tag,
+    ExtraData,
  } from "./styled";
 
 const MovieTile = ({ movie }) => {
@@ -20,14 +23,14 @@ const MovieTile = ({ movie }) => {
                     {movie.title}
             </StyledLink>
             
-            <p> Release data: {movie.release_date} </p>
-            <p> Genres:&nbsp;
+            <ExtraData> {new Date(movie.release_date).getFullYear()} </ExtraData>
+            <Tags>
                 {movie.genre_ids && movie.genre_ids.map(genre => (
-                        <span key={genre}>
-                            [{getGenre(genre)}]
-                        </span>
+                        <Tag key={genre}>
+                            {getGenre(genre)}
+                        </Tag>
                 ))}
-            </p>
+            </Tags>
             
             <Vote average={movie.vote_average} count={movie.vote_count}  />
         </StyledMovieTile>
