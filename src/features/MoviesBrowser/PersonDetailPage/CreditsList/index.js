@@ -14,7 +14,7 @@ const CreditsList = () => {
             <SectionTitle>Cast</SectionTitle>
             <StyledMoviesList>
                 {cast.map(castItem => (
-                    <MovieTile movie={castItem}> </MovieTile>
+                    <MovieTile movie={castItem} showCharacter={true}> </MovieTile>
                 ))}
             </StyledMoviesList>
         </>}
@@ -22,7 +22,7 @@ const CreditsList = () => {
             <SectionTitle>Crew</SectionTitle>
             <StyledMoviesList>
                 {crew.map(crewItem => (
-                    <MovieTile movie={crewItem}> </MovieTile>
+                    <MovieTile movie={crewItem} showJob={true}> </MovieTile>
                 ))}
             </StyledMoviesList>
         </>}

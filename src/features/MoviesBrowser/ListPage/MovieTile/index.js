@@ -12,7 +12,7 @@ import {
     ExtraData,
  } from "./styled";
 
-const MovieTile = ({ movie }) => {
+const MovieTile = ({ movie, showCharacter, showJob }) => {
     const genres = useSelector(selectGenres);
     const getGenre = id => genres.find(genre => genre.id === id).name;
     const imgSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : MovieDummy;
@@ -24,8 +24,13 @@ const MovieTile = ({ movie }) => {
                     alt={movie.title} src={imgSrc} />
                     {movie.title}
             </StyledLink>
-            
-            <ExtraData> {new Date(movie.release_date).getFullYear()} </ExtraData>
+
+            <ExtraData>
+                {showCharacter && movie.character}
+                {showJob && movie.job}&nbsp;
+                ({new Date(movie.release_date).getFullYear()})
+            </ExtraData>
+
             <Tags>
                 {movie.genre_ids && movie.genre_ids.map(genre => (
                         <Tag key={genre}>
