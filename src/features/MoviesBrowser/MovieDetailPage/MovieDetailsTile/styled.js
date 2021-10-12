@@ -84,7 +84,6 @@ export const Description = styled.p`
 export const Content = styled.div``;
 
 export const StyledDetails = styled.span`
-    margin-left: 12px;
     font-size: 18px;
     font-weight: normal;
     color: ${({ theme }) => theme.colors.linkHeader};
