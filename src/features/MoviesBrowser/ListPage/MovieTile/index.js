@@ -1,50 +1,40 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import Vote from "../../../../common/Vote";
 import { toMovie } from "../../../../core/config/routes";
 import { selectGenres } from "../../moviesBrowserSlice";
+import MovieDummy from "../../../../assets/images/movie_dummy.svg";
 import { 
     StyledMovieTile,
     StyledLink,
     StyledPoster,
-    StyledReview,
-    ScoreScale,
-    VotedScale,
+    Tags,
+    Tag,
+    ExtraData,
  } from "./styled";
 
 const MovieTile = ({ movie }) => {
     const genres = useSelector(selectGenres);
     const getGenre = id => genres.find(genre => genre.id === id).name;
+    const imgSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : MovieDummy;
     return (
         <StyledMovieTile>
             <StyledLink
             to={toMovie(movie)}>
                 <StyledPoster
-                    alt={movie.title} src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`} />
+                    alt={movie.title} src={imgSrc} />
                     {movie.title}
             </StyledLink>
             
-            <p> Release data: {movie.release_date} </p>
-            <p> Genres:&nbsp;
+            <ExtraData> {new Date(movie.release_date).getFullYear()} </ExtraData>
+            <Tags>
                 {movie.genre_ids && movie.genre_ids.map(genre => (
-                        <span key={genre}>
-                            [{getGenre(genre)}]
-                        </span>
+                        <Tag key={genre}>
+                            {getGenre(genre)}
+                        </Tag>
                 ))}
-            </p>
-
-            <StyledReview>
-                {/* <StyledStar
-                src={starIcon}
-                alt="star"
-                /> */}
-            <ScoreScale>
-            {movie.vote_average}&nbsp;
-            </ScoreScale>
-            <VotedScale>
-            {movie.vote_count} 
-            </VotedScale>
-            </StyledReview>
+            </Tags>
+            
+            <Vote average={movie.vote_average} count={movie.vote_count}  />
         </StyledMovieTile>
     );
 }
