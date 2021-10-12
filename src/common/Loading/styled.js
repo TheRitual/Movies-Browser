@@ -5,11 +5,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%;
     margin: 0 auto;
-    text-align: center;
-    padding: 16px;
-    background-color: transparent;
 `;
 
 export const Header = styled.h1`
@@ -23,6 +19,25 @@ export const Header = styled.h1`
 `;
 
 export const LoadingIcon = styled(Loading)`
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    user-select: none;
+    
+    @keyframes rotate {
+        from{
+        transform: rotate(0deg);
+        };
+        to{
+        transform: rotate(360deg);
+        };
+    };
     max-width: 91px;
     height: 91px;
+
+    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        width: 35px;
+        height: 35px;
+    };
 `;

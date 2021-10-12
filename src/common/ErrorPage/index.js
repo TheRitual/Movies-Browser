@@ -1,7 +1,15 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { toMoviesList } from "../../core/config/routes";
+import { setError } from "../../features/moviesBrowser/moviesBrowserSlice";
 import { Wrapper, ErrorImage, Title, Subtitle, StyledLink } from "./styled";
 
 const ErrorPage = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setError(false));
+    // eslint-disable-next-line
+  }, []);
   return (
     <Wrapper>
       <ErrorImage />
