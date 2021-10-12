@@ -85,38 +85,3 @@ export const StyledReview = styled.div`
     align-items: center;
 }
 `;
-
-export const StyledStar = styled.img`
-    width: 20px;
-    object-fit: contain;
-    margin-top: -2px;
-    margin-right: 12px;
-    margin-bottom: 16px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: 10%;
-    };
-`;
-
-export const VotedScale = styled.p`
-    color: ${({ theme }) => theme.colors.subtitleColor};
-    font-size: 16px;
-    line-height: 1.5;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: 13px;
-        line-height: 1.3;
-    }
-`;
-
-export const ScoreScale = styled.p`
-    color: ${({ theme }) => theme.colors.linkHeader};
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.5;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: 13px;
-        line-height: 1.3;
-    }
-`;

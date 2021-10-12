@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import Vote from "../../../../common/Vote";
 import { toMovie } from "../../../../core/config/routes";
 import { selectGenres } from "../../moviesBrowserSlice";
@@ -7,9 +6,6 @@ import {
     StyledMovieTile,
     StyledLink,
     StyledPoster,
-    StyledReview,
-    ScoreScale,
-    VotedScale,
  } from "./styled";
 
 const MovieTile = ({ movie }) => {
@@ -32,19 +28,8 @@ const MovieTile = ({ movie }) => {
                         </span>
                 ))}
             </p>
-
-            <StyledReview>
-                {/* <StyledStar
-                src={starIcon}
-                alt="star"
-                /> */}
-            <ScoreScale>
-            {movie.vote_average}&nbsp;
-            </ScoreScale>
-            <VotedScale>
-            {movie.vote_count} 
-            </VotedScale>
-            </StyledReview>
+            
+            <Vote average={movie.vote_average} count={movie.vote_count}  />
         </StyledMovieTile>
     );
 }
