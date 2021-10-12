@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const PersonDetailTile = styled.div`
     width: 1368px;
-    height: 644px;
     background-color: ${({ theme }) => theme.colors.tileBackground};
     padding: 40px;
     display: flex;
@@ -58,7 +57,6 @@ export const StyledPoster = styled.img`
     flex-grow: 0;
     border-radius: 5px;
     width: 399px;
-    height: 564px;
     left: 40px;
     top: 40px;
 
