@@ -1,8 +1,14 @@
-const Vote = ({score, count}) => {
+import { VoteWrapper, StarIcon, Score, RatingScale, Count} from "./styled";
+import smallStar from "./smallStar.svg";
+
+const Vote = ({ score, count }) => {
     return (
-        <>
-            [StarImage] {score} [{count} people voted]
-        </>
+        <VoteWrapper>
+            <StarIcon src={smallStar} />
+            <Score>{score}</Score>
+            <RatingScale>/10</RatingScale>
+            <Count>{count} votes</Count>
+        </VoteWrapper>
     );
 }
 
