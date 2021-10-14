@@ -14,7 +14,7 @@ const pallette = {
 export const theme = {
     colors: {
         bodyBackground: pallette.mercury,
-        navBackground: pallette.woodsmoke,
+        navBackground: pallette.black,
         navText: pallette.white,
         inputIcon: pallette.waterloo,
         headers: pallette.woodsmoke,
