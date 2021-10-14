@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const PersonDetailTile = styled.div`
-    width: 1368px;
-    height: 644px;
+    width: 100%;
     background-color: ${({ theme }) => theme.colors.tileBackground};
     padding: 40px;
     display: flex;
+    gap: 40px;
     flex-direction: row;
     align-items: flex-start;
-    margin: 50px 0 50px;
+    margin: 50px 0 64px;
 `;
 
 export const PersonName = styled.h1`
@@ -18,8 +18,7 @@ export const PersonName = styled.h1`
     font-weight: 600;
     font-size: 36px;
     line-height: 1.3px;
-    text-align: center;
-    margin: 24px 0px;
+    margin-left: 40px;
 `;
 
 export const Subtitle = styled.h3`
@@ -58,7 +57,6 @@ export const StyledPoster = styled.img`
     flex-grow: 0;
     border-radius: 5px;
     width: 399px;
-    height: 564px;
     left: 40px;
     top: 40px;
 
