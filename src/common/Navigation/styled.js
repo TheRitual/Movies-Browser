@@ -45,7 +45,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledInput = styled.input`
-background: ${({ theme }) => theme.colors.white}; 
+    background: ${({ theme }) => theme.colors.white}; 
     font-size: 16px;
     border-radius: 33px;
     outline: none;
