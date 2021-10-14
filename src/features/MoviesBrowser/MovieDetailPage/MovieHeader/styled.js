@@ -17,7 +17,7 @@ export const WrapperPoster = styled.div`
 `;
 
 export const WrapperContent = styled.div`
-    width: 1280px;
+    width: 1920px;
     height: 745px;
     margin: 0 auto;
     display: flex;
@@ -63,26 +63,50 @@ export const Title = styled.h1`
     line-height: 120%;
     margin-bottom: 24px;
     color: ${({ theme }) => theme.colors.navText};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
 `;
 
 export const Star = styled.img`
    width: 38.12px;
    height: 40px;
+   object-fit: cover;
+
+   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    height: 15px;
+  }
 `;
 
 export const Note = styled.span`
-     margin: 0 7px 16px 8px;
      font-weight: 500;
      font-size: 30px;
      line-height: 130%;
+     margin-left: 8px;
+     margin-right: 8px;
      color: ${({ theme }) => theme.colors.navText};
+
+     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        margin-left: 4px;
+        margin-right: 4px;
+        font-size: 14px;
+  }
 `;
 
 export const Votes = styled.p`
     margin-top: 16px;
     font-size: 16px;
+    margin-bottom: 56px;
     line-height: 120%;
     color: ${({ theme }) => theme.colors.navText};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 10px;
+    margin-top: 6px;
+    margin-left: 5px;
+  }
 `;
 
 export const Scale = styled.span`
@@ -90,5 +114,10 @@ export const Scale = styled.span`
      font-size: 16px;
      line-height: 120%;
      color: ${({ theme }) => theme.colors.navText};
- `;
 
+     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 10px;
+        margin-top: 6px;
+        margin-left: 5px;
+  }
+ `;
