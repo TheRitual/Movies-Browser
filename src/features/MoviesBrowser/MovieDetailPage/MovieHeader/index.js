@@ -10,7 +10,7 @@ import {
     Scale,
     Votes,
     Title,
-    Header,
+    Text,
 } from "./styled";
 import star from "./Star.svg";
 
@@ -28,13 +28,13 @@ const MovieHeader = () => {
                 alt={movie.backdrop_path}
                 style={sectionStyle}>
                 <WrapperContent>
-                    <Header>
+                    <Text>
                         <Title> {movie.title} </Title>
                         <Star src={star} />
                         <Note>{rating}</Note>
                         <Scale>/10</Scale>
                         <Votes>{votesNumber} votes</Votes>
-                    </Header>
+                    </Text>
                 </WrapperContent>
             </WrapperPoster>
         </Wrapper>

@@ -2,23 +2,26 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     max-width: 1920px;
-    max-height: 770px;
+    height: 770px;
+
     @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     };
 `;
 
 export const WrapperPoster = styled.div`
-    width: 1280px;
     height: 770px;
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    
+    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    };
 `;
 
 export const WrapperContent = styled.div`
-    width: 1920px;
-    height: 745px;
+    width: auto;
+    height: 770px;
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
@@ -49,11 +52,15 @@ export const WrapperContent = styled.div`
                 rgba(0, 0, 0, 0.106473), 
                 rgba(0, 0, 0, 0.235359), 
                 rgba(0, 0, 0, 0.492821), 
-                rgba(0, 0, 0, 0.740286), #000000 92%)
+                rgba(0, 0, 0, 0.740286), #000000 92%);
+
+    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    };
 `;
 
 export const Text = styled.article`
-    margin: 0 0 56px 276px;
+    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    };
 `;
 
 export const Title = styled.h1`
@@ -67,7 +74,7 @@ export const Title = styled.h1`
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-size: 22px;
         margin-bottom: 4px;
-    }
+    };
 `;
 
 export const Star = styled.img`
@@ -77,7 +84,7 @@ export const Star = styled.img`
 
    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     height: 15px;
-  }
+  };
 `;
 
 export const Note = styled.span`
@@ -92,7 +99,7 @@ export const Note = styled.span`
         margin-left: 4px;
         margin-right: 4px;
         font-size: 14px;
-  }
+  };
 `;
 
 export const Votes = styled.p`
@@ -119,5 +126,5 @@ export const Scale = styled.span`
         font-size: 10px;
         margin-top: 6px;
         margin-left: 5px;
-  }
- `;
+    };
+`;
