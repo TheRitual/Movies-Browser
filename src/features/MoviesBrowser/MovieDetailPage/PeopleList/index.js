@@ -13,7 +13,7 @@ const PeopleList = () => {
         {isCastEmpty || <>
             <SectionTitle>Cast</SectionTitle>
             <StyledPeopleList>
-                {cast.map(castItem => (
+                {Array.isArray(cast) && cast.map(castItem => (
                     <PersonTile person={castItem} showCharacter={true} />
                 ))}
             </StyledPeopleList>
@@ -21,7 +21,7 @@ const PeopleList = () => {
         {isCrewEmpty || <>
             <SectionTitle>Crew</SectionTitle>
             <StyledPeopleList>
-                {crew.map(crewItem => (
+                {Array.isArray(crew) && crew.map(crewItem => (
                     <PersonTile person={crewItem} showJob={true} />
                 ))}
             </StyledPeopleList>

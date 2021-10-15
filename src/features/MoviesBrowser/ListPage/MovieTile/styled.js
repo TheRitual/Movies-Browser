@@ -33,19 +33,24 @@ export const Subtitle = styled.h3`
 
 export const Content = styled.div``;
 
-export const Tags = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding-left: 0;
-    margin: 16px -8px;
+export const ExtraData = styled.p`
+    font-size: 16px;
+    line-height: 1.5;
+    color: ${({ theme }) => theme.colors.subtitleColor};
 `;
 
-export const Tag = styled.li`
-    background: ${({theme}) => theme.color.mystic};
+export const Tags = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin: 8px 0 40px;
+    justify-content: flex-start;
+    gap: 8px;
+`;
+
+export const Tag = styled.span`
+    background: ${({theme}) => theme.colors.tagBackground};
     padding: 8px 16px;
     font-size: 14px;
-    margin: 8px;
     border-radius: 5px;
     text-align: center;
     width: fit-content;
@@ -84,39 +89,4 @@ export const StyledReview = styled.div`
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     align-items: center;
 }
-`;
-
-export const StyledStar = styled.img`
-    width: 20px;
-    object-fit: contain;
-    margin-top: -2px;
-    margin-right: 12px;
-    margin-bottom: 16px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        width: 10%;
-    };
-`;
-
-export const VotedScale = styled.p`
-    color: ${({ theme }) => theme.colors.subtitleColor};
-    font-size: 16px;
-    line-height: 1.5;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: 13px;
-        line-height: 1.3;
-    }
-`;
-
-export const ScoreScale = styled.p`
-    color: ${({ theme }) => theme.colors.linkHeader};
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.5;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: 13px;
-        line-height: 1.3;
-    }
 `;
