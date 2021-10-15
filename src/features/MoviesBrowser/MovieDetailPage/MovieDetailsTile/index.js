@@ -25,16 +25,16 @@ const MovieDetailsTile = () => {
                 alt={movie.title} />
 
             <Content>
-                <Title />
-                <h1>{movie.title}</h1>
-                <Subtitle />
-                {/* subtitle */}
-
+                <Title>
+                    {movie.title}
+                </Title>
+                {movie.release_date &&
+                    <Subtitle>{movie.release_date.toString().substring(0, 4)}
+                    </Subtitle>}
                 <Subtekst>
                     Release data:&nbsp;
                     <StyledDetails>{movie.release_date}</StyledDetails>
                 </Subtekst>
-
                 <Subtekst>
                     Production:&nbsp;
                     <StyledDetails>{movie.production_countries && movie.production_countries.map(country => (
