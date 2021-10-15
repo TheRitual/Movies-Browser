@@ -14,7 +14,7 @@ const pallette = {
 export const theme = {
     colors: {
         bodyBackground: pallette.mercury,
-        navBackground: pallette.woodsmoke,
+        navBackground: pallette.black,
         navText: pallette.white,
         inputIcon: pallette.waterloo,
         headers: pallette.woodsmoke,
@@ -34,6 +34,7 @@ export const theme = {
         paginatorArrow: pallette.scienceBlue,
         paginatorDisabledButton: pallette.mystic,
         paginatorDisabledArrow: pallette.waterloo,
+        headerBackground: pallette.black,
         listTitles: pallette.black,
     },
     breakpoints: {
