@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     width: 100vw;
     max-width: 100%;
-    position: relative;
+    background-color: ${({ theme }) => theme.colors.navBackground};
 `;
 
 export const WrapperPoster = styled.div`
@@ -13,6 +13,8 @@ export const WrapperPoster = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    background-image: url('${({ image }) => image}');
+    box-shadow: inset 0 0 3vw 3vw ${({ theme }) => theme.colors.navBackground};
 `;
 
 export const WrapperContent = styled.div`
@@ -26,30 +28,7 @@ export const WrapperContent = styled.div`
     flex-direction: column;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    background: linear-gradient(270deg, #000000, 
-                rgba(0, 0, 0, 0.873268), 
-                rgba(0, 0, 0, 0.720529), 
-                rgba(0, 0, 0, 0.294577), 
-                rgba(0, 0, 0, 0.159921), 
-                rgba(0, 0, 0, 0) 25.68%), 
-                linear-gradient(180deg, #000000, 
-                rgba(0, 0, 0, 0.984059),
-                rgba(0, 0, 0, 0.967732),
-                rgba(0, 0, 0, 0.865569),
-                rgba(0, 0, 0, 0.230315), 
-                rgba(0, 0, 0, 0) 26.64%), 
-                linear-gradient(90deg, #000000, 
-                rgba(0, 0, 0, 0.689555),
-                rgba(0, 0, 0, 0.439033),
-                rgba(0, 0, 0, 0.20628),
-                rgba(0, 0, 0, 0) 24.22%), 
-                linear-gradient(180deg, 
-                rgba(0, 0, 0, 0) 58.48%, 
-                rgba(0, 0, 0, 0.106473), 
-                rgba(0, 0, 0, 0.235359), 
-                rgba(0, 0, 0, 0.492821), 
-                rgba(0, 0, 0, 0.740286), #000000 92%);
+    background-size: contain; 
 `;
 
 export const Text = styled.article`

@@ -11,19 +11,15 @@ import {
 
 const MovieHeader = () => {
     const movie = useSelector(selectDetailItem);
-    const sectionStyle = {
-        backgroundImage: `url("https://image.tmdb.org/t/p/w1280${movie.backdrop_path}")`
-    };
+    const imgUrl = `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`;
 
     return (
         <Wrapper>
-            <WrapperPoster
-                alt={movie.title}
-                style={sectionStyle}>
+            <WrapperPoster image={imgUrl}>
                 <WrapperContent>
                     <Text>
                         <Title> {movie.title} </Title>
-                        <Vote count={movie.vote_count} score={movie.vote_average} type="header"/>
+                        <Vote count={movie.vote_count} score={movie.vote_average} type="header" />
                     </Text>
                 </WrapperContent>
             </WrapperPoster>
