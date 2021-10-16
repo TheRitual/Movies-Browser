@@ -16,7 +16,7 @@ export const StyledNavWrapper = styled.div`
     justify-content: space-between;
     max-width: ${({ theme }) => theme.breakpoints.container};
     margin: 0 auto;
-    padding: 23px 0;
+    padding: 23px 16px;
     @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
