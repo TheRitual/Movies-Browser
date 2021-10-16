@@ -6,13 +6,14 @@ import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/us
 import { searchQueryParamName, pageQueryParamName, typeQueryParamName } from "../../features/moviesBrowser/queryParamNames";
 import {
     StyledNavigation,
-    NavigationList,
-    NavigationListItem,
     StyledTitle,
     StyledNavLink,
     StyledNavWrapper,
     StyledInput,
     StyledCameraIcon,
+    LogoWrapper,
+    ButtonsWrapper,
+    SearchWrapper,
 } from "./styled";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -53,18 +54,17 @@ const Navigation = () => {
     return (
         <StyledNavigation>
             <StyledNavWrapper>
-                <StyledCameraIcon src={cameraIcon} />
-
-                <Link to="/"><StyledTitle> Movies Browser </StyledTitle></Link>
-                <NavigationList>
-                    <NavigationListItem>
-                        <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>
-                    </NavigationListItem>
-                    <NavigationListItem>
-                        <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
-                    </NavigationListItem>
-                </NavigationList>
-                <StyledInput value={query || ""} onChange={onSearchChange} placeholder={`Search for ${type}`} />
+                <LogoWrapper>
+                    <StyledCameraIcon src={cameraIcon} />
+                    <Link to="/"><StyledTitle> Movies Browser </StyledTitle></Link>
+                </LogoWrapper>
+                <ButtonsWrapper>
+                    <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>
+                    <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
+                </ButtonsWrapper>
+                <SearchWrapper>
+                    <StyledInput value={query || ""} onChange={onSearchChange} placeholder={`Search for ${type}`} />
+                </SearchWrapper>
             </StyledNavWrapper>
         </StyledNavigation>
     )

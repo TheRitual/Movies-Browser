@@ -17,8 +17,6 @@ export const GlobalStyles = createGlobalStyle`
         overflow-y: scroll;
         background-color: ${({ theme }) => theme.colors.bodyBackground};
         font-family: 'Poppins', sans-serif;
-        background-repeat: repeat-x;
-        background-position-y: 75px;
     }
 
     a {

@@ -40,6 +40,7 @@ export const theme = {
         voteListScore: pallette.woodsmoke,
         voteHeaderScore: pallette.white,
         tileShadow: pallette.heather,
+        searchBarText: pallette.waterloo,
     },
     breakpoints: {
         mobile: "320px",
