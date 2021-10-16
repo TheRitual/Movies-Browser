@@ -12,9 +12,9 @@ export const WrapperPoster = styled.div`
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-image: url('${({ image }) => image}');
-    box-shadow: inset 0 0 3vw 3vw ${({ theme }) => theme.colors.navBackground};
+    box-shadow: inset 0 0 2vw 2vw ${({ theme }) => theme.colors.navBackground};
 `;
 
 export const WrapperContent = styled.div`

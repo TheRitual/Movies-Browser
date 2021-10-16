@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import α from "color-alpha";
 
 export const StyledMovieTile = styled.div`
     display: grid;
     background: ${({ theme }) => theme.colors.tileBackground};
     padding: 16px;
-    box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+    box-shadow: 0px 4px 12px ${({ theme }) => α(theme.colors.tileShadow, 0.5)};
     border-radius: 5px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -48,7 +49,7 @@ export const Tags = styled.div`
 `;
 
 export const Tag = styled.span`
-    background: ${({theme}) => theme.colors.tagBackground};
+    background: ${({ theme }) => theme.colors.tagBackground};
     padding: 8px 16px;
     font-size: 14px;
     border-radius: 5px;

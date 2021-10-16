@@ -9,6 +9,7 @@ const pallette = {
     stormGrey: "#74788B",
     mineShaft: "#333333",
     pattensBlue: "#D6E4FF",
+    heather: "#BAC7D5",
 }
 
 export const theme = {
@@ -38,6 +39,7 @@ export const theme = {
         listTitles: pallette.black,
         voteListScore: pallette.woodsmoke,
         voteHeaderScore: pallette.white,
+        tileShadow: pallette.heather,
     },
     breakpoints: {
         mobile: "320px",

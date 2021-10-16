@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import α from "color-alpha";
 
 export const StyledPersonTile = styled.div`
     background-color: ${({ theme }) => theme.colors.tileBackground};
@@ -9,6 +9,7 @@ export const StyledPersonTile = styled.div`
     align-items: center; 
     padding: 16px;
     width: 100%;
+    box-shadow: 0px 4px 12px ${({ theme }) => α(theme.colors.tileShadow, 0.5)};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
       grid-template-columns: 1fr;
