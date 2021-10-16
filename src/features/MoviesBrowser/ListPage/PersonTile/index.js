@@ -1,6 +1,6 @@
 
 import { toPerson } from "../../../../core/config/routes";
-import { StyledPersonTile, StyledLink, StyledPoster, PersonDetails } from "./styled";
+import { StyledPersonTile, StyledLink, StyledProfile, PersonDetails } from "./styled";
 import PersonDummy from "../../../../assets/images/person_dummy.svg";
 
 
@@ -11,7 +11,7 @@ const PersonTile = ({ person, showJob, showCharacter }) => {
         <StyledPersonTile>
             <StyledLink
             to={toPerson(person)}>
-            <StyledPoster
+            <StyledProfile
                 alt={person.name}
                 src={imgSrc}
                 />
