@@ -15,6 +15,7 @@ export const WrapperPoster = styled.div`
     background-size: cover;
     background-image: url('${({ image }) => image}');
     box-shadow: inset 0 0 2vw 2vw ${({ theme }) => theme.colors.navBackground};
+    background-position: top;
 `;
 
 export const WrapperContent = styled.div`
