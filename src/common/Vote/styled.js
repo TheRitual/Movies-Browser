@@ -15,7 +15,7 @@ export const VoteWrapper = styled.div`
     column-gap: 12px;
     row-gap: 17px;
     justify-content: flex-start;
-    align-items: center;
+    align-items: ${({ type }) => type === "details" ? "baseline" : "center"};
     margin: 0;
 `;
 
@@ -27,7 +27,11 @@ export const Icon = styled.img`
 export const Score = styled.span`
     grid-area: score;
     display: inline-block;
-    font-size: ${({ type }) => type === "header" ? "30px" : "16px"};
+    font-size: ${({ type }) => {
+        if(type === "header") {return "30px"}
+        if(type === "details") {return "22px"}
+        return "16px";
+    }};
     color: ${({ theme, type }) => type === "header" ? theme.colors.voteHeaderScore : theme.colors.voteListScore};
     font-weight: 600;
     line-height: 1.5;
