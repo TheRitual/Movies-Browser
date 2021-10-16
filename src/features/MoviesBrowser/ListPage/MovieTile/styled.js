@@ -19,9 +19,11 @@ export const StyledMovieTile = styled.div`
     box-shadow: 0px 4px 12px ${({ theme }) => α(theme.colors.tileShadow, 0.5)};
     border-radius: 5px;
     gap: 8px; 
+    height: 100%;
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         align-items: flex-start;
         flex-direction: row;
+        height: initial;
     }
 `;
 
@@ -38,15 +40,18 @@ export const DataWrapper = styled.div`
     flex-flow: column nowrap;
     width: 100%;
     gap: 8px;
+    justify-content: space-between;
+    height: 100%;
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         align-items: flex-start;
         width: 50%;
+        height: initial;
     }
 `;
 
 export const Title = styled.header`
     font-weight: 600;
-    font-size: 36px;
+    font-size: 22px;
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         font-weight: 500;
         font-size: 16px;
@@ -70,7 +75,9 @@ export const Tags = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 8px 8px;
+    flex-grow: 2;
 `;
 
 export const Tag = styled.span`
