@@ -40,7 +40,6 @@ export const StyledProfile = styled.img`
     width: 100%;
 `;
 
-
 export const PersonDetails = styled.p`
     font-style: normal;
     font-weight: normal;

@@ -13,6 +13,7 @@ import {
     Description,
     Tags,
     Tag,
+    DetailsWrapper,
 } from "./styled";
 
 const MovieDetailsTile = () => {
@@ -26,25 +27,26 @@ const MovieDetailsTile = () => {
                     {movie.title}
                 </Title>
                 {movie.release_date && <Subtitle>{movie.release_date.toString().substring(0, 4)} </Subtitle>}
-                {movie.release_date &&
-                    <Subtext>
-                        Release data:&nbsp;
-                        <StyledDetails>
-                            {movie.release_date.toString().substring(8, 10)}.{movie.release_date.toString().substring(5, 7)}.{movie.release_date.toString().substring(0, 4)}
-                        </StyledDetails>
-                    </Subtext>
-                }
-                {movie.production_countries &&
-                    <Subtext>
-                        Production:&nbsp;
-                        <StyledDetails>{movie.production_countries && movie.production_countries.map(country => (
-                            <span key={country.iso_3166_1}>
-                                {country.name} ({country.iso_3166_1}),
-                            </span>
-                        ))}
-                        </StyledDetails>
-                    </Subtext>}
-
+                <DetailsWrapper>
+                    {movie.release_date &&
+                        <Subtext>
+                            Release data:&nbsp;
+                            <StyledDetails>
+                                {movie.release_date.toString().substring(8, 10)}.{movie.release_date.toString().substring(5, 7)}.{movie.release_date.toString().substring(0, 4)}
+                            </StyledDetails>
+                        </Subtext>
+                    }
+                    {movie.production_countries &&
+                        <Subtext>
+                            Production:&nbsp;
+                            <StyledDetails>{movie.production_countries && movie.production_countries.map(country => (
+                                <span key={country.iso_3166_1}>
+                                    {country.name} ({country.iso_3166_1}),
+                                </span>
+                            ))}
+                            </StyledDetails>
+                        </Subtext>}
+                </DetailsWrapper>
                 <Tags>
                     {movie.genres && movie.genres.map(genre => (
                         <Tag>

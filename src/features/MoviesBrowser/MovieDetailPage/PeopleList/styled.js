@@ -7,14 +7,17 @@ export const StyledPeopleList = styled.div`
     padding: 0;
     grid-template-columns: repeat(6, 1fr);
     gap: 24px;
-    justify-items: center;
+    justify-items: stretch;
     align-items: stretch;
     @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);  
     }
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        grid-template-columns: 1fr;
-    }    
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        grid-template-columns: repeat(2, 1fr);
+    } 
 `;
 
 export const SectionTitle = styled.h4`

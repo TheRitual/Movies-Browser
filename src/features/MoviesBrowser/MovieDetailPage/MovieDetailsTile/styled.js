@@ -23,7 +23,6 @@ export const StyledMovieDetailTile = styled.div`
 `;
 
 export const Title = styled.h1`
-    font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -99,3 +98,8 @@ export const StyledPoster = styled.img`
     border-radius: 5px;
 `;
 
+export const DetailsWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+`;
