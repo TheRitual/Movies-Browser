@@ -16,6 +16,7 @@ const MovieTile = ({ movie, showCharacter, showJob }) => {
     const genres = useSelector(selectGenres);
     const getGenre = id => genres.find(genre => genre.id === id).name;
     const imgSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : MovieDummy;
+    const showBracelets = (showJob && movie.job !== "")  || (showCharacter && movie.character !== "");
     return (
         <StyledMovieTile>
             <StyledLink
@@ -28,9 +29,9 @@ const MovieTile = ({ movie, showCharacter, showJob }) => {
             <ExtraData>
                 {showCharacter && movie.character}
                 {showJob && movie.job}
-                {(showJob || showCharacter) && " ("}
+                {showBracelets && " ("}
                 {new Date(movie.release_date).getFullYear()}
-                {(showJob || showCharacter) && ")"}
+                {showBracelets && ")"}
             </ExtraData>
 
             <Tags>

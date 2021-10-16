@@ -14,7 +14,7 @@ const CreditsList = () => {
             <SectionTitle>Cast</SectionTitle>
             <StyledMoviesList>
                 {Array.isArray(cast) && cast.map(castItem => (
-                    <MovieTile movie={castItem} showCharacter={true}> </MovieTile>
+                    <MovieTile movie={castItem} key={castItem.id} showCharacter={true} />
                 ))}
             </StyledMoviesList>
         </>}
@@ -22,14 +22,11 @@ const CreditsList = () => {
             <SectionTitle>Crew</SectionTitle>
             <StyledMoviesList>
                 {Array.isArray(crew) && crew.map(crewItem => (
-                    <MovieTile movie={crewItem} showJob={true}> </MovieTile>
+                    <MovieTile movie={crewItem} key={crewItem.id} showJob={true} />
                 ))}
             </StyledMoviesList>
         </>}
     </>);
 }
-
-
-
 
 export default CreditsList;

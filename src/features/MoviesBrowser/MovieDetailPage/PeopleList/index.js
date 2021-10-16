@@ -14,7 +14,7 @@ const PeopleList = () => {
             <SectionTitle>Cast</SectionTitle>
             <StyledPeopleList>
                 {Array.isArray(cast) && cast.map(castItem => (
-                    <PersonTile person={castItem} id={castItem.id} showCharacter={true} />
+                    <PersonTile person={castItem} key={castItem.key} showCharacter={true} />
                 ))}
             </StyledPeopleList>
         </>}
@@ -22,7 +22,7 @@ const PeopleList = () => {
             <SectionTitle>Crew</SectionTitle>
             <StyledPeopleList>
                 {Array.isArray(crew) && crew.map(crewItem => (
-                    <PersonTile person={crewItem} id={crewItem.id} showJob={true} />
+                    <PersonTile person={crewItem} key={crewItem.key} showJob={true} />
                 ))}
             </StyledPeopleList>
         </>}
