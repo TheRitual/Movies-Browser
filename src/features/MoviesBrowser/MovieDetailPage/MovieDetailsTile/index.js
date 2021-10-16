@@ -55,7 +55,7 @@ const MovieDetailsTile = () => {
                     ))}
                 </Tags>
 
-                <Vote score={movie.vote_average} count={movie.vote_count} />
+                <Vote score={movie.vote_average} count={movie.vote_count} type="details" />
 
                 <Description />
                 {movie.overview}

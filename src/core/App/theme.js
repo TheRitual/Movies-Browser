@@ -36,6 +36,8 @@ export const theme = {
         paginatorDisabledArrow: pallette.waterloo,
         headerBackground: pallette.black,
         listTitles: pallette.black,
+        voteListScore: pallette.woodsmoke,
+        voteHeaderScore: pallette.white,
     },
     breakpoints: {
         mobile: "320px",

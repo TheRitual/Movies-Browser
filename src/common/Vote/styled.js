@@ -2,41 +2,52 @@ import styled from "styled-components";
 
 export const VoteWrapper = styled.div`
     display: grid;
-    grid-template-columns: auto auto auto 1fr;
-    justify-content: start;
-    align-items: baseline;
+    grid-template-areas: ${({ type }) => {
+        if (type === "header") {
+            return `"icon score" "count count"`;
+        }
+        if (type === "details") {
+            return `"icon score range count"`;
+        }
+        return `"icon score count"`;
+    }};
+    flex-wrap: nowrap;
+    column-gap: 12px;
+    row-gap: 17px;
+    justify-content: flex-start;
+    align-items: center;
     margin: 0;
 `;
 
-export const StarIcon = styled.img`
-    width: 24px;
-    margin-right: 8px;
+export const Icon = styled.img`
+    grid-area: icon;
+    height: ${({ type }) => type === "header" ? "40px" : "24px"};
 `;
 
-export const Score = styled.p`
-    font-size: 22px;
-    color: ${({ theme }) => theme.colors.linkHeader};
+export const Score = styled.span`
+    grid-area: score;
+    display: inline-block;
+    font-size: ${({ type }) => type === "header" ? "30px" : "16px"};
+    color: ${({ theme, type }) => type === "header" ? theme.colors.voteHeaderScore : theme.colors.voteListScore};
     font-weight: 600;
-    margin: 0 8px 0 0;
+    line-height: 1.5;
 `;
 
-export const RatingScale = styled.p`
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-    color: ${({ theme }) => theme.colors.linkHeader};
+export const Range = styled.span`
+    display: ${({ type }) => type === "header" || type === "details" ? "inline-block" : "none"};
+    font-size: ${({ type }) => type === "header" ? "16px" : "14px"};
+    color: ${({ theme, type }) => type === "header" ? theme.colors.voteHeaderScore : theme.colors.voteListScore};
+    font-weight: normal;
+    line-height: 1.2;
 `;
 
 export const Count = styled.span`
-    padding-left: 4px;
-    font-size: 14px;
-    color: ${({ theme }) => theme.colors.subtitleColor};
-    margin: 0 0 0 4px;
-`;
-
-export const ListVoteWrapper = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto 1fr;
-    align-items: baseline;
-    justify-content: start;
+    grid-area: count;
+    font-size: ${({ type }) => type === "details" ? "14px" : "16px"};
+    color: ${({ theme, type }) => {
+            if (type === "header") { return theme.colors.voteHeaderScore }
+            if (type === "details") { return theme.colors.voteListScore }
+            return theme.colors.subtitleColor
+        }};
+    line-height: ${({ type }) => type === "header" ? "1.2" : "1.5"};
 `;
