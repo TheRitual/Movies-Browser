@@ -7,7 +7,7 @@ export const StyledMovieDetailTile = styled.div`
     padding: 40px;
     box-shadow: 0px 4px 12px ${({ theme }) => α(theme.colors.tileShadow, 0.5)};
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 3fr;
     grid-gap: 40px;
     border-radius: 5px;
     margin: 50px 0 64px;

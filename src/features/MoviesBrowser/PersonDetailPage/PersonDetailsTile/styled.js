@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import α from "color-alpha";
 
 export const PersonDetailTile = styled.div`
     width: 100%;
     background-color: ${({ theme }) => theme.colors.tileBackground};
     padding: 40px;
-    display: flex;
-    gap: 40px;
+    box-shadow: 0px 4px 12px ${({ theme }) => α(theme.colors.tileShadow, 0.5)};
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 40px;
+    border-radius: 5px;
     flex-direction: row;
-    align-items: flex-start;
     margin: 50px 0 64px;
 `;
 
