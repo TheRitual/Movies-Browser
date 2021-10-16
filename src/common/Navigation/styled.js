@@ -8,7 +8,6 @@ export const StyledNavigation = styled.nav`
     background-color: ${({ theme }) => theme.colors.navBackground};
     justify-content: center;
     padding: 13px;
-    height: 94px;
 `;
 
 export const NavigationList = styled.ul`

@@ -16,6 +16,7 @@ import {
 } from "./styled";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     const dispatch = useDispatch();
@@ -53,7 +54,8 @@ const Navigation = () => {
         <StyledNavigation>
             <StyledNavWrapper>
                 <StyledCameraIcon src={cameraIcon} />
-                <StyledTitle> Movies Browser </StyledTitle>
+
+                <Link to="/"><StyledTitle> Movies Browser </StyledTitle></Link>
                 <NavigationList>
                     <NavigationListItem>
                         <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>

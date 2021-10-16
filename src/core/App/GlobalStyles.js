@@ -20,4 +20,8 @@ export const GlobalStyles = createGlobalStyle`
         background-repeat: repeat-x;
         background-position-y: 75px;
     }
+
+    a {
+        text-decoration: none;
+    }
 `;
