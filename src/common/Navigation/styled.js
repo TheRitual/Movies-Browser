@@ -67,9 +67,14 @@ export const ButtonsWrapper = styled.div`
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    margin: 0;
+    margin-left: 80px;
     justify-content: flex-start;
     padding: 0;
+    gap: 20px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        gap: initial;
+        margin-left: 0;
+    }
 `;
 
 

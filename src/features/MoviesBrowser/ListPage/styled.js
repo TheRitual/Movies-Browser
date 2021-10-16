@@ -11,11 +11,12 @@ export const ListHeader = styled.h1`
 export const ListGrid = styled.div`
     display: grid;
     width: 100%;
+    max-width: 100%;
     margin: 0;
     padding: 0;
     grid-template-columns: repeat(${({columns}) => columns || 4}, 1fr);
     gap: 24px;
-    justify-items: center;
+    justify-items: stretch;
     align-items: stretch;
     @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
         grid-template-columns: repeat(2, 1fr);
