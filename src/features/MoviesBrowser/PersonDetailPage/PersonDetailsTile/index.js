@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { selectDetailItem } from "../../moviesBrowserSlice";
+import DummyPerson from "../../../../assets/images/person_dummy.svg";
 import {
     PersonDetailTile,
-    Content,
     PersonName,
     Subtitle,
     StyledDetails,
@@ -12,30 +12,34 @@ import {
 
 const PersonDetailsTile = () => {
     const person = useSelector(selectDetailItem);
+    const imageSrc = person.profile_path ? `https://image.tmdb.org/t/p/w400${person.profile_path}` : DummyPerson;
     return (
-
         <PersonDetailTile>
             <StyledPoster
-                src={`https://image.tmdb.org/t/p/w500${person.profile_path}`}
+                src={imageSrc}
                 alt={person.name} />
-            <Content>
+            <div>
                 <PersonName>
                     {person.name}
                 </PersonName>
-                <Subtitle>
-                    Birthday:
-                    <StyledDetails>{person.birthday}</StyledDetails>
-                </Subtitle>
-
-                <Subtitle>
-                    Place of birth:
-                    <StyledDetails>{person.place_of_birth}</StyledDetails>
-                </Subtitle>
-
-                <Description>
-                    {person.biography}
-                </Description>
-            </Content>
+                {person.birthday &&
+                    <Subtitle>
+                        Birthday:
+                        <StyledDetails>{person.birthday}</StyledDetails>
+                    </Subtitle>
+                }
+                {person.place_of_birth &&
+                    <Subtitle>
+                        Place of birth:
+                        <StyledDetails>{person.place_of_birth}</StyledDetails>
+                    </Subtitle>
+                }
+                {person.biography &&
+                    <Description>
+                        {person.biography}
+                    </Description>
+                }
+            </div>
         </PersonDetailTile>
     );
 }
