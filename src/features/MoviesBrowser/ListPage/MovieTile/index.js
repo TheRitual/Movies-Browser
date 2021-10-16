@@ -27,8 +27,10 @@ const MovieTile = ({ movie, showCharacter, showJob }) => {
 
             <ExtraData>
                 {showCharacter && movie.character}
-                {showJob && movie.job}&nbsp;
-                ({new Date(movie.release_date).getFullYear()})
+                {showJob && movie.job}
+                {(showJob || showCharacter) && " ("}
+                {new Date(movie.release_date).getFullYear()}
+                {(showJob || showCharacter) && ")"}
             </ExtraData>
 
             <Tags>
