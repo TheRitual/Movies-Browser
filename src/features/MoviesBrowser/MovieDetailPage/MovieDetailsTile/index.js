@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
 import Vote from "../../../../common/Vote";
 import { selectDetailItem } from "../../moviesBrowserSlice";
+import DummyMovie from "../../../../assets/images/movie_dummy.svg";
 import {
     StyledMovieDetailTile,
     Title,
     Subtitle,
-    Subtekst,
+    Subtext,
     StyledDetails,
     StyledPoster,
     Content,
@@ -16,34 +17,33 @@ import {
 
 const MovieDetailsTile = () => {
     const movie = useSelector(selectDetailItem);
+    const imageSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : DummyMovie;
     return (
-
         <StyledMovieDetailTile>
-
-            <StyledPoster
-                src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
-                alt={movie.title} />
-
+            <StyledPoster src={imageSrc} alt={movie.title} />
             <Content>
                 <Title>
                     {movie.title}
                 </Title>
+                {movie.release_date && <Subtitle>{movie.release_date.toString().substring(0, 4)} </Subtitle>}
                 {movie.release_date &&
-                    <Subtitle>{movie.release_date.toString().substring(0, 4)}
-                    </Subtitle>}
-                <Subtekst>
-                    Release data:&nbsp;
-                    <StyledDetails>{movie.release_date}</StyledDetails>
-                </Subtekst>
-                <Subtekst>
-                    Production:&nbsp;
-                    <StyledDetails>{movie.production_countries && movie.production_countries.map(country => (
-                        <span key={country.iso_3166_1}>
-                            {country.name} ({country.iso_3166_1}),
-                        </span>
-                    ))}
-                    </StyledDetails>
-                </Subtekst>
+                    <Subtext>
+                        Release data:&nbsp;
+                        <StyledDetails>
+                            {movie.release_date.toString().substring(8, 10)}.{movie.release_date.toString().substring(5, 7)}.{movie.release_date.toString().substring(0, 4)}
+                        </StyledDetails>
+                    </Subtext>
+                }
+                {movie.production_countries &&
+                    <Subtext>
+                        Production:&nbsp;
+                        <StyledDetails>{movie.production_countries && movie.production_countries.map(country => (
+                            <span key={country.iso_3166_1}>
+                                {country.name} ({country.iso_3166_1}),
+                            </span>
+                        ))}
+                        </StyledDetails>
+                    </Subtext>}
 
                 <Tags>
                     {movie.genres && movie.genres.map(genre => (

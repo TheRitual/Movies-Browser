@@ -10,8 +10,7 @@ export const StyledMovieDetailTile = styled.div`
     grid-gap: 40px;
     border-radius: 5px;
     margin: 50px 0 64px;
-    
-        
+     
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin: 0px;
     width: 100%;
@@ -43,7 +42,7 @@ export const Subtitle = styled.h3`
     margin: 24px 0px;
 `;
 
-export const Subtekst = styled.h3`
+export const Subtext = styled.h3`
     color: ${({ theme }) => theme.colors.subText};
     font-size: 18px;
     font-weight: 400;

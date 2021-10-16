@@ -20,20 +20,14 @@ export const WrapperPoster = styled.div`
 export const WrapperContent = styled.div`
     padding: 56px 0;
     width: auto;
-    height: 770px;
+    height: 80vh;
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; 
-`;
-
-export const Text = styled.article`
-    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    };
+    text-shadow:    0px 0px 15px ${({ theme }) => theme.colors.navBackground},
+                    0px 0px 7px ${({ theme }) => theme.colors.navBackground};
 `;
 
 export const Title = styled.h1`
