@@ -18,7 +18,7 @@ const MovieHeader = () => {
     return (
         <Wrapper>
             <WrapperPoster
-                alt={movie.backdrop_path}
+                alt={movie.title}
                 style={sectionStyle}>
                 <WrapperContent>
                     <Text>

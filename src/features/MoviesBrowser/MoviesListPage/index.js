@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ListPage from "../ListPage";
+import Main from "../Main";
 import { setSearchQuery, setType } from "../moviesBrowserSlice";
 
 const MoviesListPage = () => {
@@ -11,7 +12,11 @@ const MoviesListPage = () => {
         dispatch(setSearchQuery(""));
         // eslint-disable-next-line
     }, []);
-    return <ListPage header="Popular Movies" />;
+    return (
+        <Main>
+            <ListPage header="Popular Movies" />
+        </Main>
+    );
 }
 
 

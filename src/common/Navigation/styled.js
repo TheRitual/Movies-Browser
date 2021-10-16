@@ -67,7 +67,7 @@ export const StyledNavWrapper = styled.div`
     width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1368px;
+    max-width: ${({ theme }) => theme.breakpoints.container};
     margin: auto;
 `;
 

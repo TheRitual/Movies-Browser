@@ -4,19 +4,22 @@ import MovieDetailsTile from "../MovieDetailsTile";
 import MovieHeader from "../MovieHeader";
 import PeopleList from "../PeopleList";
 import Loading from "../../../../common/Loading";
+import Main from "../../Main";
 
 const MovieDetails = () => {
     const isLoading = useSelector(selectIsLoading);
     return isLoading ?
-        <>
+        <Main>
             <h1>Loading Movie Details...</h1>
             <Loading />
-        </>
+        </Main>
         :
         <>
             <MovieHeader />
-            <MovieDetailsTile />
-            <PeopleList />
+            <Main>
+                <MovieDetailsTile />
+                <PeopleList />
+            </Main>
         </>
         ;
 }

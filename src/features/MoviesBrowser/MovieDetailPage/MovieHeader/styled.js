@@ -1,25 +1,22 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    max-width: 1920px;
-    height: 770px;
-
-    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    };
+    width: 100vw;
+    max-width: 100%;
+    position: relative;
 `;
 
 export const WrapperPoster = styled.div`
-    height: 770px;
+    width: 100%;
+    max-width: ${({ theme }) => theme.breakpoints.container};
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    
-    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    };
 `;
 
 export const WrapperContent = styled.div`
+    padding: 56px 0;
     width: auto;
     height: 770px;
     margin: 0 auto;
@@ -53,9 +50,6 @@ export const WrapperContent = styled.div`
                 rgba(0, 0, 0, 0.235359), 
                 rgba(0, 0, 0, 0.492821), 
                 rgba(0, 0, 0, 0.740286), #000000 92%);
-
-    @media ( max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    };
 `;
 
 export const Text = styled.article`

@@ -44,5 +44,6 @@ export const theme = {
         mobileLandscape: "568px",
         tablet: "767px",
         tabletLandscape: "1024px",
+        container: "1368px"
     }
 }
