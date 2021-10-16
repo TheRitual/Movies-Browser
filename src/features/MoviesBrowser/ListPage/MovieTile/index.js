@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import Vote from "../../../../common/Vote";
+import { MovieListVote } from "../../../../common/Vote";
 import { toMovie } from "../../../../core/config/routes";
 import { selectGenres } from "../../moviesBrowserSlice";
 import MovieDummy from "../../../../assets/images/movie_dummy.svg";
@@ -39,7 +39,7 @@ const MovieTile = ({ movie, showCharacter, showJob }) => {
                 ))}
             </Tags>
             
-            <Vote average={movie.vote_average} count={movie.vote_count}  />
+            <MovieListVote score={movie.vote_average} count={movie.vote_count}  />
         </StyledMovieTile>
     );
 }

@@ -1,17 +1,25 @@
-const Vote = ({score, count}) => {
-    return (
-        <>
-            [StarImage] {score} [{count} people voted]
-        </>
-    );
-}
+import { VoteWrapper, StarIcon, Score, RatingScale, Count, ListVoteWrapper } from "./styled";
+import star from "../assets/svg/smallStarIcon.svg";
 
-export const LargeVote = ({score, count}) => {
+const Vote = ({ score, count }) => {
     return (
-        <>
-            [StarImage] {score}/10  [{count} people voted]
-        </>
+        <VoteWrapper>
+            <StarIcon src={star} />
+            <Score>{score}</Score>
+            <RatingScale>/10</RatingScale>
+            <Count> {count} votes</Count>
+        </VoteWrapper>
     );
-}
+};
+
+export const MovieListVote = ({ score, count }) => {
+    return (
+        <ListVoteWrapper>
+            <StarIcon src={star} />
+            <Score>{score}</Score>
+            <Count> {count} votes</Count>
+        </ListVoteWrapper>
+    );
+};
 
 export default Vote;

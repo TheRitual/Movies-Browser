@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-
 import { selectDetailItem } from "../../moviesBrowserSlice";
 import {
     Wrapper,

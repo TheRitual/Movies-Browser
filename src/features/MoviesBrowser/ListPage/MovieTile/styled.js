@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledMovieTile = styled.div`
+    display: grid;
     background: ${({ theme }) => theme.colors.tileBackground};
     padding: 16px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    grid-gap: 40px;
     border-radius: 5px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
