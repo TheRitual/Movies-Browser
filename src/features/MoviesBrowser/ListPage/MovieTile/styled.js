@@ -55,6 +55,7 @@ export const Tag = styled.span`
     border-radius: 5px;
     text-align: center;
     width: fit-content;
+    height: fit-content;
 `;
 
 export const Description = styled.p`

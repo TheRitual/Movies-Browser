@@ -32,9 +32,9 @@ export const WrapperContent = styled.div`
 
 export const Title = styled.h1`
     font-style: normal;
-    font-weight: 600;
+    font-weight: 600; 
     font-size: 64px;
-    line-height: 120%;
+    line-height: 1.2;
     margin-bottom: 24px;
     color: ${({ theme }) => theme.colors.navText};
 
