@@ -27,10 +27,10 @@ export const RatingScale = styled.p`
     color: ${({ theme }) => theme.colors.linkHeader};
 `;
 
-export const Count = styled.p`
+export const Count = styled.span`
     padding-left: 4px;
     font-size: 14px;
-    color: ${({ theme }) => theme.colors.linkHeader};
+    color: ${({ theme }) => theme.colors.subtitleColor};
     margin: 0 0 0 4px;
 `;
 
