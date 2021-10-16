@@ -17,7 +17,7 @@ export const StyledNavWrapper = styled.div`
     max-width: ${({ theme }) => theme.breakpoints.container};
     margin: 0 auto;
     padding: 23px 0;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         row-gap: 16px;
@@ -33,7 +33,7 @@ export const LogoWrapper = styled.div`
     align-items: center;
     margin: 0;
     gap: 17px;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         gap: 10px;
     }
 `;
@@ -41,7 +41,7 @@ export const LogoWrapper = styled.div`
 export const StyledCameraIcon = styled.img`
     height: 40px;
     margin: 4px;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         height: 20px;
     }
 `;
@@ -55,7 +55,7 @@ export const StyledTitle = styled.h1`
     letter-spacing: -1.5px;
     text-transform: capitalize;
     margin: 0;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         font-size:13px;
         letter-spacing: -0.5px;
         margin-right: 14px;
@@ -67,16 +67,16 @@ export const ButtonsWrapper = styled.div`
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    margin-left: 80px;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 0;
     gap: 20px;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin-left: 30px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
         gap: initial;
         margin-left: 0;
+        justify-content: flex-end;
     }
 `;
-
 
 export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.navText};
@@ -97,7 +97,7 @@ export const StyledNavLink = styled(NavLink)`
         background-color: ${({ theme }) => theme.colors.navText};
         color: ${({ theme }) => theme.colors.navBackground};
     }
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         justify-content: space-between;
         height: fit-content;
         line-height: 18px;
@@ -131,7 +131,7 @@ export const StyledInput = styled.input`
     color: ${({ theme }) => theme.colors.searchBarText};
     display: block;
     line-height: 1.5;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 13px;
         line-height: 1.3;
         float: initial;

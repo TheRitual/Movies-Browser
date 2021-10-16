@@ -20,7 +20,7 @@ export const StyledMovieTile = styled.div`
     border-radius: 5px;
     gap: 8px; 
     height: 100%;
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         align-items: flex-start;
         flex-direction: row;
         height: initial;
@@ -30,7 +30,7 @@ export const StyledMovieTile = styled.div`
 export const StyledPoster = styled.img`
     border-radius: 5px;
     width: 100%;
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         width: 50%;
     }
 `;
@@ -42,7 +42,7 @@ export const DataWrapper = styled.div`
     gap: 8px;
     justify-content: space-between;
     height: 100%;
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         align-items: flex-start;
         width: 50%;
         height: initial;

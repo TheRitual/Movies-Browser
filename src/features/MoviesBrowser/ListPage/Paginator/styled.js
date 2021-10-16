@@ -6,7 +6,7 @@ export const LeftArrow = styled(leftArrowSVG)`
     width: 7px;
     height: 11px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         height: 8px;
         width: 5px;
     }
@@ -16,7 +16,7 @@ export const RightArrow = styled(rightArrowSVG)`
     width: 7px;
     height: 11px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         height: 8px;
         width: 5px;
     }
@@ -25,7 +25,7 @@ export const RightArrow = styled(rightArrowSVG)`
 export const AdditionalLeftArrow = styled(LeftArrow)`
     display: none;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         display: inline-block;
     }
 `;
@@ -33,7 +33,7 @@ export const AdditionalLeftArrow = styled(LeftArrow)`
 export const AdditionalRightArrow = styled(RightArrow)`
     display: none;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         display: inline-block;
     }
 `;
@@ -69,7 +69,7 @@ export const PaginatorButton = styled.button`
         }
     }
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         height: 23px;
         padding: 8px 12px;
         font-size: 8px;
@@ -104,13 +104,13 @@ export const PaginatorWrapper = styled.div`
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         gap: 8px;
     }
 `;
 
 export const ButtonText = styled.span`
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         display: none;
     }
 `;
