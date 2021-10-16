@@ -29,8 +29,6 @@ export const StyledPoster = styled.img`
     border-radius: 5px;
     width: 100%;
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        align-items: flex-start;
-        flex-direction: row;
         width: 50%;
     }
 `;
@@ -38,8 +36,12 @@ export const StyledPoster = styled.img`
 export const DataWrapper = styled.div`
     display: flex;
     flex-flow: column nowrap;
-    width: 50%;
+    width: 100%;
     gap: 8px;
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        align-items: flex-start;
+        width: 50%;
+    }
 `;
 
 export const Title = styled.header`

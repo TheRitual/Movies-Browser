@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const ListHeader = styled.h1`
-    font-family: Poppins;
     font-weight: 600;
     font-size: 36px;
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.headers};
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 18px;
+    }
 `;
 
 export const ListGrid = styled.div`

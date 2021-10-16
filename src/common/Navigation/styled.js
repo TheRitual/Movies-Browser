@@ -20,7 +20,7 @@ export const StyledNavWrapper = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        row-gap: 28px;
+        row-gap: 16px;
         grid-template-areas: "logo buttons" "search search";
         padding: 16px 18px;
     }
@@ -99,10 +99,10 @@ export const StyledNavLink = styled(NavLink)`
     }
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
         justify-content: space-between;
-        height: 44px;
+        height: fit-content;
         line-height: 18px;
         font-size: 12px;
-        padding: 12px 12px;
+        padding: 8px 12px;
     }
 `;
 
