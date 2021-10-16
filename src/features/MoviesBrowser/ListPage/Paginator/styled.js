@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as leftArrowSVG } from "../../../../common/assets/svg/leftArrow.svg";
-import { ReactComponent as rightArrowSVG } from "../../../../common/assets/svg/rightArrow.svg";
+import { ReactComponent as leftArrowSVG } from "../../../../assets/images/leftArrow.svg";
+import { ReactComponent as rightArrowSVG } from "../../../../assets/images/rightArrow.svg";
 
 export const LeftArrow = styled(leftArrowSVG)`
     width: 7px;

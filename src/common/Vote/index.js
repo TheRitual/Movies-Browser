@@ -1,5 +1,5 @@
 import { VoteWrapper, StarIcon, Score, RatingScale, Count, ListVoteWrapper } from "./styled";
-import star from "../assets/svg/smallStarIcon.svg";
+import star from "../../assets/images/star.svg";
 
 const Vote = ({ score, count }) => {
     return (

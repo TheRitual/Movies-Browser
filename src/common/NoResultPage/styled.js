@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Image } from "../assets/svg/NoResult.svg";
+import { ReactComponent as Image } from "../../assets/images/noResult.svg";
 
 export const Wrapper = styled.div`
     display: flex;

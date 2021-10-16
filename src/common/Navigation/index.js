@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
 import { fetchMoviesListData, fetchPeopleListData, fetchSearchData, selectPage, selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
-import cameraIcon from "../assets/svg/CameraIcon.svg";
+import cameraIcon from "../../assets/images/CameraIcon.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName, typeQueryParamName } from "../../features/moviesBrowser/queryParamNames";
 import {

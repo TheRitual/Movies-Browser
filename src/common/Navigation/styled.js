@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Search from "../assets/svg/SearchIcon.svg";
+import Search from "../../assets/images/SearchIcon.svg";
 
 
 export const StyledNavigation = styled.nav`
