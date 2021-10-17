@@ -16,7 +16,7 @@ export const PersonDetailTile = styled.div`
     box-shadow: 0px 4px 12px ${({ theme }) => α(theme.colors.tileShadow, 0.5)};
     border-radius: 5px;
     margin: 50px 0 64px;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         grid-template-rows: auto auto;
         grid-template-areas: "photo data" "description description";
         padding: 16px;
@@ -40,7 +40,7 @@ export const PersonName = styled.h1`
     font-weight: 600;
     font-size: 36px;
     line-height: 1.3px;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         font-size: 14px;
     }
 `;
@@ -57,7 +57,7 @@ export const Subtitle = styled.p`
     line-height: 1.2;
     margin: 0;
     padding: 0;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         font-size: 12px;
     }
 `;
@@ -68,7 +68,7 @@ export const StyledDetails = styled.span`
     font-weight: normal;
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.linkHeader};
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         font-size: 12px;
     }
 `;
@@ -78,7 +78,7 @@ export const Description = styled.p`
     margin: 0;
     font-size: 20px;
     line-height: 1.6;
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         font-size: 14px;
     }
 `;
