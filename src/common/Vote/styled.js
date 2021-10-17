@@ -4,7 +4,7 @@ export const VoteWrapper = styled.div`
     display: grid;
     grid-template-areas: ${({ type }) => {
         if (type === "header") {
-            return `"icon score" "count count"`;
+            return `"icon score range" "count count count"`;
         }
         if (type === "details") {
             return `"icon score range count"`;
@@ -17,17 +17,18 @@ export const VoteWrapper = styled.div`
     justify-content: flex-start;
     align-items: ${({ type }) => type === "details" ? "baseline" : "center"};
     margin: 0;
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         column-gap: 8px;
         row-gap: 17px;
+        grid-template-areas: "icon score count";
     }
 `;
 
 export const Icon = styled.img`
     grid-area: icon;
     height: ${({ type }) => type === "header" ? "40px" : "24px"};
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        height: ${({ type }) => type === "header" ? "40px" : "16px"};
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        height: 16px;
     }
 `;
 
@@ -42,12 +43,11 @@ export const Score = styled.span`
     color: ${({ theme, type }) => type === "header" ? theme.colors.voteHeaderScore : theme.colors.voteListScore};
     font-weight: 600;
     line-height: 1.5;
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
         font-size: ${({ type }) => {
-        if(type === "header") {return "30px"}
-        if(type === "details") {return "22px"}
-        return "13px";
-    }};
+            if(type === "header") {return "14px"}
+            return "13px";
+        }};
     }
 `;
 
@@ -57,6 +57,10 @@ export const Range = styled.span`
     color: ${({ theme, type }) => type === "header" ? theme.colors.voteHeaderScore : theme.colors.voteListScore};
     font-weight: normal;
     line-height: 1.2;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
+        display: ${({ type }) => type !== "header" && "none"};
+        font-size: 10px;
+    }
 `;
 
 export const Count = styled.span`
@@ -69,9 +73,9 @@ export const Count = styled.span`
             return theme.colors.subtitleColor
         }};
     line-height: ${({ type }) => type === "header" ? "1.2" : "1.5"};
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-        font-size: ${({ type }) => type === "details" ? "14px" : "13px"};
-        line-height: 130%;
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size: ${({ type }) => type === "header" ? "10px" : "13px"};
+        line-height: 1.3;
         white-space: wrap;
     }
 `;

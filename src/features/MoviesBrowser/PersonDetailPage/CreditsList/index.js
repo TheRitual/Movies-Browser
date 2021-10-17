@@ -13,16 +13,16 @@ const CreditsList = () => {
         {isCastEmpty || <>
             <SectionTitle>Movies - Cast ({cast.length})</SectionTitle>
             <StyledMoviesList>
-                {Array.isArray(cast) && cast.map(castItem => (
-                    <MovieTile movie={castItem} key={castItem.id} showCharacter={true} />
+                {Array.isArray(cast) && cast.map((castItem, index) => (
+                    <MovieTile movie={castItem} key={index} showCharacter={true} />
                 ))}
             </StyledMoviesList>
         </>}
         {isCrewEmpty || <>
             <SectionTitle>Movies - Crew ({crew.length})</SectionTitle>
             <StyledMoviesList>
-                {Array.isArray(crew) && crew.map(crewItem => (
-                    <MovieTile movie={crewItem} key={crewItem.id} showJob={true} />
+                {Array.isArray(crew) && crew.map((crewItem, index) => (
+                    <MovieTile movie={crewItem} key={index} showJob={true} />
                 ))}
             </StyledMoviesList>
         </>}

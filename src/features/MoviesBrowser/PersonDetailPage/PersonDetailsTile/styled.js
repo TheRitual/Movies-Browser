@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import α from "color-alpha";
 
-export const PersonDetailTile = styled.div`
+export const StyledPersonDetailsTile = styled.div`
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 3fr;
     grid-template-rows: auto 1fr;
     grid-column-gap: 40px;
     grid-row-gap: 24px;
@@ -33,7 +33,14 @@ export const ImageWrapper = styled.div`
 
 export const StyledPoster = styled.img`
     border-radius: 5px;
-    width: 100%;
+    width: 40vw;
+`;
+
+export const DetailsWrapper = styled.div`
+    grid-area: data;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
 `;
 
 export const PersonName = styled.h1`
@@ -44,12 +51,6 @@ export const PersonName = styled.h1`
     @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         font-size: 14px;
     }
-`;
-
-export const DetailsWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
 `;
 
 export const Subtitle = styled.p`
@@ -64,7 +65,6 @@ export const Subtitle = styled.p`
 `;
 
 export const StyledDetails = styled.span`
-    grid-area: data;
     font-size: 18px;
     font-weight: normal;
     line-height: 1.2;

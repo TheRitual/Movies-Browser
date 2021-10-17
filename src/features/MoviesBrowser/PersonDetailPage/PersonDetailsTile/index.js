@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectDetailItem } from "../../moviesBrowserSlice";
 import DummyPerson from "../../../../assets/images/person_dummy.svg";
 import {
-    PersonDetailTile,
+    StyledPersonDetailsTile,
     PersonName,
     Subtitle,
     StyledDetails,
@@ -16,7 +16,7 @@ const PersonDetailsTile = () => {
     const person = useSelector(selectDetailItem);
     const imageSrc = person.profile_path ? `https://image.tmdb.org/t/p/w400${person.profile_path}` : DummyPerson;
     return (
-        <PersonDetailTile>
+        <StyledPersonDetailsTile>
             <ImageWrapper>
                 <StyledPoster src={imageSrc} alt={person.name} />
             </ImageWrapper>
@@ -41,7 +41,7 @@ const PersonDetailsTile = () => {
             {person.biography &&
                 <Description> {person.biography} </Description>
             }
-        </PersonDetailTile>
+        </StyledPersonDetailsTile>
     );
 }
 
