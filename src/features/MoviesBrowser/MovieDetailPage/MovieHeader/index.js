@@ -11,7 +11,7 @@ import {
 
 const MovieHeader = () => {
     const movie = useSelector(selectDetailItem);
-    const imgUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}` : BlankField;
+    const imgUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : BlankField;
 
     return (
         <Wrapper>

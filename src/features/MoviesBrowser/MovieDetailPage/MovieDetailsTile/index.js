@@ -21,7 +21,7 @@ import {
 
 const MovieDetailsTile = () => {
     const movie = useSelector(selectDetailItem);
-    const imageSrc = movie.poster_path ? `https://image.tmdb.org/t/p/w400${movie.poster_path}` : DummyMovie;
+    const imageSrc = movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}` : DummyMovie;
     return (
         <StyledMovieDetailTile>
             <ImageWrapper>

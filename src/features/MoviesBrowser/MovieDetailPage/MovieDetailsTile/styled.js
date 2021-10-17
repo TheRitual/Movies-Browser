@@ -28,7 +28,10 @@ export const StyledMovieDetailTile = styled.div`
 
 export const ImageWrapper = styled.div`
     grid-area: photo;
-    width: 40vw;
+    width: 100%;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 40vw;
+    }
 `;
 
 export const StyledPoster = styled.img`

@@ -14,7 +14,7 @@ import {
 
 const PersonDetailsTile = () => {
     const person = useSelector(selectDetailItem);
-    const imageSrc = person.profile_path ? `https://image.tmdb.org/t/p/w400${person.profile_path}` : DummyPerson;
+    const imageSrc = person.profile_path ? `https://image.tmdb.org/t/p/original${person.profile_path}` : DummyPerson;
     return (
         <StyledPersonDetailsTile>
             <ImageWrapper>
