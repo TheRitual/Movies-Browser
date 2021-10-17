@@ -26,4 +26,8 @@ export const SectionTitle = styled.h4`
     font-weight: 600;
     font-size: 36px;
     line-height: 1.2;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size: 20px;
+        margin: 24px auto 16px;
+    }  
 `;

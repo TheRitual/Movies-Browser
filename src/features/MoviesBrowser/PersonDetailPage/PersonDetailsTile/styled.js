@@ -22,6 +22,7 @@ export const PersonDetailTile = styled.div`
         padding: 16px;
         grid-column-gap: 16px;
         grid-row-gap: 16px;
+        margin: 23px 0 24px;
     }
 `;
 
