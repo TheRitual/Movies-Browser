@@ -10,11 +10,14 @@ export const StyledMoviesList = styled.div`
     justify-items: center;
     align-items: stretch;
     @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
         grid-template-columns: 1fr;
-    }    
+    }  
 `;
 
 export const SectionTitle = styled.h4`
@@ -23,4 +26,8 @@ export const SectionTitle = styled.h4`
     font-weight: 600;
     font-size: 36px;
     line-height: 1.2;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size: 20px;
+        margin: 24px auto 16px;
+    }  
 `;

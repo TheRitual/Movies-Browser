@@ -1,39 +1,24 @@
 import { useSelector } from "react-redux";
+import Vote from "../../../../common/Vote";
 import { selectDetailItem } from "../../moviesBrowserSlice";
+import BlankField from "../../../../assets/images/blank.svg";
 import {
     Wrapper,
     WrapperContent,
     WrapperPoster,
-    Star,
-    Note,
-    Scale,
-    Votes,
     Title,
-    Text,
 } from "./styled";
-import star from "./Star.svg";
 
 const MovieHeader = () => {
     const movie = useSelector(selectDetailItem);
-    const rating = movie.vote_average;
-    const votesNumber = movie.vote_count;
-    const sectionStyle = {
-        backgroundImage: `url("https://image.tmdb.org/t/p/w1280${movie.backdrop_path}")`
-    };
+    const imgUrl = movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : BlankField;
 
     return (
         <Wrapper>
-            <WrapperPoster
-                alt={movie.backdrop_path}
-                style={sectionStyle}>
+            <WrapperPoster image={imgUrl}>
                 <WrapperContent>
-                    <Text>
                         <Title> {movie.title} </Title>
-                        <Star src={star} />
-                        <Note>{rating}</Note>
-                        <Scale>/10</Scale>
-                        <Votes>{votesNumber} votes</Votes>
-                    </Text>
+                        <Vote count={movie.vote_count} score={movie.vote_average} type="header" />
                 </WrapperContent>
             </WrapperPoster>
         </Wrapper>

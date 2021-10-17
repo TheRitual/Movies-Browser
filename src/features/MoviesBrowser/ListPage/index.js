@@ -22,7 +22,7 @@ const ListPage = ({ header }) => {
                     <NoResultPage />
                     :
                     <>
-                        <ListGrid columns={type === "movie" ? 4 : 6}>
+                        <ListGrid type={type}>
                             {list && list.map(listItem => {
                                 return type === "movie" ? <MovieTile movie={listItem} key={listItem.id} /> : <PersonTile key={listItem.id} person={listItem} />
                             })}

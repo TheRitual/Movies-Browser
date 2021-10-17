@@ -1,66 +1,89 @@
 import styled from "styled-components";
+import α from "color-alpha";
 
-export const PersonDetailTile = styled.div`
+export const StyledPersonDetailsTile = styled.div`
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 24px;
+    justify-items: stretch;
+    align-items: start;
+    grid-template-areas: "photo data" "photo description";
     width: 100%;
     background-color: ${({ theme }) => theme.colors.tileBackground};
     padding: 40px;
-    display: flex;
-    gap: 40px;
-    flex-direction: row;
-    align-items: flex-start;
+    box-shadow: 0px 4px 12px ${({ theme }) => α(theme.colors.tileShadow, 0.5)};
+    border-radius: 5px;
     margin: 50px 0 64px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        grid-template-rows: auto auto;
+        grid-template-areas: "photo data" "description description";
+        padding: 16px;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        margin: 23px 0 24px;
+    }
+`;
+
+export const ImageWrapper = styled.div`
+    grid-area: photo;
+    width: 100%;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 40vw;
+    }
+`;
+
+export const StyledPoster = styled.img`
+    border-radius: 5px;
+    width: 100%;
+`;
+
+export const DetailsWrapper = styled.div`
+    grid-area: data;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
 `;
 
 export const PersonName = styled.h1`
     color: ${({ theme }) => theme.colors.linkHeader};
-    font-family: Poppins;
-    font-style: normal;
     font-weight: 600;
     font-size: 36px;
     line-height: 1.3px;
-    margin-left: 40px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size: 14px;
+    }
 `;
 
-export const Subtitle = styled.h3`
-    color: ${({ theme }) => theme.colors.subTekst};
+export const Subtitle = styled.p`
+    color: ${({ theme }) => theme.colors.subText};
     font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    margin: 40px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size: 12px;
+    }
 `;
 
 export const StyledDetails = styled.span`
-    margin-left: 12px;
     font-size: 18px;
     font-weight: normal;
+    line-height: 1.2;
     color: ${({ theme }) => theme.colors.linkHeader};
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size: 12px;
+    }
 `;
 
 export const Description = styled.p`
+    grid-area: description;
+    margin: 0;
     font-size: 20px;
-    line-height: 1.3;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 400;
-    display: flex;
-    text-align: justify;
-    margin: 40px;
-
+    line-height: 1.6;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size: 14px;
+    }
 `;
 
-export const Content = styled.div``;
-
-export const StyledPoster = styled.img`
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    border-radius: 5px;
-    width: 399px;
-    left: 40px;
-    top: 40px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    height: 200px;
-  }
-`;

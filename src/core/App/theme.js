@@ -9,6 +9,7 @@ const pallette = {
     stormGrey: "#74788B",
     mineShaft: "#333333",
     pattensBlue: "#D6E4FF",
+    heather: "#BAC7D5",
 }
 
 export const theme = {
@@ -36,11 +37,16 @@ export const theme = {
         paginatorDisabledArrow: pallette.waterloo,
         headerBackground: pallette.black,
         listTitles: pallette.black,
+        voteListScore: pallette.woodsmoke,
+        voteHeaderScore: pallette.white,
+        tileShadow: pallette.heather,
+        searchBarText: pallette.waterloo,
     },
     breakpoints: {
         mobile: "320px",
         mobileLandscape: "568px",
         tablet: "767px",
         tabletLandscape: "1024px",
+        container: "1368px"
     }
 }

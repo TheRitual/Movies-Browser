@@ -1,76 +1,82 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Search from "../assets/svg/SearchIcon.svg";
+import Search from "../../assets/images/SearchIcon.svg";
 
 
 export const StyledNavigation = styled.nav`
     width: 100%;
     background-color: ${({ theme }) => theme.colors.navBackground};
-    justify-content: center;
-    padding: 13px;
 `;
 
-export const NavigationList = styled.ul`
-    list-style: none;
+export const StyledNavWrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr;
+    grid-template-areas: "logo buttons . search";
+    width: 100%;
+    justify-content: space-between;
+    max-width: ${({ theme }) => theme.breakpoints.container};
+    margin: 0 auto;
+    padding: 23px 16px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 16px;
+        grid-template-areas: "logo buttons" "search search";
+        padding: 16px 18px;
+    }
+`;
+
+export const LogoWrapper = styled.div`
+    grid-area: logo;
     display: flex;
-    margin: 0 10px;
-    position: static;
-    flex-grow: 8;
-`;
-
-export const NavigationListItem = styled.li`
-    flex-grow: 0;
-    justify-content: flex-start;
-    margin: 15px 5px;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0;
+    gap: 17px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        gap: 10px;
+    }
 `;
 
 export const StyledCameraIcon = styled.img`
-    width: 37px;
-    height: 47px;
-    margin: 0 10px;
-    padding-left: 5px;
+    height: 40px;
+    margin: 4px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        height: 20px;
+    }
 `;
 
 export const StyledTitle = styled.h1`
     color: ${({ theme }) => theme.colors.navText};
-    width: 168px;
-    margin: 0;
-    font-style: normal;
+    white-space: nowrap;
     font-weight: 500;
     font-size: 24px;
-    line-height: 40px;
+    line-height: 40px; 
     letter-spacing: -1.5px;
     text-transform: capitalize;
-    flex-grow: 1;
+    margin: 0;
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        font-size:13px;
+        letter-spacing: -0.5px;
+        margin-right: 14px;
+    }
 `;
-
-export const StyledInput = styled.input`
-    background: ${({ theme }) => theme.colors.white}; 
-    font-size: 16px;
-    border-radius: 33px;
-    outline: none;
-    height: 48px;
-    min-width: 400px;
-    outline: 0px;
-    padding: 12px 12px 12px 64px;
-    border: 1px solid ${({ theme }) => theme.colors.mystic}; 
-    background-image: url(${Search});
-    background-position: 26px 12px;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    color: #7E839A;
-`;
-
-export const StyledNavWrapper = styled.div`
+ 
+export const ButtonsWrapper = styled.div`
+    grid-area: buttons;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1368px;
-    margin: auto;
+    justify-content: center;
+    padding: 0;
+    gap: 20px;
+    margin-left: 30px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}) {
+        gap: initial;
+        margin-left: 0;
+        justify-content: flex-end;
+    }
 `;
-
 
 export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.navText};
@@ -83,12 +89,51 @@ export const StyledNavLink = styled(NavLink)`
     padding: 12px 16px;
     border: 1px solid ${({ theme }) => theme.colors.navBackground};
     border-radius: 24px;
-    height: 48px;
+    height: 48px; 
     &.active {
         border-color: ${({ theme }) => theme.colors.navText};
     }
     &:hover {
         background-color: ${({ theme }) => theme.colors.navText};
         color: ${({ theme }) => theme.colors.navBackground};
+    }
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobileLandscape}) {
+        justify-content: space-between;
+        height: fit-content;
+        line-height: 18px;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+`;
+
+export const SearchWrapper = styled.div`
+    grid-area: search;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+`;
+
+export const StyledInput = styled.input`
+    float: right;
+    background: ${({ theme }) => theme.colors.white}; 
+    font-size: 16px;
+    border-radius: 33px;
+    outline: none;
+    height: 48px;
+    width: 100%;
+    outline: 0px;
+    padding: 12px 12px 12px 64px;
+    border: 1px solid ${({ theme }) => theme.colors.mystic}; 
+    background-image: url(${Search});
+    background-position: 26px 12px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    color: ${({ theme }) => theme.colors.searchBarText};
+    display: block;
+    line-height: 1.5;
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 13px;
+        line-height: 1.3;
+        float: initial;
     }
 `;

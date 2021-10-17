@@ -1,21 +1,23 @@
 import { useDispatch } from "react-redux";
 import { toPeopleList, toMoviesList, toSearch } from "../../core/config/routes";
 import { fetchMoviesListData, fetchPeopleListData, fetchSearchData, selectPage, selectSearchQuery, selectType, setPage, setSearchQuery, setType } from "../../features/moviesBrowser/moviesBrowserSlice";
-import cameraIcon from "../assets/svg/CameraIcon.svg";
+import cameraIcon from "../../assets/images/CameraIcon.svg";
 import { useQueryParameter, useReplaceQueryParameter } from "../../common/api/useQueryParameters";
 import { searchQueryParamName, pageQueryParamName, typeQueryParamName } from "../../features/moviesBrowser/queryParamNames";
 import {
     StyledNavigation,
-    NavigationList,
-    NavigationListItem,
     StyledTitle,
     StyledNavLink,
     StyledNavWrapper,
     StyledInput,
     StyledCameraIcon,
+    LogoWrapper,
+    ButtonsWrapper,
+    SearchWrapper,
 } from "./styled";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     const dispatch = useDispatch();
@@ -52,17 +54,17 @@ const Navigation = () => {
     return (
         <StyledNavigation>
             <StyledNavWrapper>
-                <StyledCameraIcon src={cameraIcon} />
-                <StyledTitle> Movies Browser </StyledTitle>
-                <NavigationList>
-                    <NavigationListItem>
-                        <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>
-                    </NavigationListItem>
-                    <NavigationListItem>
-                        <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
-                    </NavigationListItem>
-                </NavigationList>
-                <StyledInput value={query || ""} onChange={onSearchChange} placeholder={`Search for ${type}`} />
+                <LogoWrapper>
+                    <StyledCameraIcon src={cameraIcon} />
+                    <Link to="/"><StyledTitle> Movies Browser </StyledTitle></Link>
+                </LogoWrapper>
+                <ButtonsWrapper>
+                    <StyledNavLink to={toMoviesList()}> Movies </StyledNavLink>
+                    <StyledNavLink to={toPeopleList()}> People </StyledNavLink>
+                </ButtonsWrapper>
+                <SearchWrapper>
+                    <StyledInput value={query || ""} onChange={onSearchChange} placeholder={`Search for ${type}`} />
+                </SearchWrapper>
             </StyledNavWrapper>
         </StyledNavigation>
     )

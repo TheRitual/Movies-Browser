@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import {ReactComponent as ErrorIcon} from "../assets/svg/error.svg";
+import {ReactComponent as ErrorIcon} from "../../assets/images/error.svg";
 
 export const Wrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.noResultPageBackground};

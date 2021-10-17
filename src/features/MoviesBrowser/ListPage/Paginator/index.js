@@ -4,7 +4,7 @@ import { useReplaceQueryParameter } from "../../../../common/api/useQueryParamet
 import { toMoviesList, toPeopleList, toSearch } from "../../../../core/config/routes";
 import { selectPage, selectSearchQuery, selectTotalPages, selectType, setPage } from "../../moviesBrowserSlice";
 import { pageQueryParamName, searchQueryParamName, typeQueryParamName } from "../../queryParamNames";
-import { LeftArrow, PaginatorButton, PaginatorPage, PaginatorText, PaginatorWrapper, RightArrow } from "./styled";
+import { LeftArrow, PaginatorButton, PaginatorPage, PaginatorText, PaginatorWrapper, RightArrow, ButtonText, AdditionalRightArrow, AdditionalLeftArrow } from "./styled";
 
 const Paginator = () => {
     const dispatch = useDispatch();
@@ -29,35 +29,34 @@ const Paginator = () => {
                 { key: pageQueryParamName, value: page },
                 { key: typeQueryParamName, value: undefined }
             ];
-                if(type === "person")
-                    {
-                        replaceParam(params, toPeopleList());
-                    } else {
-                        replaceParam(params, toMoviesList()) ;
-                    }
+            if (type === "person") {
+                replaceParam(params, toPeopleList());
+            } else {
+                replaceParam(params, toMoviesList());
+            }
         }
     }
 
     return (
         <PaginatorWrapper>
             <PaginatorButton disabled={page === "1" || page === 1} onClick={() => onSetPage("1")}>
-                <LeftArrow /> First
+                <LeftArrow /> <AdditionalLeftArrow /> <ButtonText> First </ButtonText>
             </PaginatorButton>
 
             <PaginatorButton disabled={page === "1" || page === 1} onClick={() => onSetPage((Number(page) - 1).toString())}>
-                <LeftArrow /> Previous
+                <LeftArrow /> <ButtonText> Previous </ButtonText>
             </PaginatorButton>
 
             <PaginatorText>
-                Page <PaginatorPage>{page}</PaginatorPage> from <PaginatorPage>{totalPages}</PaginatorPage>
+                <ButtonText>Page</ButtonText> <PaginatorPage>{page}</PaginatorPage> from <PaginatorPage>{totalPages}</PaginatorPage>
             </PaginatorText>
 
             <PaginatorButton disabled={page === totalPages} onClick={() => onSetPage((Number(page) + 1).toString())}>
-                Next <RightArrow />
+                <ButtonText>Next</ButtonText> <RightArrow />
             </PaginatorButton>
 
             <PaginatorButton disabled={page === totalPages} onClick={() => onSetPage(totalPages)}>
-                Last <RightArrow />
+                <ButtonText>Last</ButtonText> <RightArrow /><AdditionalRightArrow />
             </PaginatorButton>
         </PaginatorWrapper>
     );

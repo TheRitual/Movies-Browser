@@ -13,16 +13,16 @@ const PeopleList = () => {
         {isCastEmpty || <>
             <SectionTitle>Cast</SectionTitle>
             <StyledPeopleList>
-                {Array.isArray(cast) && cast.map(castItem => (
-                    <PersonTile person={castItem} showCharacter={true} />
+                {Array.isArray(cast) && cast.map((castItem, index) => (
+                    <PersonTile person={castItem} key={index} showCharacter={true} />
                 ))}
             </StyledPeopleList>
         </>}
         {isCrewEmpty || <>
             <SectionTitle>Crew</SectionTitle>
             <StyledPeopleList>
-                {Array.isArray(crew) && crew.map(crewItem => (
-                    <PersonTile person={crewItem} showJob={true} />
+                {Array.isArray(crew) && crew.map((crewItem, index) => (
+                    <PersonTile person={crewItem} key={index} showJob={true} />
                 ))}
             </StyledPeopleList>
         </>}
@@ -30,4 +30,4 @@ const PeopleList = () => {
 }
 
 
-export default PeopleList;
+export default PeopleList; 

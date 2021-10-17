@@ -35,6 +35,7 @@ function* fetchListHandler() {
         yield put(setTotalPages(list.total_pages));
     } catch (error) {
         yield put(fetchDataError());
+        yield call(console.error, "Error List Fetching");
         yield call(console.error, error);
     }
 }
@@ -52,6 +53,7 @@ function* fetchDetailHandler() {
         yield put(setDetailItem(detailedItem));
     } catch (error) {
         yield put(fetchDataError());
+        yield call(console.error, "Error Details Fetching");
         yield call(console.error, error);
     }
 }
@@ -67,11 +69,14 @@ function* fetchSearchHandler() {
         const query = yield select(selectSearchQuery);
         const requestType = yield select(selectType);
         const list = yield call(fetchSearch, requestType, query, page);
-        yield put(setList(list.results || []));
-        yield put(setResultsAmount(list.total_results));
-        yield put(setTotalPages(list.total_pages));
+        if (list !== null) {
+            yield put(setList(list.results));
+            yield put(setResultsAmount(list.total_results));
+            yield put(setTotalPages(list.total_pages));
+        }
     } catch (error) {
         yield put(fetchDataError());
+        yield call(console.error, "Error Search Fetching");
         yield call(console.error, error);
     }
 }
