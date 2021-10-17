@@ -30,6 +30,7 @@ const MovieDetailsTile = () => {
             <DetailsWrapper>
                 <Title> {movie.title} </Title>
                 {movie.release_date && <Subtitle>{movie.release_date.toString().substring(0, 4)} </Subtitle>}
+
                 <DataWrapper>
                     {movie.production_countries &&
                         <Subtext>
@@ -50,14 +51,9 @@ const MovieDetailsTile = () => {
                             </StyledDetails>
                         </Subtext>}
                 </DataWrapper>
-
                 <Tags>
-                    {movie.genres && movie.genres.map((genre, index) => (
-                        <Tag>
-                            <span key={index}>
-                                {genre.name}
-                            </span>
-                        </Tag>
+                    {movie.genres && movie.genres.map(genre => (
+                        <Tag key={genre.name}> {genre.name} </Tag>
                     ))}
                 </Tags>
                 <Vote score={movie.vote_average} count={movie.vote_count} type="details" />
