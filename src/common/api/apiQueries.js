@@ -8,7 +8,7 @@ const getApiKey = (version) => {
 export const fetchList = async (type = "movie", page = "1") => {
     const response = await fetch(`https://api.themoviedb.org/3/${type}/popular?api_key=${getApiKey()}&language=en-US&page=${page || 1}`);
     if (!response.ok) {
-        new Error((response).statusText);
+        throw new Error((response).statusText);
     }
     return await response.json();
 };
@@ -16,7 +16,7 @@ export const fetchList = async (type = "movie", page = "1") => {
 export const fetchDetails = async (type = "movie", id) => {
     const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${getApiKey()}&language=en-US`);
     if (!response.ok) {
-        new Error((response).statusText);
+        throw new Error((response).statusText);
     }
     return await response.json();
 };
@@ -25,7 +25,7 @@ export const fetchSearch = async (type = "movie", query = "", page = "1") => {
     if (query || query !== "") {
         const response = await fetch(`https://api.themoviedb.org/3/search/${type}?api_key=${getApiKey()}&language=en-US&query=${query}&page=${page}&include_adult=false`);
         if (!response.ok) {
-            new Error((response).statusText);
+            throw new Error((response).statusText);
         }
         return await response.json();
     } else {
@@ -36,7 +36,7 @@ export const fetchSearch = async (type = "movie", query = "", page = "1") => {
 export const fetchGenres = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${getApiKey()}&language=en-US`);
     if (!response.ok) {
-        new Error((response).statusText);
+        throw new Error((response).statusText);
     }
     return await response.json();
 };
@@ -44,7 +44,7 @@ export const fetchGenres = async () => {
 export const fetchMovieCredits = async (movie_id) => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=${getApiKey()}&language=en-US`);
     if (!response.ok) {
-        new Error((response).statusText);
+        throw new Error((response).statusText);
     }
     return await response.json();
 };
@@ -52,7 +52,7 @@ export const fetchMovieCredits = async (movie_id) => {
 export const fetchPersonCredits = async (person_id) => {
     const response = await fetch(`https://api.themoviedb.org/3/person/${person_id}/movie_credits?api_key=${getApiKey()}&language=en-US`);
     if (!response.ok) {
-        new Error((response).statusText);
+        throw new Error((response).statusText);
     }
     return await response.json();
 };
