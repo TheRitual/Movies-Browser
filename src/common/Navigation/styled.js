@@ -89,7 +89,6 @@ export const StyledNavLink = styled(NavLink)`
     padding: 12px 16px;
     border: 1px solid ${({ theme }) => theme.colors.navBackground};
     border-radius: 24px;
-    height: 48px; 
     &.active {
         border-color: ${({ theme }) => theme.colors.navText};
     }
